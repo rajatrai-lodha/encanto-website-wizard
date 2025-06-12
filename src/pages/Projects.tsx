@@ -1,7 +1,7 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ImageGallery from "@/components/ImageGallery";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Building, Users } from "lucide-react";
@@ -99,8 +99,23 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Interactive Project Gallery */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Project Gallery
+            </h2>
+            <p className="text-xl text-gray-600">
+              Interactive showcase of our completed parking systems - click to explore
+            </p>
+          </div>
+          <ImageGallery />
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
@@ -174,7 +189,7 @@ const Projects = () => {
       </section>
 
       {/* Industry Sectors */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

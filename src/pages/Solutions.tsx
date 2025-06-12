@@ -1,7 +1,7 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ImageGallery from "@/components/ImageGallery";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff } from "lucide-react";
@@ -120,9 +120,32 @@ const Solutions = () => {
         </div>
       </section>
 
+      {/* Project Gallery Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Projects in Action
+            </h2>
+            <p className="text-xl text-gray-600">
+              Click on each image to discover more about our parking solutions
+            </p>
+          </div>
+          <ImageGallery />
+        </div>
+      </section>
+
       {/* Solutions Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Solution Details
+            </h2>
+            <p className="text-xl text-gray-600">
+              Explore our comprehensive range of parking systems
+            </p>
+          </div>
           <div className="space-y-16">
             {solutions.map((solution, index) => (
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
