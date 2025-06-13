@@ -1,13 +1,22 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import InteractiveCard from "@/components/InteractiveCard";
 import ImageGallery from "@/components/ImageGallery";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Solutions = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   const solutions = [
     {
       title: "G+1 Stack Parking",
@@ -26,7 +35,8 @@ const Solutions = () => {
         "ROI within 2-3 years",
         "Weather protection for vehicles",
         "Enhanced security"
-      ]
+      ],
+      color: "from-blue-500 to-blue-700"
     },
     {
       title: "G+2 Stack Parking",
@@ -45,7 +55,8 @@ const Solutions = () => {
         "Automated operation reduces human error",
         "Suitable for high-traffic areas",
         "Long-term cost savings"
-      ]
+      ],
+      color: "from-indigo-500 to-indigo-700"
     },
     {
       title: "Pit Stack Parking",
@@ -64,7 +75,8 @@ const Solutions = () => {
         "Complete weather protection",
         "Aesthetic appeal maintained",
         "Energy-efficient operation"
-      ]
+      ],
+      color: "from-purple-500 to-purple-700"
     },
     {
       title: "Puzzle Parking System",
@@ -83,7 +95,8 @@ const Solutions = () => {
         "Lower installation costs",
         "Quick vehicle retrieval",
         "Suitable for retrofit projects"
-      ]
+      ],
+      color: "from-cyan-500 to-cyan-700"
     },
     {
       title: "Tower Parking System",
@@ -102,128 +115,143 @@ const Solutions = () => {
         "Minimal ground footprint",
         "Faster parking and retrieval",
         "Suitable for commercial complexes"
-      ]
+      ],
+      color: "from-teal-500 to-teal-700"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <div className="fixed inset-0 bg-tech-gradient"></div>
+      <div className="fixed inset-0 grid-bg opacity-20"></div>
+      <AnimatedBackground />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Parking Solutions</h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Comprehensive range of automated parking systems designed for every space and requirement
-          </p>
-        </div>
-      </section>
-
-      {/* Project Gallery Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Projects in Action
-            </h2>
-            <p className="text-xl text-gray-600">
-              Click on each image to discover more about our parking solutions
-            </p>
+      <div className="relative z-10">
+        <Header />
+        
+        {/* Hero Section */}
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+                Our Parking Solutions
+              </h1>
+              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100">
+                Comprehensive range of automated parking systems designed for every space and requirement
+              </p>
+            </div>
           </div>
-          <ImageGallery />
-        </div>
-      </section>
+        </section>
 
-      {/* Solutions Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Solution Details
-            </h2>
-            <p className="text-xl text-gray-600">
-              Explore our comprehensive range of parking systems
-            </p>
+        {/* Project Gallery Section */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Our Projects in Action
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Click on each image to discover more about our parking solutions
+              </p>
+            </div>
+            <ImageGallery />
           </div>
-          <div className="space-y-16">
-            {solutions.map((solution, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <Card className="h-full">
-                    <CardHeader>
-                      <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <solution.icon className="h-8 w-8 text-blue-600" />
-                      </div>
-                      <CardTitle className="text-2xl">{solution.title}</CardTitle>
-                      <CardDescription className="text-lg">{solution.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                          <ul className="space-y-2">
-                            {solution.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-start text-sm text-gray-600">
-                                <div className="w-2 h-2 bg-blue-600 rounded-full mr-2 mt-2"></div>
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
+        </section>
+
+        {/* Solutions Grid */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Solution Details
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Explore our comprehensive range of parking systems
+              </p>
+            </div>
+            <div className="space-y-16">
+              {solutions.map((solution, index) => (
+                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    <InteractiveCard hoverEffect="lift" className="h-full">
+                      <CardHeader>
+                        <div className={`w-16 h-16 bg-gradient-to-r ${solution.color} rounded-lg flex items-center justify-center mb-4 animate-pulse-glow`}>
+                          <solution.icon className="h-8 w-8 text-white" />
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">Benefits:</h4>
-                          <ul className="space-y-2">
-                            {solution.benefits.map((benefit, idx) => (
-                              <li key={idx} className="flex items-start text-sm text-gray-600">
-                                <div className="w-2 h-2 bg-green-600 rounded-full mr-2 mt-2"></div>
-                                {benefit}
-                              </li>
-                            ))}
-                          </ul>
+                        <CardTitle className="text-2xl">{solution.title}</CardTitle>
+                        <CardDescription className="text-lg">{solution.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <h4 className="font-semibold mb-3">Key Features:</h4>
+                            <ul className="space-y-2">
+                              {solution.features.map((feature, idx) => (
+                                <li key={idx} className="flex items-start text-sm text-muted-foreground">
+                                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-2 mt-2"></div>
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold mb-3">Benefits:</h4>
+                            <ul className="space-y-2">
+                              {solution.benefits.map((benefit, idx) => (
+                                <li key={idx} className="flex items-start text-sm text-muted-foreground">
+                                  <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-green-600 rounded-full mr-2 mt-2"></div>
+                                  {benefit}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className={`bg-gray-100 rounded-lg p-8 h-80 flex items-center justify-center ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                  <div className="text-center">
-                    <solution.icon className="h-24 w-24 text-blue-600 mx-auto mb-4" />
-                    <p className="text-gray-600">System Diagram</p>
-                    <p className="text-sm text-gray-500 mt-2">{solution.title}</p>
+                      </CardContent>
+                    </InteractiveCard>
+                  </div>
+                  <div className={`glass-effect rounded-lg p-8 h-80 flex items-center justify-center neon-blue ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                    <div className="text-center">
+                      <solution.icon className="h-24 w-24 text-primary mx-auto mb-4 animate-float" />
+                      <p className="text-muted-foreground">System Diagram</p>
+                      <p className="text-sm text-muted-foreground mt-2">{solution.title}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Need a Custom Solution?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Our engineering team can design and implement customized parking solutions 
-            tailored to your specific requirements and space constraints.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Request Consultation
+        {/* CTA Section */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Need a Custom Solution?
+            </h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90 text-blue-100">
+              Our engineering team can design and implement customized parking solutions 
+              tailored to your specific requirements and space constraints.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button size="lg" className="btn-futuristic">
+                  Request Consultation
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-background glass-effect">
+                Download Brochure
               </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-              Download Brochure
-            </Button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
-      <WhatsAppButton />
+        <Footer />
+        <WhatsAppButton />
+      </div>
     </div>
   );
 };

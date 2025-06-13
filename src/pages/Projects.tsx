@@ -1,12 +1,22 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import InteractiveCard from "@/components/InteractiveCard";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import ImageGallery from "@/components/ImageGallery";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Building, Users } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   const projects = [
     {
       name: "Suman Apartments",
@@ -71,9 +81,9 @@ const Projects = () => {
   ];
 
   const stats = [
-    { label: "Projects Completed", value: "50+", icon: Building },
-    { label: "Parking Spaces Created", value: "1000+", icon: MapPin },
-    { label: "Satisfied Clients", value: "45+", icon: Users }
+    { number: 50, suffix: "+", label: "Projects Completed", icon: Building },
+    { number: 1000, suffix: "+", label: "Parking Spaces Created", icon: MapPin },
+    { number: 45, suffix: "+", label: "Satisfied Clients", icon: Users }
   ];
 
   const getTypeColor = (type: string) => {
@@ -86,165 +96,189 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <div className="fixed inset-0 bg-tech-gradient"></div>
+      <div className="fixed inset-0 grid-bg opacity-20"></div>
+      <AnimatedBackground />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Projects</h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Trusted by leading developers and institutions across India
-          </p>
-        </div>
-      </section>
-
-      {/* Interactive Project Gallery */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Project Gallery
-            </h2>
-            <p className="text-xl text-gray-600">
-              Interactive showcase of our completed parking systems - click to explore
-            </p>
-          </div>
-          <ImageGallery />
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="h-8 w-8 text-blue-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-xl text-gray-600">
-              Showcasing our expertise across different sectors and applications
-            </p>
-          </div>
+      <div className="relative z-10">
+        <Header />
+        
+        {/* Hero Section */}
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl">{project.name}</CardTitle>
-                    <Badge className={getTypeColor(project.type)}>{project.type}</Badge>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+                Our Projects
+              </h1>
+              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100">
+                Trusted by leading developers and institutions across India
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Project Gallery */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Project Gallery
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Interactive showcase of our completed parking systems - click to explore
+              </p>
+            </div>
+            <ImageGallery />
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
+                    <stat.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <CardDescription className="font-medium text-blue-600">
-                    {project.client}
-                  </CardDescription>
+                  <AnimatedCounter
+                    end={stat.number}
+                    suffix={stat.suffix}
+                    className="text-3xl font-bold mb-2"
+                  />
+                  <div className="text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Grid */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Featured Projects
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Showcasing our expertise across different sectors and applications
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <InteractiveCard key={index} hoverEffect="lift">
+                  <CardHeader>
+                    <div className="flex justify-between items-start mb-2">
+                      <CardTitle className="text-xl">{project.name}</CardTitle>
+                      <Badge className={getTypeColor(project.type)}>{project.type}</Badge>
+                    </div>
+                    <CardDescription className="font-medium text-primary">
+                      {project.client}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <MapPin className="h-4 w-4 mr-2" />
+                        {project.location}
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <span className="font-medium">System:</span>
+                          <p className="text-muted-foreground">{project.system}</p>
+                        </div>
+                        <div>
+                          <span className="font-medium">Capacity:</span>
+                          <p className="text-muted-foreground">{project.capacity}</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                      
+                      <div className="flex justify-between items-center pt-2">
+                        <span className="text-xs text-muted-foreground">Completed: {project.year}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </InteractiveCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industry Sectors */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Industries We Serve
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Providing parking solutions across diverse sectors
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <InteractiveCard hoverEffect="glow" className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
+                    <Building className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle>Residential Complexes</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      {project.location}
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="font-medium text-gray-700">System:</span>
-                        <p className="text-gray-600">{project.system}</p>
-                      </div>
-                      <div>
-                        <span className="font-medium text-gray-700">Capacity:</span>
-                        <p className="text-gray-600">{project.capacity}</p>
-                      </div>
-                    </div>
-                    
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex justify-between items-center pt-2">
-                      <span className="text-xs text-gray-500">Completed: {project.year}</span>
-                    </div>
-                  </div>
+                  <p className="text-muted-foreground">
+                    Apartment buildings, housing societies, and residential towers requiring 
+                    efficient parking solutions for residents and visitors.
+                  </p>
                 </CardContent>
-              </Card>
-            ))}
+              </InteractiveCard>
+              
+              <InteractiveCard hoverEffect="glow" className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
+                    <MapPin className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle>Commercial Buildings</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Office complexes, shopping centers, and commercial establishments 
+                    needing high-capacity parking for employees and customers.
+                  </p>
+                </CardContent>
+              </InteractiveCard>
+              
+              <InteractiveCard hoverEffect="glow" className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle>Healthcare Facilities</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Hospitals, clinics, and medical centers requiring organized parking 
+                    for patients, visitors, and medical staff.
+                  </p>
+                </CardContent>
+              </InteractiveCard>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Industry Sectors */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Industries We Serve
-            </h2>
-            <p className="text-xl text-gray-600">
-              Providing parking solutions across diverse sectors
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <CardHeader>
-                <Building className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>Residential Complexes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Apartment buildings, housing societies, and residential towers requiring 
-                  efficient parking solutions for residents and visitors.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardHeader>
-                <MapPin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>Commercial Buildings</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Office complexes, shopping centers, and commercial establishments 
-                  needing high-capacity parking for employees and customers.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardHeader>
-                <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>Healthcare Facilities</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Hospitals, clinics, and medical centers requiring organized parking 
-                  for patients, visitors, and medical staff.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-      <WhatsAppButton />
+        <Footer />
+        <WhatsAppButton />
+      </div>
     </div>
   );
 };
