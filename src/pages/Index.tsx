@@ -5,12 +5,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PageBackground from "@/components/PageBackground";
-import EnhancedHero from "@/components/EnhancedHero";
-import EnhancedSection from "@/components/EnhancedSection";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import InteractiveCard from "@/components/InteractiveCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, Zap, Shield, Award } from "lucide-react";
+import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -25,241 +23,284 @@ const Index = () => {
       title: "G+1 Stack Parking",
       description: "Double your parking capacity with our efficient two-level stacking system.",
       icon: ArrowUp,
-      features: ["200% space efficiency", "Quick 60-sec retrieval", "Weather protection"],
-      color: "from-blue-500 to-cyan-500",
-      animation: "hover-lift"
+      features: ["Space efficient", "Cost effective", "Easy operation"],
+      color: "from-blue-500 to-blue-700"
     },
     {
       title: "G+2 Stack Parking", 
       description: "Triple your parking space with our advanced three-level stacking solution.",
       icon: ArrowUp,
-      features: ["300% capacity increase", "Advanced safety systems", "Automated operation"],
-      color: "from-indigo-500 to-blue-500",
-      animation: "hover-tilt"
+      features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
+      color: "from-indigo-500 to-indigo-700"
     },
     {
       title: "Pit Stack Parking",
       description: "Underground parking solution for limited overhead space areas.",
       icon: ArrowDown,
-      features: ["Underground optimization", "Aesthetic preservation", "Complete protection"],
-      color: "from-purple-500 to-indigo-500",
-      animation: "hover-glow"
+      features: ["Underground solution", "Weather protected", "Space optimization"],
+      color: "from-purple-500 to-purple-700"
     },
     {
       title: "Puzzle Parking",
       description: "Horizontal sliding puzzle system for maximum space efficiency.",
       icon: CircleParking,
-      features: ["Horizontal movement", "No excavation needed", "Flexible configuration"],
-      color: "from-cyan-500 to-teal-500",
-      animation: "hover-lift"
+      features: ["Horizontal movement", "No pit required", "Modular design"],
+      color: "from-cyan-500 to-cyan-700"
     },
     {
       title: "Tower Parking",
       description: "Vertical automated parking towers for high-density parking needs.",
       icon: CircleParkingOff,
-      features: ["Vertical excellence", "Minimal footprint", "High-speed automation"],
-      color: "from-teal-500 to-emerald-500",
-      animation: "hover-tilt"
+      features: ["Vertical storage", "Automated system", "High capacity"],
+      color: "from-teal-500 to-teal-700"
     }
   ];
 
   const projects = [
-    { name: "Suman Apartments", client: "Nirmitee Developers", type: "Residential", capacity: "24 Cars" },
-    { name: "Kamal Nivas", client: "ESKAY ELEVATORS LTD", type: "Residential", capacity: "36 Cars" },
-    { name: "21st Century Hospital", client: "Nadkarni Foundation", type: "Healthcare", capacity: "50 Cars" },
-    { name: "Hawa Mahal", client: "H. RISHABRAJ", type: "Heritage", capacity: "20 Cars" }
+    "Suman Apartments (Nirmitee Developers)",
+    "Kamal Nivas (ESKAY ELEVATORS LTD)",
+    "Hawa Mahal (H. RISHABRAJ)",
+    "21st Century Hospital, Vapi (Nadkarni Foundation)"
   ];
 
   const stats = [
-    { number: 1000, suffix: "+", label: "Parking Spaces Created", icon: CircleParking },
-    { number: 50, suffix: "+", label: "Projects Completed", icon: Award },
-    { number: 45, suffix: "+", label: "Satisfied Clients", icon: Shield },
-    { number: 99, suffix: "%", label: "Uptime Reliability", icon: Zap }
+    { number: 1000, suffix: "+", label: "Parking Spaces Created" },
+    { number: 50, suffix: "+", label: "Projects Completed" },
+    { number: 45, suffix: "+", label: "Satisfied Clients" },
+    { number: 99, suffix: "%", label: "Uptime Reliability" }
   ];
 
   return (
-    <PageBackground variant="home">
-      <Header />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <div className="fixed inset-0 bg-tech-gradient"></div>
+      <div className="fixed inset-0 grid-bg opacity-20"></div>
+      <AnimatedBackground />
       
-      {/* Enhanced Hero Section */}
-      <EnhancedHero
-        title="Smarter Parking Starts Here"
-        subtitle="Revolutionizing Urban Parking with Smart Technology"
-        description="Welcome to Encanto Industries, your premier destination for innovative parking solutions tailored to modern urban living. Unlock space. Unlock value."
-        primaryCTA={{ text: "Explore Solutions", href: "/solutions" }}
-        secondaryCTA={{ text: "Get Free Quote", href: "/contact" }}
-        backgroundVariant="home"
-        height="full"
-      />
-
-      {/* Animated Stats Section */}
-      <EnhancedSection spacing="large">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 neon-cyan group-hover:scale-110 transition-transform duration-300">
-                <stat.icon className="h-10 w-10 text-cyan-400" />
-              </div>
-              <AnimatedCounter
-                end={stat.number}
-                suffix={stat.suffix}
-                className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent"
-              />
-              <p className="text-slate-300 mt-2 font-medium">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </EnhancedSection>
-
-      {/* About Section with Enhanced Cards */}
-      <EnhancedSection 
-        title="Why Choose Encanto Industries?"
-        subtitle="Leading the revolution in smart parking solutions across India"
-        background="gradient"
-        divider={true}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { 
-              icon: Zap, 
-              title: "Innovation First", 
-              desc: "Cutting-edge parking technology solutions that set industry standards",
-              color: "neon-cyan"
-            },
-            { 
-              icon: ArrowUp, 
-              title: "Maximum Efficiency", 
-              desc: "Optimize space utilization with minimal footprint and maximum capacity",
-              color: "neon-green"
-            },
-            { 
-              icon: Shield, 
-              title: "Proven Reliability", 
-              desc: "Robust systems engineered for 99%+ uptime with minimal maintenance",
-              color: "neon-orange"
-            }
-          ].map((item, index) => (
-            <InteractiveCard key={index} hoverEffect="lift" className="glass-card group">
-              <CardHeader className="text-center">
-                <div className={`w-20 h-20 bg-gradient-to-br from-slate-800 to-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 ${item.color} group-hover:animate-pulse-glow transition-all duration-300`}>
-                  <item.icon className="h-10 w-10 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-white font-bold">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-300 text-center leading-relaxed">{item.desc}</p>
-              </CardContent>
-            </InteractiveCard>
-          ))}
-        </div>
-      </EnhancedSection>
-
-      {/* Interactive Solutions Showcase */}
-      <EnhancedSection 
-        title="Our Parking Solutions"
-        subtitle="Comprehensive range of automated parking systems engineered for every space and requirement"
-        spacing="xlarge"
-        divider={true}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {solutions.map((solution, index) => (
-            <InteractiveCard key={index} hoverEffect={solution.animation as any} className="glass-card group">
-              <CardHeader>
-                <div className={`w-16 h-16 bg-gradient-to-r ${solution.color} rounded-lg flex items-center justify-center mb-6 group-hover:animate-pulse-glow shadow-lg`}>
-                  <solution.icon className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-white font-bold">{solution.title}</CardTitle>
-                <CardDescription className="text-slate-300 text-lg">{solution.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {solution.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-slate-300">
-                      <div className={`w-3 h-3 bg-gradient-to-r ${solution.color} rounded-full mr-3 animate-pulse`}></div>
-                      <span className="font-medium">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </InteractiveCard>
-          ))}
-        </div>
+      <div className="relative z-10">
+        <Header />
         
-        <div className="text-center mt-16">
-          <Link to="/solutions">
-            <Button size="lg" className="btn-premium text-xl px-12 py-6">
-              Discover All Solutions
-            </Button>
-          </Link>
-        </div>
-      </EnhancedSection>
-
-      {/* Enhanced Projects Section */}
-      <EnhancedSection 
-        title="Our Recent Projects"
-        subtitle="Trusted by leading developers and institutions across India"
-        background="gradient"
-        divider={true}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <InteractiveCard key={index} hoverEffect="lift" className="glass-card">
-              <CardHeader>
-                <div className="flex justify-between items-start mb-4">
-                  <CardTitle className="text-2xl text-white font-bold">{project.name}</CardTitle>
-                  <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-sm font-medium text-white">
-                    {project.type}
-                  </span>
-                </div>
-                <CardDescription className="text-lg font-medium text-cyan-300">
-                  {project.client}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-300">Capacity:</span>
-                  <span className="font-bold text-white text-lg">{project.capacity}</span>
-                </div>
-              </CardContent>
-            </InteractiveCard>
-          ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <Link to="/projects">
-            <Button size="lg" variant="outline" className="glass-effect hover-glow text-white border-cyan-400 text-xl px-12 py-6">
-              View All Projects
-            </Button>
-          </Link>
-        </div>
-      </EnhancedSection>
-
-      {/* Enhanced CTA Section */}
-      <EnhancedSection spacing="xlarge" background="gradient">
-        <div className="text-center glass-card p-12 rounded-2xl">
-          <h2 className="heading-md mb-6 text-white">
-            Ready to Transform Your Parking Space?
-          </h2>
-          <p className="text-xl mb-12 text-slate-200 max-w-3xl mx-auto leading-relaxed">
-            Contact us today for a free consultation and discover how our smart parking solutions 
-            can revolutionize your space utilization and enhance user experience.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="btn-premium text-xl px-12 py-6">
-                Get Free Consultation
-              </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900 glass-effect text-xl px-12 py-6">
-              Call: 8097465332
-            </Button>
+        {/* Dynamic Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+          
+          {/* Floating geometric shapes */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute w-32 h-32 border border-primary/30 rotate-45 animate-float`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.5}s`,
+                  animationDuration: `${6 + i}s`
+                }}
+              ></div>
+            ))}
           </div>
-        </div>
-      </EnhancedSection>
 
-      <Footer />
-      <WhatsAppButton />
-    </PageBackground>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <h1 className="text-5xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+                Revolutionizing Urban Parking
+              </h1>
+              <h2 className="text-2xl md:text-4xl font-light mb-8 text-blue-100">
+                with Smart Technology
+              </h2>
+              <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed">
+                Welcome to Encanto Industries, your premier destination for innovative parking solutions 
+                tailored to modern urban living.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Link to="/solutions">
+                  <Button size="lg" className="btn-futuristic text-lg px-8 py-4 animate-pulse-glow">
+                    Explore Solutions
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="text-white border-white hover:bg-white hover:text-background text-lg px-8 py-4 glass-effect"
+                  >
+                    Get Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <AnimatedCounter
+                    end={stat.number}
+                    suffix={stat.suffix}
+                    className="text-4xl md:text-6xl"
+                  />
+                  <p className="text-muted-foreground mt-2">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="py-16 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                About Encanto Industries
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                We are committed to revolutionizing parking with space-efficient systems, 
+                optimizing convenience, efficiency, and sustainability.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { icon: CircleParking, title: "Innovation", desc: "Cutting-edge parking technology solutions" },
+                { icon: ArrowUp, title: "Efficiency", desc: "Maximum space utilization with minimal footprint" },
+                { icon: CircleParkingOff, title: "Reliability", desc: "Robust systems with minimal maintenance" }
+              ].map((item, index) => (
+                <InteractiveCard key={index} hoverEffect="glow">
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
+                      <item.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-center">{item.desc}</p>
+                  </CardContent>
+                </InteractiveCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Solutions Showcase */}
+        <section className="py-16 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Our Parking Solutions
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Comprehensive range of automated parking systems for every need
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {solutions.map((solution, index) => (
+                <InteractiveCard key={index} hoverEffect="tilt" className="group">
+                  <CardHeader>
+                    <div className={`w-12 h-12 bg-gradient-to-r ${solution.color} rounded-lg flex items-center justify-center mb-4 group-hover:animate-pulse-glow`}>
+                      <solution.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl">{solution.title}</CardTitle>
+                    <CardDescription>{solution.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {solution.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </InteractiveCard>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link to="/solutions">
+                <Button size="lg" className="btn-futuristic">
+                  View All Solutions
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Our Recent Projects
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Trusted by leading developers and institutions across India
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <InteractiveCard key={index} hoverEffect="lift">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{project}</CardTitle>
+                    <CardDescription>
+                      Advanced parking solution with reliable performance
+                    </CardDescription>
+                  </CardHeader>
+                </InteractiveCard>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link to="/projects">
+                <Button size="lg" variant="outline" className="glass-effect hover:bg-primary hover:text-primary-foreground">
+                  View All Projects
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+              Ready to Transform Your Parking Space?
+            </h2>
+            <p className="text-xl mb-8 opacity-90 text-blue-100">
+              Contact us today for a free consultation and customized parking solution
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button size="lg" className="btn-futuristic text-lg px-8 py-4">
+                  Get Free Quote
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-background glass-effect text-lg px-8 py-4">
+                Call: 8097465332
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </div>
   );
 };
 
