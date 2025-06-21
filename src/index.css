@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -101,26 +102,31 @@
   @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
 }
 
-/* Enhanced Floating Action Styles */
+/* Enhanced Floating Action Styles - Fixed positioning and removed shake */
 .floating-tab {
-  @apply fixed right-0 z-40 px-6 py-8 text-white font-semibold text-sm cursor-pointer transition-all duration-300 shadow-lg;
+  @apply fixed right-0 z-40 px-4 py-3 text-white font-semibold text-sm cursor-pointer transition-all duration-300 shadow-lg rounded-l-lg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   top: 50%;
   transform: translateY(-50%);
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .floating-tab:hover {
-  @apply pr-8 shadow-xl scale-105;
+  @apply shadow-xl;
+  transform: translateY(-50%) translateX(-3px);
 }
 
 .download-tab {
-  @apply bg-red-600 hover:bg-red-700 rounded-l-lg;
-  margin-top: -100px;
+  @apply bg-red-600 hover:bg-red-700;
+  margin-top: -60px;
 }
 
 .appointment-tab {
-  @apply bg-gray-900 hover:bg-gray-800 rounded-l-lg;
+  @apply bg-blue-600 hover:bg-blue-700;
   margin-top: 20px;
 }
 
@@ -133,17 +139,25 @@
   @apply bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300;
 }
 
-/* Section Backgrounds */
+/* Enhanced Section Backgrounds */
 .section-bg-white {
   @apply bg-white;
 }
 
 .section-bg-light-blue {
-  @apply bg-gradient-to-br from-blue-50 to-blue-100/50;
+  @apply bg-gradient-to-br from-blue-50 to-blue-100/70;
 }
 
 .section-bg-primary {
   @apply bg-gradient-to-br from-primary to-primary/90;
+}
+
+.section-bg-dark-blue {
+  @apply bg-gradient-to-br from-slate-800 to-slate-900;
+}
+
+.section-bg-light-gray {
+  @apply bg-gradient-to-br from-gray-100 to-gray-200/70;
 }
 
 /* Clean Section Spacing */
@@ -163,7 +177,7 @@
   border-bottom: 1px solid rgba(214, 84, 156, 0.1);
 }
 
-/* Enhanced Typography */
+/* Enhanced Typography with Better Contrast */
 .hero-title {
   @apply text-5xl md:text-7xl font-bold leading-tight;
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
@@ -177,20 +191,27 @@
 }
 
 .section-title {
-  @apply text-4xl md:text-5xl font-bold mb-6;
-  color: #1e293b;
+  @apply text-4xl md:text-5xl font-bold mb-6 text-slate-800;
 }
 
 .section-title-white {
   @apply text-4xl md:text-5xl font-bold text-white mb-6;
 }
 
+.section-title-dark {
+  @apply text-4xl md:text-5xl font-bold text-slate-800 mb-6;
+}
+
 .section-subtitle {
-  @apply text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed;
+  @apply text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed;
 }
 
 .section-subtitle-white {
   @apply text-xl text-white/80 max-w-3xl mx-auto leading-relaxed;
+}
+
+.section-subtitle-dark {
+  @apply text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed;
 }
 
 /* Image Styles */
@@ -211,26 +232,72 @@
   background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
 }
 
+/* Better Background Gradients */
+.bg-tech-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #cbd5e1 70%, #94a3b8 100%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+}
+
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neon-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
 /* Stats Enhancement */
 .stat-number {
   @apply text-5xl md:text-6xl font-bold text-primary mb-2;
 }
 
 .stat-label {
-  @apply text-lg text-muted-foreground font-medium;
+  @apply text-lg text-slate-700 font-medium;
+}
+
+/* Card Text Colors */
+.card-text-dark {
+  @apply text-slate-700;
+}
+
+.card-title-dark {
+  @apply text-slate-800;
+}
+
+/* Futuristic Button Style */
+.btn-futuristic {
+  @apply bg-gradient-to-r from-primary to-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-primary/20;
+}
+
+/* Animation utilities */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
 }
 
 /* Mobile Responsive Utilities */
 @media (max-width: 768px) {
   .floating-tab {
-    @apply px-4 py-6 text-xs;
+    @apply px-3 py-2 text-xs;
+    min-width: 40px;
   }
   
   .hero-title {
     @apply text-4xl;
   }
   
-  .section-title {
+  .section-title, .section-title-dark, .section-title-white {
     @apply text-3xl;
   }
 

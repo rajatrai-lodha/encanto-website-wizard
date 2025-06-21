@@ -61,10 +61,10 @@ const About = () => {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
                 About Encanto Industries
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Leading the revolution in smart parking solutions across India
               </p>
             </div>
@@ -72,7 +72,7 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 relative">
+        <section className="py-16 section-bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -80,9 +80,9 @@ const About = () => {
                   <AnimatedCounter
                     end={stat.number}
                     suffix={stat.suffix}
-                    className="text-4xl md:text-6xl"
+                    className="text-4xl md:text-6xl font-bold text-primary"
                   />
-                  <p className="text-muted-foreground mt-2">{stat.label}</p>
+                  <p className="text-slate-700 mt-2 font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -90,25 +90,25 @@ const About = () => {
         </section>
 
         {/* Company Overview */}
-        <section className="py-16">
+        <section className="py-16 section-bg-light-blue">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <h2 className="section-title-dark">
                   Our Company
                 </h2>
                 <div className="space-y-6">
-                  <p className="text-lg text-muted-foreground">
+                  <p className="text-lg text-slate-700">
                     Welcome to Encanto Industries, your premier destination for innovative parking solutions 
                     tailored to modern urban living. We are committed to revolutionizing parking with 
                     space-efficient systems, optimizing convenience, efficiency, and sustainability.
                   </p>
-                  <p className="text-lg text-muted-foreground">
+                  <p className="text-lg text-slate-700">
                     With years of experience in the parking industry, we have established ourselves as 
                     a trusted partner for residential complexes, commercial buildings, and healthcare 
                     facilities across India.
                   </p>
-                  <p className="text-lg text-muted-foreground">
+                  <p className="text-lg text-slate-700">
                     Our focus: making parking hassle-free for everyone while maximizing space utilization 
                     and minimizing environmental impact.
                   </p>
@@ -116,25 +116,25 @@ const About = () => {
               </div>
               <InteractiveCard hoverEffect="glow" className="glass-effect">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Quick Facts</CardTitle>
+                  <CardTitle className="text-2xl card-title-dark">Quick Facts</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
-                      <span className="text-muted-foreground">Established parking solution provider</span>
+                      <span className="card-text-dark">Established parking solution provider</span>
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
-                      <span className="text-muted-foreground">Multiple successful installations across India</span>
+                      <span className="card-text-dark">Multiple successful installations across India</span>
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
-                      <span className="text-muted-foreground">Specialized in automated parking systems</span>
+                      <span className="card-text-dark">Specialized in automated parking systems</span>
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
-                      <span className="text-muted-foreground">Comprehensive maintenance and support</span>
+                      <span className="card-text-dark">Comprehensive maintenance and support</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -144,8 +144,7 @@ const About = () => {
         </section>
 
         {/* Vision & Mission */}
-        <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+        <section className="py-16 section-bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <InteractiveCard hoverEffect="lift">
@@ -153,7 +152,7 @@ const About = () => {
                   <CardTitle className="text-2xl text-primary">Our Vision</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="card-text-dark">
                     To be the leading provider of innovative parking solutions in India, 
                     transforming urban mobility through smart, sustainable, and efficient 
                     parking systems that enhance the quality of life in cities.
@@ -166,7 +165,7 @@ const About = () => {
                   <CardTitle className="text-2xl text-primary">Our Mission</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="card-text-dark">
                     To revolutionize parking with space-efficient, technologically advanced 
                     systems that optimize convenience, efficiency, and sustainability while 
                     providing exceptional service and support to our clients.
@@ -178,13 +177,13 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-16">
+        <section className="py-16 section-bg-light-gray">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h2 className="section-title-dark">
                 Our Core Values
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="section-subtitle-dark">
                 The principles that drive our commitment to excellence
               </p>
             </div>
@@ -196,10 +195,10 @@ const About = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
                       <value.icon className="h-8 w-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl">{value.title}</CardTitle>
+                    <CardTitle className="text-xl card-title-dark">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground text-center">{value.description}</p>
+                    <p className="card-text-dark text-center">{value.description}</p>
                   </CardContent>
                 </InteractiveCard>
               ))}
@@ -208,13 +207,12 @@ const About = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+        <section className="py-16 section-bg-primary relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            <h2 className="section-title-white">
               Why Choose Encanto Industries?
             </h2>
-            <p className="text-xl mb-8 opacity-90 text-blue-100">
+            <p className="section-subtitle-white mb-8">
               Experience the difference with our comprehensive approach to parking solutions
             </p>
             
@@ -224,7 +222,7 @@ const About = () => {
                   <CheckCircle className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">Expertise & Experience</h3>
-                <p className="opacity-90 text-blue-100">
+                <p className="text-white/90">
                   Years of experience in designing and implementing parking solutions 
                   for diverse requirements and challenging spaces.
                 </p>
@@ -234,7 +232,7 @@ const About = () => {
                   <Phone className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">End-to-End Service</h3>
-                <p className="opacity-90 text-blue-100">
+                <p className="text-white/90">
                   From initial consultation and design to installation, commissioning, 
                   and ongoing maintenance support.
                 </p>
@@ -244,7 +242,7 @@ const About = () => {
                   <CircleParkingOff className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">Quality & Reliability</h3>
-                <p className="opacity-90 text-blue-100">
+                <p className="text-white/90">
                   High-quality components and robust engineering ensure long-lasting 
                   performance with minimal downtime.
                 </p>

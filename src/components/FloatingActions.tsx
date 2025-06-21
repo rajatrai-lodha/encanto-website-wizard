@@ -23,16 +23,16 @@ const FloatingActions = () => {
     <>
       {/* Floating Tabs */}
       <div className="floating-tab download-tab" onClick={handleDownloadCatalogue}>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-col items-center space-y-1">
           <Download className="w-4 h-4" />
-          <span className="text-right">Download Catalogue</span>
+          <span className="text-xs font-medium">Download Catalogue</span>
         </div>
       </div>
 
       <div className="floating-tab appointment-tab" onClick={handleBookAppointment}>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-col items-center space-y-1">
           <Calendar className="w-4 h-4" />
-          <span>Book an Appointment</span>
+          <span className="text-xs font-medium">Book Appointment</span>
         </div>
       </div>
 
