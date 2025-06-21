@@ -3,26 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clean Professional Theme - Blue and White */
+/* Enhanced Professional Theme - Blue and White */
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 214 32% 20%;
+    --foreground: 214 32% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 214 32% 20%;
+    --card-foreground: 214 32% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 214 32% 20%;
+    --popover-foreground: 214 32% 15%;
 
     --primary: 214 84% 56%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 214 32% 95%;
-    --secondary-foreground: 214 32% 20%;
+    --secondary: 214 15% 95%;
+    --secondary-foreground: 214 32% 15%;
 
-    --muted: 214 32% 95%;
-    --muted-foreground: 214 20% 50%;
+    --muted: 214 15% 95%;
+    --muted-foreground: 214 20% 45%;
 
     --accent: 214 84% 56%;
     --accent-foreground: 0 0% 98%;
@@ -30,8 +30,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
     --ring: 214 84% 56%;
 
     --radius: 0.5rem;
@@ -53,7 +53,7 @@
   }
 }
 
-/* Professional Animations */
+/* Enhanced Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -76,6 +76,11 @@
   }
 }
 
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -84,70 +89,167 @@
   animation: slideInRight 0.8s ease-out;
 }
 
-/* Professional Button Styles */
+.animate-float {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+/* Enhanced Button Styles */
 .btn-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg;
+  @apply bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
 }
 
 .btn-secondary {
-  @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
 }
 
 /* Floating Action Styles */
 .floating-tab {
+  @apply fixed right-0 z-40 px-4 py-6 text-white font-semibold text-sm cursor-pointer transition-all duration-300 shadow-lg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  @apply fixed right-0 top-1/2 transform -translate-y-1/2 px-4 py-6 text-white font-semibold text-sm cursor-pointer transition-all duration-300 z-40;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .floating-tab:hover {
-  @apply pr-6;
+  @apply pr-6 shadow-xl scale-105;
 }
 
 .download-tab {
-  @apply bg-red-600 hover:bg-red-700;
-  margin-top: -60px;
+  @apply bg-red-600 hover:bg-red-700 rounded-l-lg;
+  margin-top: -80px;
 }
 
 .appointment-tab {
-  @apply bg-gray-900 hover:bg-gray-800;
+  @apply bg-gray-900 hover:bg-gray-800 rounded-l-lg;
   margin-top: 0px;
 }
 
-/* Professional Card Styles */
+/* Enhanced Card Styles */
 .professional-card {
-  @apply bg-white border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  @apply bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+}
+
+.hero-card {
+  @apply bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300;
+}
+
+/* Section Backgrounds */
+.section-bg-white {
+  @apply bg-white;
+}
+
+.section-bg-light-blue {
+  @apply bg-gradient-to-br from-blue-50 to-blue-100/50;
+}
+
+.section-bg-primary {
+  @apply bg-gradient-to-br from-primary to-primary/90;
 }
 
 /* Clean Section Spacing */
 .section-padding {
-  @apply py-16 px-4 sm:px-6 lg:px-8;
+  @apply py-20 px-4 sm:px-6 lg:px-8;
 }
 
-/* WhatsApp Button */
+/* WhatsApp Button Enhanced */
 .whatsapp-float {
-  @apply fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 z-50;
+  @apply fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-300 z-50 hover:scale-110;
 }
 
-/* Header Styles */
+/* Header Styles Enhanced */
 .header-blur {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(214, 84, 156, 0.1);
 }
 
-/* Professional Typography */
+/* Enhanced Typography */
 .hero-title {
-  @apply text-5xl md:text-6xl font-bold text-foreground leading-tight;
+  @apply text-5xl md:text-7xl font-bold leading-tight;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
-  @apply text-xl md:text-2xl text-primary font-medium;
+  @apply text-2xl md:text-3xl font-semibold text-white/90 mb-6;
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
+  @apply text-4xl md:text-5xl font-bold mb-6;
+  color: #1e293b;
+}
+
+.section-title-white {
+  @apply text-4xl md:text-5xl font-bold text-white mb-6;
 }
 
 .section-subtitle {
-  @apply text-lg text-muted-foreground max-w-2xl mx-auto;
+  @apply text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed;
+}
+
+.section-subtitle-white {
+  @apply text-xl text-white/80 max-w-3xl mx-auto leading-relaxed;
+}
+
+/* Image Styles */
+.project-image {
+  @apply rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+}
+
+.solution-icon {
+  @apply w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg;
+}
+
+/* Enhanced Gradients */
+.hero-gradient {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #60a5fa 70%, #93c5fd 100%);
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+}
+
+/* Stats Enhancement */
+.stat-number {
+  @apply text-5xl md:text-6xl font-bold text-primary mb-2;
+}
+
+.stat-label {
+  @apply text-lg text-muted-foreground font-medium;
+}
+
+/* Mobile Responsive Utilities */
+@media (max-width: 768px) {
+  .floating-tab {
+    @apply px-3 py-4 text-xs;
+  }
+  
+  .hero-title {
+    @apply text-4xl;
+  }
+  
+  .section-title {
+    @apply text-3xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
 }

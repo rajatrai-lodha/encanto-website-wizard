@@ -1,10 +1,11 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
-import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle } from "lucide-react";
+import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -20,38 +21,63 @@ const Index = () => {
       description: "Double your parking capacity with our efficient two-level stacking system.",
       icon: ArrowUp,
       features: ["Space efficient", "Cost effective", "Easy operation"],
+      image: "/lovable-uploads/e3478f7c-bec3-4dec-b41c-8035d4461ff3.png"
     },
     {
       title: "G+2 Stack Parking", 
       description: "Triple your parking space with our advanced three-level stacking solution.",
       icon: ArrowUp,
       features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
+      image: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png"
     },
     {
       title: "Pit Stack Parking",
       description: "Underground parking solution for limited overhead space areas.",
       icon: ArrowDown,
       features: ["Underground solution", "Weather protected", "Space optimization"],
+      image: "/lovable-uploads/2c017785-0a73-4f9a-aa75-3749e785d9b3.png"
     },
     {
       title: "Puzzle Parking",
       description: "Horizontal sliding puzzle system for maximum space efficiency.",
       icon: CircleParking,
       features: ["Horizontal movement", "No pit required", "Modular design"],
+      image: "/lovable-uploads/afe66f3d-b0ac-493c-a429-015287bc5098.png"
     },
     {
       title: "Tower Parking",
       description: "Vertical automated parking towers for high-density parking needs.",
       icon: CircleParkingOff,
       features: ["Vertical storage", "Automated system", "High capacity"],
+      image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
     }
   ];
 
   const projects = [
-    "Suman Apartments (Nirmitee Developers)",
-    "Kamal Nivas (ESKAY ELEVATORS LTD)",
-    "Hawa Mahal (H. RISHABRAJ)",
-    "21st Century Hospital, Vapi (Nadkarni Foundation)"
+    {
+      name: "Suman Apartments",
+      client: "Nirmitee Developers",
+      description: "Advanced stack parking solution for modern residential complex",
+      image: "/lovable-uploads/43aa289b-6da1-4e50-be48-1a08832804e6.png"
+    },
+    {
+      name: "Tower Parking Installation",
+      client: "Commercial Complex",
+      description: "Multi-level automated parking tower for urban spaces",
+      image: "/lovable-uploads/f98454ef-8973-4a8a-bd1c-7c47b86b4e35.png"
+    },
+    {
+      name: "Puzzle System Setup",
+      client: "Residential Building",
+      description: "Horizontal sliding puzzle parking system implementation",
+      image: "/lovable-uploads/e42c0120-3dbf-43b8-b97a-ab71474d4cc7.png"
+    },
+    {
+      name: "Underground Platform",
+      client: "Housing Society",
+      description: "Pit stack parking solution for space-constrained areas",
+      image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
+    }
   ];
 
   const stats = [
@@ -62,35 +88,61 @@ const Index = () => {
   ];
 
   const whyChooseUs = [
-    { icon: CheckCircle, title: "Expert Engineering", desc: "15+ years of experience in parking solutions" },
-    { icon: CheckCircle, title: "Quality Assured", desc: "ISO certified manufacturing and installation" },
-    { icon: CheckCircle, title: "24/7 Support", desc: "Round-the-clock maintenance and support" },
-    { icon: CheckCircle, title: "Cost Effective", desc: "Maximize space utilization, minimize costs" }
+    { 
+      icon: Shield, 
+      title: "Expert Engineering", 
+      desc: "15+ years of experience in automated parking solutions" 
+    },
+    { 
+      icon: CheckCircle, 
+      title: "Quality Assured", 
+      desc: "ISO certified manufacturing and installation processes" 
+    },
+    { 
+      icon: Zap, 
+      title: "24/7 Support", 
+      desc: "Round-the-clock maintenance and technical support" 
+    },
+    { 
+      icon: Building, 
+      title: "Cost Effective", 
+      desc: "Maximize space utilization while minimizing operational costs" 
+    }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-24 section-padding bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto text-center">
+      {/* Enhanced Hero Section */}
+      <section className="pt-32 section-padding hero-gradient relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0'}`}>
-            <h1 className="hero-title mb-6">
+            <h1 className="hero-title mb-8">
               Revolutionizing Urban Parking
             </h1>
-            <h2 className="hero-subtitle mb-8">
+            <h2 className="hero-subtitle">
               with Smart Technology
             </h2>
-            <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
               Welcome to Encanto Industries, your premier destination for innovative parking solutions 
               tailored to modern urban living.
             </p>
             
-            <div className="flex justify-center">
-              <Link to="/solutions">
-                <Button className="btn-primary text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link to="/projects">
+                <Button className="btn-primary text-xl px-10 py-5">
                   Explore Solutions
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button className="btn-secondary bg-white/10 border-white text-white hover:bg-white hover:text-primary text-xl px-10 py-5">
+                  Get Quote
                 </Button>
               </Link>
             </div>
@@ -98,26 +150,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-white">
+      {/* Enhanced Stats Section */}
+      <section className="section-padding section-bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div key={index} className="text-center group">
+                <div className="stat-number group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
-                <p className="text-muted-foreground">{stat.label}</p>
+                <p className="stat-label">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="section-padding bg-secondary/30">
+      {/* Enhanced About Section */}
+      <section className="section-padding section-bg-light-blue">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">About Encanto Industries</h2>
             <p className="section-subtitle">
               We are committed to revolutionizing parking with space-efficient systems, 
@@ -127,15 +179,15 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="professional-card text-center">
+              <Card key={index} className="professional-card text-center group">
                 <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-8 w-8 text-primary" />
+                  <div className="solution-icon mx-auto">
+                    <item.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -143,10 +195,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Solutions Showcase */}
-      <section className="section-padding bg-white">
+      {/* Enhanced Solutions Showcase */}
+      <section className="section-padding section-bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">Our Parking Solutions</h2>
             <p className="section-subtitle">
               Comprehensive range of automated parking systems for every need
@@ -155,20 +207,29 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
-              <Card key={index} className="professional-card group hover:border-primary/20">
+              <Card key={index} className="professional-card group overflow-hidden">
+                <div className="project-image mb-6">
+                  <img 
+                    src={solution.image} 
+                    alt={solution.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
                 <CardHeader>
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="solution-icon">
                     <solution.icon className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{solution.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">{solution.description}</CardDescription>
+                  <CardTitle className="text-xl font-bold">{solution.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {solution.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {solution.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                        {feature}
+                      <li key={idx} className="flex items-center text-muted-foreground">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-4"></div>
+                        <span className="font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -176,21 +237,13 @@ const Index = () => {
               </Card>
             ))}
           </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/solutions">
-              <Button className="btn-primary">
-                View All Solutions
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="section-padding bg-secondary/30">
+      {/* Enhanced Projects Section */}
+      <section className="section-padding section-bg-light-blue">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">Our Recent Projects</h2>
             <p className="section-subtitle">
               Trusted by leading developers and institutions across India
@@ -199,12 +252,24 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="professional-card">
+              <Card key={index} className="professional-card group overflow-hidden">
+                <div className="project-image mb-6">
+                  <img 
+                    src={project.image} 
+                    alt={project.name}
+                    className="w-full h-64 object-cover"
+                  />
+                </div>
                 <CardHeader>
-                  <CardTitle className="text-lg text-primary">{project}</CardTitle>
-                  <CardDescription>
-                    Advanced parking solution with reliable performance and customer satisfaction
+                  <CardTitle className="text-xl font-bold text-primary">
+                    {project.name}
+                  </CardTitle>
+                  <CardDescription className="text-sm font-semibold text-muted-foreground">
+                    {project.client}
                   </CardDescription>
+                  <p className="text-muted-foreground leading-relaxed mt-2">
+                    {project.description}
+                  </p>
                 </CardHeader>
               </Card>
             ))}
@@ -212,7 +277,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Link to="/projects">
-              <Button className="btn-secondary">
+              <Button className="btn-primary text-lg">
                 View All Projects
               </Button>
             </Link>
@@ -220,22 +285,30 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-primary text-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      {/* Enhanced CTA Section */}
+      <section className="section-padding cta-gradient text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <h2 className="section-title-white">
             Ready to Transform Your Parking Space?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          <p className="section-subtitle-white mb-12">
             Contact us today for a free consultation and customized parking solution
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/contact">
-              <Button className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4">
+              <Button className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Get Free Quote
               </Button>
             </Link>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4">
+            <Button 
+              variant="outline" 
+              className="border-2 border-white text-white hover:bg-white hover:text-primary text-xl px-10 py-5 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+            >
               Call: 8097465332
             </Button>
           </div>

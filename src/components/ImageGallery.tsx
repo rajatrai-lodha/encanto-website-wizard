@@ -16,73 +16,73 @@ const ImageGallery = () => {
   const images: GalleryImage[] = [
     {
       id: 1,
-      src: "/lovable-uploads/314201f5-dc0d-4e1b-802f-1b0d33172a9d.png",
+      src: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png",
       title: "G+1 Stack Parking Installation",
       description: "Two-level stacking system installation in residential complex. Blue structural framework with efficient space utilization design.",
       category: "Stack Parking"
     },
     {
       id: 2,
-      src: "/lovable-uploads/6ad21624-105c-4fa1-8edd-c5106324e532.png",
+      src: "/lovable-uploads/43aa289b-6da1-4e50-be48-1a08832804e6.png",
       title: "Operational Parking Platform",
       description: "Car positioned on hydraulic lifting platform. Demonstrates smooth operation and secure vehicle positioning.",
       category: "Platform System"
     },
     {
       id: 3,
-      src: "/lovable-uploads/a3c2398e-4f7b-4188-93bd-26c27339ef8a.png",
+      src: "/lovable-uploads/afe66f3d-b0ac-493c-a429-015287bc5098.png",
       title: "Platform Installation Site",
       description: "Ground-level parking platform during installation phase. Shows robust construction and engineering precision.",
       category: "Installation"
     },
     {
       id: 4,
-      src: "/lovable-uploads/0e8eefac-ba45-43fa-b8c2-2949682c4bdc.png",
+      src: "/lovable-uploads/2c017785-0a73-4f9a-aa75-3749e785d9b3.png",
       title: "Multi-Level Puzzle System",
-      description: "Advanced horizontal sliding puzzle parking system with multiple vehicle positions and automated operation.",
-      category: "Puzzle Parking"
+      description: "Advanced pit parking system with multiple vehicle positions and automated operation for underground spaces.",
+      category: "Pit Parking"
     },
     {
       id: 5,
-      src: "/lovable-uploads/27199c54-0441-4bc1-9c8b-3d840177db2a.png",
-      title: "Two-Level Parking Platform",
-      description: "Empty two-level stacking platform showing the lifting mechanism and structural design for maximum space efficiency.",
-      category: "Stack Parking"
+      src: "/lovable-uploads/f98454ef-8973-4a8a-bd1c-7c47b86b4e35.png",
+      title: "Tower Parking Interior",
+      description: "Interior view of automated tower parking system showing vertical storage capabilities with multiple vehicle levels.",
+      category: "Tower Parking"
     },
     {
       id: 6,
-      src: "/lovable-uploads/388dc65b-9dca-4bf6-b927-2e6dc6288219.png",
+      src: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png",
       title: "Tower Parking Building",
       description: "Multi-story automated parking tower providing high-capacity parking solution for urban commercial spaces.",
       category: "Tower Parking"
     },
     {
       id: 7,
-      src: "/lovable-uploads/39b5c100-1f9e-4367-9443-f494841a2f95.png",
-      title: "Vertical Car Storage",
-      description: "Interior view of tower parking system showing vertical storage capabilities with multiple vehicle levels.",
-      category: "Tower Parking"
+      src: "/lovable-uploads/e42c0120-3dbf-43b8-b97a-ab71474d4cc7.png",
+      title: "Underground Parking System",
+      description: "Advanced underground automated parking system with multiple platforms and sophisticated control mechanisms.",
+      category: "Underground System"
     },
     {
       id: 8,
-      src: "/lovable-uploads/9ed9c597-4a4a-427a-aa7a-d97011664e59.png",
-      title: "Residential Stack Parking",
-      description: "Fully operational G+1 stack parking system in residential complex with multiple vehicles parked efficiently.",
-      category: "Residential Project"
+      src: "/lovable-uploads/9c420345-736b-4612-90dd-db9e36c33e24.png",
+      title: "Automated Platform Array",
+      description: "Multiple automated parking platforms arranged in systematic configuration for maximum efficiency and space utilization.",
+      category: "Platform Array"
     },
     {
       id: 9,
-      src: "/lovable-uploads/568b7e01-363f-4f6e-821d-55e4ff27c251.png",
-      title: "Multi-Level Car Parking",
-      description: "Three-level parking system showing multiple cars stacked vertically with hydraulic platform operation.",
-      category: "G+2 Stack Parking"
+      src: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png",
+      title: "Outdoor Stack System",
+      description: "Outdoor two-level parking system installation showing weather-resistant construction and operational efficiency.",
+      category: "Outdoor System"
     },
     {
       id: 10,
-      src: "/lovable-uploads/3969b05d-9ed6-4d5b-9cfc-f26f542367f1.png",
-      title: "Puzzle Parking in Operation",
-      description: "Horizontal sliding puzzle parking system with cars parked at ground level in residential complex.",
-      category: "Puzzle Parking"
+      src: "/lovable-uploads/e3478f7c-bec3-4dec-b41c-8035d4461ff3.png",
+      title: "Residential Stack Parking",
+      description: "Fully operational G+1 stack parking system in residential complex with multiple vehicles parked efficiently.",
+      category: "Residential Project"
     }
   ];
 
@@ -104,7 +104,7 @@ const ImageGallery = () => {
             }`}
           >
             {/* Front of card */}
-            <Card className="absolute inset-0 w-full h-full backface-hidden overflow-hidden">
+            <Card className="absolute inset-0 w-full h-full backface-hidden overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="relative h-full">
                 <img
                   src={image.src}
@@ -115,22 +115,22 @@ const ImageGallery = () => {
                   <h3 className="text-white font-semibold text-lg">{image.title}</h3>
                   <p className="text-gray-200 text-sm">{image.category}</p>
                 </div>
-                <div className="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded text-xs">
+                <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-2 rounded-lg text-xs font-medium">
                   Click to flip
                 </div>
               </div>
             </Card>
 
             {/* Back of card */}
-            <Card className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-blue-50 p-6 flex flex-col justify-center">
+            <Card className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-blue-50 to-blue-100 p-6 flex flex-col justify-center shadow-lg">
               <div className="text-center">
                 <h3 className="text-xl font-bold text-blue-900 mb-4">{image.title}</h3>
-                <div className="w-12 h-1 bg-blue-600 mx-auto mb-4"></div>
-                <p className="text-gray-700 leading-relaxed mb-4">{image.description}</p>
-                <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm inline-block">
+                <div className="w-12 h-1 bg-blue-600 mx-auto mb-4 rounded-full"></div>
+                <p className="text-gray-700 leading-relaxed mb-4 text-sm">{image.description}</p>
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm inline-block font-medium">
                   {image.category}
                 </div>
-                <div className="mt-4 text-xs text-gray-500">
+                <div className="mt-4 text-xs text-gray-500 font-medium">
                   Click to flip back
                 </div>
               </div>

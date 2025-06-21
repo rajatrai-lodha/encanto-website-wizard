@@ -1,15 +1,15 @@
 
-import { Calendar, Download, MessageCircle } from "lucide-react";
+import { Download, Calendar, MessageCircle } from "lucide-react";
 
 const FloatingActions = () => {
   const handleDownloadCatalogue = () => {
-    // Add download logic here
     console.log("Download catalogue clicked");
+    // Add download logic here
   };
 
   const handleBookAppointment = () => {
+    console.log("Book appointment clicked"); 
     // Add booking logic here
-    console.log("Book appointment clicked");
   };
 
   const handleWhatsAppClick = () => {
@@ -23,32 +23,32 @@ const FloatingActions = () => {
     <>
       {/* Floating Tabs */}
       <div 
-        className="floating-tab download-tab"
+        className="download-tab floating-tab"
         onClick={handleDownloadCatalogue}
       >
         <div className="flex items-center space-x-2">
-          <Download className="w-4 h-4" />
-          <span>Download Catalogue</span>
+          <Download className="w-5 h-5" />
+          <span className="font-medium">Download Catalogue</span>
         </div>
       </div>
 
       <div 
-        className="floating-tab appointment-tab"
+        className="appointment-tab floating-tab"
         onClick={handleBookAppointment}
       >
         <div className="flex items-center space-x-2">
-          <Calendar className="w-4 h-4" />
-          <span>Book an Appointment</span>
+          <Calendar className="w-5 h-5" />
+          <span className="font-medium">Book Appointment</span>
         </div>
       </div>
 
-      {/* WhatsApp Float */}
+      {/* Enhanced WhatsApp Float */}
       <button
         onClick={handleWhatsAppClick}
-        className="whatsapp-float"
+        className="whatsapp-float animate-float"
         aria-label="Contact us on WhatsApp"
       >
-        <MessageCircle className="w-6 h-6" />
+        <MessageCircle className="w-8 h-8" />
       </button>
     </>
   );
