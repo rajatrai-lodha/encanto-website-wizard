@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -114,35 +113,39 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Enhanced Hero Section */}
-      <section className="pt-32 section-padding hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      {/* Enhanced Hero Section - Split Layout */}
+      <section className="pt-32 relative overflow-hidden">
+        {/* Blue Top Half */}
+        <div className="hero-gradient section-padding">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto text-center relative z-10">
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0'}`}>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8">
+                Revolutionizing Urban Parking
+              </h1>
+              <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-6">
+                with Smart Technology
+              </h2>
+            </div>
+          </div>
         </div>
-        
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0'}`}>
-            <h1 className="hero-title mb-8">
-              Revolutionizing Urban Parking
-            </h1>
-            <h2 className="hero-subtitle">
-              with Smart Technology
-            </h2>
-            <p className="text-xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+
+        {/* White Bottom Half */}
+        <div className="bg-white section-padding">
+          <div className="max-w-7xl mx-auto text-center">
+            <p className="text-xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
               Welcome to Encanto Industries, your premier destination for innovative parking solutions 
               tailored to modern urban living.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex justify-center">
               <Link to="/projects">
-                <Button className="btn-primary text-xl px-10 py-5">
+                <Button className="bg-primary text-white hover:bg-primary/90 px-10 py-5 text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   Explore Solutions
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button className="btn-secondary bg-white/10 border-white text-white hover:bg-white hover:text-primary text-xl px-10 py-5">
-                  Get Quote
                 </Button>
               </Link>
             </div>
@@ -151,7 +154,7 @@ const Index = () => {
       </section>
 
       {/* Enhanced Stats Section */}
-      <section className="section-padding section-bg-white">
+      <section className="section-padding section-bg-light-blue">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -167,7 +170,7 @@ const Index = () => {
       </section>
 
       {/* Enhanced About Section */}
-      <section className="section-padding section-bg-light-blue">
+      <section className="section-padding section-bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">About Encanto Industries</h2>
@@ -196,7 +199,7 @@ const Index = () => {
       </section>
 
       {/* Enhanced Solutions Showcase */}
-      <section className="section-padding section-bg-white">
+      <section className="section-padding section-bg-light-blue">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">Our Parking Solutions</h2>

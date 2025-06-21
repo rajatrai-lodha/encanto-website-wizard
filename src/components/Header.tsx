@@ -33,19 +33,19 @@ const Header = () => {
       isScrolled ? 'header-blur' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Enhanced Logo */}
-          <Link to="/" className="flex items-center space-x-4 group">
+        <div className="flex justify-between items-center py-6">
+          {/* Enhanced Larger Logo */}
+          <Link to="/" className="flex items-center space-x-6 group">
             <img 
               src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" 
               alt="Encanto Industries Logo" 
-              className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" 
+              className="h-20 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" 
             />
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold text-primary leading-tight">
+              <h1 className="text-3xl font-bold text-primary leading-tight">
                 Encanto Industries
               </h1>
-              <p className="text-sm text-muted-foreground font-medium">
+              <p className="text-base text-foreground font-semibold">
                 Smart Parking Solutions
               </p>
             </div>
