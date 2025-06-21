@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -88,15 +87,10 @@ const Index = () => {
               tailored to modern urban living.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex justify-center">
               <Link to="/solutions">
                 <Button className="btn-primary text-lg px-8 py-4">
                   Explore Solutions
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button className="btn-secondary text-lg px-8 py-4">
-                  Get Quote
                 </Button>
               </Link>
             </div>
