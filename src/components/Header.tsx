@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import ThemeToggle from "@/components/ThemeToggle";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -33,20 +32,20 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-background/80 backdrop-blur-md border-b border-border/50' 
+        ? 'header-blur border-b border-border' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/00eeed2a-3418-45ed-911d-3a4937540984.png" 
+              src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" 
               alt="Encanto Industries Logo" 
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-xl font-bold text-primary">
                 Encanto Industries
               </h1>
               <p className="text-xs text-muted-foreground">Smart Parking Solutions</p>
@@ -59,34 +58,28 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative overflow-hidden group ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   isActive(item.href)
                     ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/10'
+                    : 'text-foreground hover:text-primary hover:bg-primary/5'
                 }`}
               >
-                <span className="relative z-10">{item.name}</span>
-                {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg"></div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+                {item.name}
               </Link>
             ))}
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <ThemeToggle />
+          {/* Desktop Get Quote Button */}
+          <div className="hidden lg:flex">
             <Link to="/contact">
-              <Button className="btn-futuristic">
+              <Button className="btn-primary">
                 Get Quote
               </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-2">
-            <ThemeToggle />
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
@@ -94,10 +87,8 @@ const Header = () => {
               className="relative w-10 h-10 p-0"
             >
               <span className="sr-only">Open menu</span>
-              <div className="relative">
-                <Menu className={`h-5 w-5 transition-all duration-300 ${isMenuOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
-                <X className={`h-5 w-5 absolute inset-0 transition-all duration-300 ${isMenuOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'}`} />
-              </div>
+              <Menu className={`h-5 w-5 transition-all duration-300 ${isMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100'}`} />
+              <X className={`h-5 w-5 absolute inset-0 transition-all duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0 -rotate-90'}`} />
             </Button>
           </div>
         </div>
@@ -115,15 +106,15 @@ const Header = () => {
                 className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                   isActive(item.href)
                     ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/10'
+                    : 'text-foreground hover:text-primary hover:bg-primary/5'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 border-t border-border/50">
+            <div className="pt-4 border-t border-border">
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full btn-futuristic">
+                <Button className="w-full btn-primary">
                   Get Quote
                 </Button>
               </Link>
