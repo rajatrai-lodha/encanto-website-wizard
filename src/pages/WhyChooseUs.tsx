@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -115,7 +116,7 @@ const WhyChooseUs = () => {
         
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#36B5FF] to-[#36B5FF] opacity-90"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -130,10 +131,10 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Key Advantages */}
-        <section className="py-16">
+        <section className="py-16 bg-[#F0F8FF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#36B5FF]">
                 Our Competitive Advantages
               </h2>
               <p className="text-xl text-muted-foreground">
@@ -143,10 +144,10 @@ const WhyChooseUs = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {advantages.map((advantage, index) => (
-                <InteractiveCard key={index} hoverEffect="tilt">
+                <InteractiveCard key={index} hoverEffect="tilt" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mb-4 neon-blue">
-                      <advantage.icon className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-[#36B5FF]/20 rounded-lg flex items-center justify-center mb-4">
+                      <advantage.icon className="h-6 w-6 text-[#36B5FF]" />
                     </div>
                     <CardTitle className="text-xl">{advantage.title}</CardTitle>
                   </CardHeader>
@@ -168,12 +169,11 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Value Propositions */}
-        <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+        <section className="py-16 bg-[#F3F7FA] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <h2 className="text-3xl font-bold mb-6 text-[#36B5FF]">
                   Commitment to Excellence
                 </h2>
                 <div className="space-y-6">
@@ -212,23 +212,23 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               
-              <InteractiveCard hoverEffect="glow" className="glass-effect">
+              <InteractiveCard hoverEffect="glow" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                 <CardHeader>
                   <CardTitle className="text-2xl">Our Promise</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="glass-effect rounded-lg p-4 neon-blue">
-                    <h4 className="font-semibold text-primary mb-2">Reliability</h4>
+                  <div className="bg-[#F5FBFF]/50 rounded-lg p-4 border border-slate-200">
+                    <h4 className="font-semibold text-[#36B5FF] mb-2">Reliability</h4>
                     <p className="text-muted-foreground">Systems designed for 99%+ uptime with minimal maintenance requirements.</p>
                   </div>
                   
-                  <div className="glass-effect rounded-lg p-4 neon-blue">
-                    <h4 className="font-semibold text-primary mb-2">Safety</h4>
+                  <div className="bg-[#F5FBFF]/50 rounded-lg p-4 border border-slate-200">
+                    <h4 className="font-semibold text-[#36B5FF] mb-2">Safety</h4>
                     <p className="text-muted-foreground">Multiple safety features and fail-safe mechanisms protect vehicles and users.</p>
                   </div>
                   
-                  <div className="glass-effect rounded-lg p-4 neon-blue">
-                    <h4 className="font-semibold text-primary mb-2">Support</h4>
+                  <div className="bg-[#F5FBFF]/50 rounded-lg p-4 border border-slate-200">
+                    <h4 className="font-semibold text-[#36B5FF] mb-2">Support</h4>
                     <p className="text-muted-foreground">Comprehensive support throughout the system lifecycle with guaranteed response times.</p>
                   </div>
                 </CardContent>
@@ -238,10 +238,10 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Client Testimonials */}
-        <section className="py-16">
+        <section className="py-16 bg-[#F0F8FF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#36B5FF]">
                 What Our Clients Say
               </h2>
               <p className="text-xl text-muted-foreground">
@@ -251,7 +251,7 @@ const WhyChooseUs = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
-                <InteractiveCard key={index} hoverEffect="lift" className="glass-effect">
+                <InteractiveCard key={index} hoverEffect="lift" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                   <CardContent className="p-6">
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (

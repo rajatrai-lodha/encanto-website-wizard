@@ -57,7 +57,7 @@ const About = () => {
         
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#36B5FF] to-[#36B5FF] opacity-90"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -72,7 +72,7 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 section-bg-white relative">
+        <section className="py-16 bg-[#F0F8FF] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -80,7 +80,7 @@ const About = () => {
                   <AnimatedCounter
                     end={stat.number}
                     suffix={stat.suffix}
-                    className="text-4xl md:text-6xl font-bold text-primary"
+                    className="text-4xl md:text-6xl font-bold text-[#36B5FF]"
                   />
                   <p className="text-slate-700 mt-2 font-medium">{stat.label}</p>
                 </div>
@@ -90,7 +90,7 @@ const About = () => {
         </section>
 
         {/* Company Overview */}
-        <section className="py-16 section-bg-light-blue">
+        <section className="py-16 bg-[#F3F7FA]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -114,26 +114,26 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <InteractiveCard hoverEffect="glow" className="glass-effect">
+              <InteractiveCard hoverEffect="glow" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                 <CardHeader>
                   <CardTitle className="text-2xl card-title-dark">Quick Facts</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#36B5FF] rounded-full mr-3"></div>
                       <span className="card-text-dark">Established parking solution provider</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#36B5FF] rounded-full mr-3"></div>
                       <span className="card-text-dark">Multiple successful installations across India</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#36B5FF] rounded-full mr-3"></div>
                       <span className="card-text-dark">Specialized in automated parking systems</span>
                     </li>
                     <li className="flex items-center">
-                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#36B5FF] rounded-full mr-3"></div>
                       <span className="card-text-dark">Comprehensive maintenance and support</span>
                     </li>
                   </ul>
@@ -144,12 +144,12 @@ const About = () => {
         </section>
 
         {/* Vision & Mission */}
-        <section className="py-16 section-bg-white relative">
+        <section className="py-16 bg-[#F0F8FF] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <InteractiveCard hoverEffect="lift">
+              <InteractiveCard hoverEffect="lift" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">Our Vision</CardTitle>
+                  <CardTitle className="text-2xl text-[#36B5FF]">Our Vision</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="card-text-dark">
@@ -160,9 +160,9 @@ const About = () => {
                 </CardContent>
               </InteractiveCard>
 
-              <InteractiveCard hoverEffect="lift">
+              <InteractiveCard hoverEffect="lift" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">Our Mission</CardTitle>
+                  <CardTitle className="text-2xl text-[#36B5FF]">Our Mission</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="card-text-dark">
@@ -177,7 +177,7 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-16 section-bg-light-gray">
+        <section className="py-16 bg-[#F3F7FA]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="section-title-dark">
@@ -190,10 +190,10 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
-                <InteractiveCard key={index} hoverEffect="tilt">
+                <InteractiveCard key={index} hoverEffect="tilt" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
                   <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
-                      <value.icon className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 bg-[#36B5FF]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <value.icon className="h-8 w-8 text-[#36B5FF]" />
                     </div>
                     <CardTitle className="text-xl card-title-dark">{value.title}</CardTitle>
                   </CardHeader>
@@ -207,7 +207,7 @@ const About = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 section-bg-primary relative">
+        <section className="py-16 bg-gradient-to-r from-[#36B5FF] to-[#36B5FF] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <h2 className="section-title-white">
               Why Choose Encanto Industries?
