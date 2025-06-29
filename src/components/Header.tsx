@@ -34,13 +34,15 @@ const Header = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
-          {/* Enhanced Larger Logo */}
+          {/* Enhanced Logo with White Background for Visibility */}
           <Link to="/" className="flex items-center space-x-6 group">
-            <img 
-              src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" 
-              alt="Encanto Industries Logo" 
-              className="h-20 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" 
-            />
+            <div className="bg-white rounded-lg p-2 shadow-sm">
+              <img 
+                src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" 
+                alt="Encanto Industries Logo" 
+                className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" 
+              />
+            </div>
             <div className="hidden sm:block">
               <h1 className="text-3xl font-bold text-primary leading-tight">
                 Encanto Industries
@@ -51,7 +53,7 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation with Improved Active State */}
           <nav className="hidden lg:flex items-center space-x-2">
             {navigation.map((item) => (
               <Link
@@ -59,23 +61,14 @@ const Header = () => {
                 to={item.href}
                 className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive(item.href)
-                    ? 'text-primary bg-primary/10 shadow-sm'
-                    : 'text-foreground hover:text-primary hover:bg-primary/5'
+                    ? 'bg-white text-primary shadow-md font-bold border-2 border-primary/20'
+                    : 'text-foreground hover:text-primary hover:bg-white/10'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
           </nav>
-
-          {/* Desktop Get Quote Button */}
-          <div className="hidden lg:flex">
-            <Link to="/contact">
-              <Button className="btn-primary text-lg">
-                Get Quote
-              </Button>
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -96,7 +89,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation with Improved Active State */}
         <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
           isMenuOpen ? 'max-h-screen opacity-100 pb-6' : 'max-h-0 opacity-0'
         }`}>
@@ -108,20 +101,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-6 py-4 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive(item.href)
-                    ? 'text-primary bg-primary/10'
-                    : 'text-foreground hover:text-primary hover:bg-primary/5'
+                    ? 'bg-white text-primary shadow-md font-bold border-2 border-primary/20'
+                    : 'text-foreground hover:text-primary hover:bg-white/10'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 border-t border-border">
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full btn-primary text-lg">
-                  Get Quote
-                </Button>
-              </Link>
-            </div>
           </nav>
         </div>
       </div>
