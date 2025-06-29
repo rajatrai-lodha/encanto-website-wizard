@@ -110,9 +110,7 @@ const Index = () => {
               <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8">
                 Revolutionizing Urban Parking
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-6">PARKING EXCELLENCE
-parking systems
-THROUGH SMART TECHNOLOGY</h2>
+              <h2 className="text-2xl mb-6 md:text-2xl font-medium text-center text-slate-200">PARKING EXCELLENCE THROUGH SMART TECHNOLOGY</h2>
             </div>
           </div>
         </div>
