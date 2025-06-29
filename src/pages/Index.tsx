@@ -6,111 +6,94 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
-
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
-  const solutions = [
-    {
-      title: "G+1 Stack Parking",
-      description: "Double your parking capacity with our efficient two-level stacking system.",
-      icon: ArrowUp,
-      features: ["Space efficient", "Cost effective", "Easy operation"],
-      image: "/lovable-uploads/e3478f7c-bec3-4dec-b41c-8035d4461ff3.png"
-    },
-    {
-      title: "G+2 Stack Parking", 
-      description: "Triple your parking space with our advanced three-level stacking solution.",
-      icon: ArrowUp,
-      features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
-      image: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png"
-    },
-    {
-      title: "Pit Stack Parking",
-      description: "Underground parking solution for limited overhead space areas.",
-      icon: ArrowDown,
-      features: ["Underground solution", "Weather protected", "Space optimization"],
-      image: "/lovable-uploads/2c017785-0a73-4f9a-aa75-3749e785d9b3.png"
-    },
-    {
-      title: "Puzzle Parking",
-      description: "Horizontal sliding puzzle system for maximum space efficiency.",
-      icon: CircleParking,
-      features: ["Horizontal movement", "No pit required", "Modular design"],
-      image: "/lovable-uploads/afe66f3d-b0ac-493c-a429-015287bc5098.png"
-    },
-    {
-      title: "Tower Parking",
-      description: "Vertical automated parking towers for high-density parking needs.",
-      icon: CircleParkingOff,
-      features: ["Vertical storage", "Automated system", "High capacity"],
-      image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
-    }
-  ];
-
-  const projects = [
-    {
-      name: "Suman Apartments",
-      client: "Nirmitee Developers",
-      description: "Advanced stack parking solution for modern residential complex",
-      image: "/lovable-uploads/43aa289b-6da1-4e50-be48-1a08832804e6.png"
-    },
-    {
-      name: "Tower Parking Installation",
-      client: "Commercial Complex",
-      description: "Multi-level automated parking tower for urban spaces",
-      image: "/lovable-uploads/f98454ef-8973-4a8a-bd1c-7c47b86b4e35.png"
-    },
-    {
-      name: "Puzzle System Setup",
-      client: "Residential Building",
-      description: "Horizontal sliding puzzle parking system implementation",
-      image: "/lovable-uploads/e42c0120-3dbf-43b8-b97a-ab71474d4cc7.png"
-    },
-    {
-      name: "Underground Platform",
-      client: "Housing Society",
-      description: "Pit stack parking solution for space-constrained areas",
-      image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
-    }
-  ];
-
-  const stats = [
-    { number: "1000+", label: "Parking Spaces Created" },
-    { number: "50+", label: "Projects Completed" },
-    { number: "45+", label: "Satisfied Clients" },
-    { number: "99%", label: "Uptime Reliability" }
-  ];
-
-  const whyChooseUs = [
-    { 
-      icon: Shield, 
-      title: "Expert Engineering", 
-      desc: "15+ years of experience in automated parking solutions" 
-    },
-    { 
-      icon: CheckCircle, 
-      title: "Quality Assured", 
-      desc: "ISO certified manufacturing and installation processes" 
-    },
-    { 
-      icon: Zap, 
-      title: "24/7 Support", 
-      desc: "Round-the-clock maintenance and technical support" 
-    },
-    { 
-      icon: Building, 
-      title: "Cost Effective", 
-      desc: "Maximize space utilization while minimizing operational costs" 
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const solutions = [{
+    title: "G+1 Stack Parking",
+    description: "Double your parking capacity with our efficient two-level stacking system.",
+    icon: ArrowUp,
+    features: ["Space efficient", "Cost effective", "Easy operation"],
+    image: "/lovable-uploads/e3478f7c-bec3-4dec-b41c-8035d4461ff3.png"
+  }, {
+    title: "G+2 Stack Parking",
+    description: "Triple your parking space with our advanced three-level stacking solution.",
+    icon: ArrowUp,
+    features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
+    image: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png"
+  }, {
+    title: "Pit Stack Parking",
+    description: "Underground parking solution for limited overhead space areas.",
+    icon: ArrowDown,
+    features: ["Underground solution", "Weather protected", "Space optimization"],
+    image: "/lovable-uploads/2c017785-0a73-4f9a-aa75-3749e785d9b3.png"
+  }, {
+    title: "Puzzle Parking",
+    description: "Horizontal sliding puzzle system for maximum space efficiency.",
+    icon: CircleParking,
+    features: ["Horizontal movement", "No pit required", "Modular design"],
+    image: "/lovable-uploads/afe66f3d-b0ac-493c-a429-015287bc5098.png"
+  }, {
+    title: "Tower Parking",
+    description: "Vertical automated parking towers for high-density parking needs.",
+    icon: CircleParkingOff,
+    features: ["Vertical storage", "Automated system", "High capacity"],
+    image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
+  }];
+  const projects = [{
+    name: "Suman Apartments",
+    client: "Nirmitee Developers",
+    description: "Advanced stack parking solution for modern residential complex",
+    image: "/lovable-uploads/43aa289b-6da1-4e50-be48-1a08832804e6.png"
+  }, {
+    name: "Tower Parking Installation",
+    client: "Commercial Complex",
+    description: "Multi-level automated parking tower for urban spaces",
+    image: "/lovable-uploads/f98454ef-8973-4a8a-bd1c-7c47b86b4e35.png"
+  }, {
+    name: "Puzzle System Setup",
+    client: "Residential Building",
+    description: "Horizontal sliding puzzle parking system implementation",
+    image: "/lovable-uploads/e42c0120-3dbf-43b8-b97a-ab71474d4cc7.png"
+  }, {
+    name: "Underground Platform",
+    client: "Housing Society",
+    description: "Pit stack parking solution for space-constrained areas",
+    image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
+  }];
+  const stats = [{
+    number: "1000+",
+    label: "Parking Spaces Created"
+  }, {
+    number: "50+",
+    label: "Projects Completed"
+  }, {
+    number: "45+",
+    label: "Satisfied Clients"
+  }, {
+    number: "99%",
+    label: "Uptime Reliability"
+  }];
+  const whyChooseUs = [{
+    icon: Shield,
+    title: "Expert Engineering",
+    desc: "15+ years of experience in automated parking solutions"
+  }, {
+    icon: CheckCircle,
+    title: "Quality Assured",
+    desc: "ISO certified manufacturing and installation processes"
+  }, {
+    icon: Zap,
+    title: "24/7 Support",
+    desc: "Round-the-clock maintenance and technical support"
+  }, {
+    icon: Building,
+    title: "Cost Effective",
+    desc: "Maximize space utilization while minimizing operational costs"
+  }];
+  return <div className="min-h-screen bg-background">
       <Header />
       
       {/* Enhanced Hero Section - Split Layout */}
@@ -127,9 +110,9 @@ const Index = () => {
               <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8">
                 Revolutionizing Urban Parking
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-6">
-                with Smart Technology
-              </h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-6">PARKING EXCELLENCE
+parking systems
+THROUGH SMART TECHNOLOGY</h2>
             </div>
           </div>
         </div>
@@ -157,14 +140,12 @@ const Index = () => {
       <section className="section-padding section-bg-light-blue">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
+            {stats.map((stat, index) => <div key={index} className="text-center group">
                 <div className="stat-number group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
                 <p className="stat-label">{stat.label}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -181,8 +162,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <Card key={index} className="professional-card text-center group">
+            {whyChooseUs.map((item, index) => <Card key={index} className="professional-card text-center group">
                 <CardHeader>
                   <div className="solution-icon mx-auto">
                     <item.icon className="h-8 w-8 text-white" />
@@ -192,8 +172,7 @@ const Index = () => {
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -209,14 +188,9 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => (
-              <Card key={index} className="professional-card group overflow-hidden">
+            {solutions.map((solution, index) => <Card key={index} className="professional-card group overflow-hidden">
                 <div className="project-image mb-6">
-                  <img 
-                    src={solution.image} 
-                    alt={solution.title}
-                    className="w-full h-48 object-cover"
-                  />
+                  <img src={solution.image} alt={solution.title} className="w-full h-48 object-cover" />
                 </div>
                 <CardHeader>
                   <div className="solution-icon">
@@ -229,16 +203,13 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {solution.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-muted-foreground">
+                    {solution.features.map((feature, idx) => <li key={idx} className="flex items-center text-muted-foreground">
                         <div className="w-2 h-2 bg-primary rounded-full mr-4"></div>
                         <span className="font-medium">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -254,14 +225,9 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="professional-card group overflow-hidden">
+            {projects.map((project, index) => <Card key={index} className="professional-card group overflow-hidden">
                 <div className="project-image mb-6">
-                  <img 
-                    src={project.image} 
-                    alt={project.name}
-                    className="w-full h-64 object-cover"
-                  />
+                  <img src={project.image} alt={project.name} className="w-full h-64 object-cover" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl font-bold text-primary">
@@ -274,8 +240,7 @@ const Index = () => {
                     {project.description}
                   </p>
                 </CardHeader>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <div className="text-center mt-12">
@@ -308,10 +273,7 @@ const Index = () => {
                 Get Free Quote
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-primary text-xl px-10 py-5 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
-            >
+            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary text-xl px-10 py-5 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
               Call: 8097465332
             </Button>
           </div>
@@ -320,8 +282,6 @@ const Index = () => {
 
       <Footer />
       <FloatingActions />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
