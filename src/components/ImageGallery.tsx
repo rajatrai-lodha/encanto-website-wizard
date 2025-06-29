@@ -10,10 +10,30 @@ interface GalleryImage {
   category: string;
 }
 
-const ImageGallery = () => {
+interface ImageGalleryProps {
+  images?: string[];
+  alt?: string;
+  className?: string;
+}
+
+const ImageGallery = ({ images, alt, className }: ImageGalleryProps) => {
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
 
-  const images: GalleryImage[] = [
+  // If images prop is provided, use it for simple display
+  if (images && images.length > 0) {
+    return (
+      <div className={className}>
+        <img
+          src={images[0]}
+          alt={alt || "Project image"}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    );
+  }
+
+  // Default gallery images for the full gallery view
+  const galleryImages: GalleryImage[] = [
     {
       id: 1,
       src: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png",
@@ -92,7 +112,7 @@ const ImageGallery = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {images.map((image) => (
+      {galleryImages.map((image) => (
         <div
           key={image.id}
           className="relative h-80 perspective-1000 cursor-pointer"
