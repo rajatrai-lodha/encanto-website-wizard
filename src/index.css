@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced Professional Theme - Brand Blue and Premium Backgrounds */
+/* Enhanced Professional Theme - Brand Blue and White */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -36,17 +36,12 @@
 
     --radius: 0.5rem;
     
-    /* Brand specific colors using exact #36B5FF */
+    /* Brand specific colors using #36B5FF */
     --brand-primary: #36B5FF;
-    --brand-primary-light: #36B5FF;
-    --brand-primary-lighter: #36B5FF;
-    --brand-primary-dark: #36B5FF;
-    --brand-primary-darker: #36B5FF;
-    
-    /* Premium background colors */
-    --premium-bg-1: #F0F8FF; /* Alice Blue */
-    --premium-bg-2: #F3F7FA; /* Cool Grey */
-    --premium-bg-3: #F5FBFF; /* Light Blue */
+    --brand-primary-light: #5AC2FF;
+    --brand-primary-lighter: #7DCDFF;
+    --brand-primary-dark: #1A9FE6;
+    --brand-primary-darker: #0D88CC;
   }
 }
 
@@ -116,26 +111,25 @@
   animation: floatAnimation 3s ease-in-out infinite;
 }
 
-/* Enhanced Button Styles with Exact Brand Colors */
+/* Enhanced Button Styles with Brand Colors */
 .btn-primary {
-  background: #36B5FF;
+  background: var(--brand-primary);
   color: white;
   @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
 }
 
 .btn-primary:hover {
-  background: #36B5FF;
-  opacity: 0.9;
+  background: var(--brand-primary-dark);
 }
 
 .btn-secondary {
-  border: 2px solid #36B5FF;
-  color: #36B5FF;
+  border: 2px solid var(--brand-primary);
+  color: var(--brand-primary);
   @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
 }
 
 .btn-secondary:hover {
-  background: #36B5FF;
+  background: var(--brand-primary);
   color: white;
 }
 
@@ -163,43 +157,42 @@
 }
 
 .appointment-tab {
-  background: #36B5FF;
+  background: var(--brand-primary);
   margin-top: 20px;
 }
 
 .appointment-tab:hover {
-  background: #36B5FF;
-  opacity: 0.9;
+  background: var(--brand-primary-dark);
 }
 
-/* Enhanced Card Styles with Premium Backgrounds */
+/* Enhanced Card Styles */
 .professional-card {
-  @apply bg-[#F5FBFF] border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  @apply bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
 }
 
 .hero-card {
-  @apply bg-[#F5FBFF]/95 backdrop-blur-sm border border-slate-200 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300;
+  @apply bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300;
 }
 
 /* Enhanced Section Backgrounds */
 .section-bg-white {
-  @apply bg-[#F0F8FF];
+  @apply bg-white;
 }
 
 .section-bg-light-blue {
-  background: #F0F8FF;
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
 }
 
 .section-bg-primary {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
 }
 
 .section-bg-dark-blue {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary-darker) 0%, #0F172A 100%);
 }
 
 .section-bg-light-gray {
-  background: #F3F7FA;
+  @apply bg-gradient-to-br from-gray-100 to-gray-200/70;
 }
 
 /* Clean Section Spacing */
@@ -219,10 +212,10 @@
   border-bottom: 1px solid rgba(54, 181, 255, 0.1);
 }
 
-/* Enhanced Typography with Exact Brand Colors */
+/* Enhanced Typography with Brand Colors */
 .hero-title {
   @apply text-5xl md:text-7xl font-bold leading-tight;
-  background: linear-gradient(135deg, #36B5FF 0%, #36B5FF 50%, #36B5FF 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -262,26 +255,26 @@
 }
 
 .solution-icon {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--brand-primary) 100%);
   @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg;
 }
 
-/* Enhanced Gradients with Exact Brand Colors */
+/* Enhanced Gradients with Brand Colors */
 .hero-gradient {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
 }
 
 .cta-gradient {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 50%, var(--brand-primary-light) 100%);
 }
 
 /* Better Background Gradients */
 .bg-tech-gradient {
-  background: linear-gradient(135deg, #F0F8FF 0%, #F3F7FA 30%, #F5FBFF 70%, #F0F8FF 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #cbd5e1 70%, #94a3b8 100%);
 }
 
 .bg-hero-gradient {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
 }
 
 .grid-bg {
@@ -293,7 +286,7 @@
 
 .glass-effect {
   backdrop-filter: blur(10px);
-  background: rgba(245, 251, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -303,7 +296,7 @@
 
 /* Stats Enhancement */
 .stat-number {
-  color: #36B5FF;
+  color: var(--brand-primary);
   @apply text-5xl md:text-6xl font-bold mb-2;
 }
 
@@ -322,14 +315,13 @@
 
 /* Futuristic Button Style */
 .btn-futuristic {
-  background: #36B5FF;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 100%);
   @apply text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
-  border: 1px solid #36B5FF;
+  border: 1px solid var(--brand-primary-light);
 }
 
 .btn-futuristic:hover {
-  background: #36B5FF;
-  opacity: 0.9;
+  background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 100%);
 }
 
 /* Animation utilities */
@@ -363,15 +355,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F0F8FF;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #36B5FF;
+  background: var(--brand-primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #36B5FF;
-  opacity: 0.8;
+  background: var(--brand-primary-dark);
 }

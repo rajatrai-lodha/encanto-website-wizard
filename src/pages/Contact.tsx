@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,7 +11,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { useEffect } from "react";
-
 const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
@@ -21,13 +19,12 @@ const Contact = () => {
     phone: "",
     message: ""
   });
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Handle form submission here
     toast.success("Thank you for your inquiry! We'll get back to you soon.");
     setFormData({
       name: "",
@@ -36,16 +33,13 @@ const Contact = () => {
       message: ""
     });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -55,7 +49,7 @@ const Contact = () => {
         
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#36B5FF] to-[#36B5FF] opacity-90"></div>
+          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -70,11 +64,11 @@ const Contact = () => {
         </section>
 
         {/* Contact Form and Info */}
-        <section className="py-16 bg-[#F0F8FF]">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <InteractiveCard hoverEffect="glow" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
+              <InteractiveCard hoverEffect="glow">
                 <CardHeader>
                   <CardTitle className="text-2xl">Send us a Message</CardTitle>
                 </CardHeader>
@@ -83,61 +77,25 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Full Name *</Label>
-                        <Input 
-                          id="name" 
-                          name="name" 
-                          type="text" 
-                          required 
-                          value={formData.name} 
-                          onChange={handleChange} 
-                          placeholder="Your full name" 
-                          className="bg-[#F5FBFF]/50 border-slate-300" 
-                        />
+                        <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Your full name" className="glass-effect" />
                       </div>
                       <div>
                         <Label htmlFor="phone">Phone Number *</Label>
-                        <Input 
-                          id="phone" 
-                          name="phone" 
-                          type="tel" 
-                          required 
-                          value={formData.phone} 
-                          onChange={handleChange} 
-                          placeholder="Your phone number" 
-                          className="bg-[#F5FBFF]/50 border-slate-300" 
-                        />
+                        <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="Your phone number" className="glass-effect" />
                       </div>
                     </div>
                     
                     <div>
                       <Label htmlFor="email">Email Address *</Label>
-                      <Input 
-                        id="email" 
-                        name="email" 
-                        type="email" 
-                        required 
-                        value={formData.email} 
-                        onChange={handleChange} 
-                        placeholder="your.email@example.com" 
-                        className="bg-[#F5FBFF]/50 border-slate-300" 
-                      />
+                      <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your.email@example.com" className="glass-effect" />
                     </div>
                     
                     <div>
                       <Label htmlFor="message">Message *</Label>
-                      <textarea 
-                        id="message" 
-                        name="message" 
-                        required 
-                        value={formData.message} 
-                        onChange={handleChange} 
-                        placeholder="Tell us about your parking requirements..." 
-                        rows={5} 
-                        className="flex w-full rounded-md border border-slate-300 bg-[#F5FBFF]/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#36B5FF] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
-                      />
+                      <textarea id="message" name="message" required value={formData.message} onChange={handleChange} placeholder="Tell us about your parking requirements..." rows={5} className="flex w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 glass-effect" />
                     </div>
                     
-                    <Button type="submit" className="w-full bg-[#36B5FF] hover:bg-[#36B5FF]/90 text-white">
+                    <Button type="submit" className="w-full btn-futuristic">
                       Send Message
                     </Button>
                   </form>
@@ -146,14 +104,14 @@ const Contact = () => {
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <InteractiveCard hoverEffect="lift" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
+                <InteractiveCard hoverEffect="lift">
                   <CardHeader>
                     <CardTitle className="text-2xl">Get in Touch</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-[#36B5FF]/20 rounded-full flex items-center justify-center mr-4">
-                        <Phone className="h-6 w-6 text-[#36B5FF]" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue">
+                        <Phone className="h-6 w-6 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Phone Numbers</h3>
@@ -164,8 +122,8 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-[#36B5FF]/20 rounded-full flex items-center justify-center mr-4">
-                        <Mail className="h-6 w-6 text-[#36B5FF]" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue">
+                        <Mail className="h-6 w-6 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email Address</h3>
@@ -174,8 +132,8 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-[#36B5FF]/20 rounded-full flex items-center justify-center mr-4">
-                        <Clock className="h-6 w-6 text-[#36B5FF]" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue">
+                        <Clock className="h-6 w-6 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Business Hours</h3>
@@ -187,14 +145,14 @@ const Contact = () => {
                 </InteractiveCard>
 
                 {/* Office Address */}
-                <InteractiveCard hoverEffect="tilt" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
+                <InteractiveCard hoverEffect="tilt">
                   <CardHeader>
                     <CardTitle className="text-xl">Office Address</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-[#36B5FF]/20 rounded-full flex items-center justify-center mr-4">
-                        <MapPin className="h-6 w-6 text-[#36B5FF]" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue">
+                        <MapPin className="h-6 w-6 text-primary" />
                       </div>
                       <div>
                         <p className="text-muted-foreground">
@@ -209,14 +167,14 @@ const Contact = () => {
                 </InteractiveCard>
 
                 {/* Factory Address */}
-                <InteractiveCard hoverEffect="tilt" className="bg-[#F5FBFF]/80 backdrop-blur-sm border-slate-200">
+                <InteractiveCard hoverEffect="tilt">
                   <CardHeader>
                     <CardTitle className="text-xl">Factory Address</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-[#36B5FF]/20 rounded-full flex items-center justify-center mr-4">
-                        <MapPin className="h-6 w-6 text-[#36B5FF]" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue">
+                        <MapPin className="h-6 w-6 text-primary" />
                       </div>
                       <div>
                         <p className="text-muted-foreground">
@@ -235,18 +193,19 @@ const Contact = () => {
         </section>
 
         {/* Map Section */}
-        <section className="py-16 bg-[#F3F7FA] relative">
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4 text-[#36B5FF]">
+              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Find Us
               </h2>
               <p className="text-xl text-muted-foreground">Visit our office for direct consultation</p>
             </div>
             
-            <div className="bg-[#F5FBFF]/80 backdrop-blur-sm border border-slate-200 rounded-lg h-96 flex items-center justify-center">
+            <div className="glass-effect rounded-lg h-96 flex items-center justify-center neon-blue">
               <div className="text-center">
-                <MapPin className="h-16 w-16 text-[#36B5FF] mx-auto mb-4 animate-float" />
+                <MapPin className="h-16 w-16 text-primary mx-auto mb-4 animate-float" />
                 <p className="text-muted-foreground">Interactive map will be embedded here</p>
                 <p className="text-sm text-muted-foreground mt-2">
                   308/B Moreshwar Krupa, Eksar Road, Borivali West, Mumbai - 400092
@@ -257,7 +216,8 @@ const Contact = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-[#36B5FF] to-[#36B5FF] relative">
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Ready to Get Started?
@@ -266,10 +226,10 @@ const Contact = () => {
               Call us now for immediate assistance or to schedule a site visit
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#36B5FF] hover:bg-white/90">
+              <Button size="lg" className="btn-futuristic">
                 Call: 8097465332
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#36B5FF]">
+              <Button size="lg" variant="outline" className="btn-futuristic">
                 WhatsApp: 8097465332
               </Button>
             </div>
@@ -279,8 +239,6 @@ const Contact = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
