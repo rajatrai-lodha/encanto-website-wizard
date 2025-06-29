@@ -271,7 +271,7 @@ const Index = () => {
                 Get Free Quote
               </Button>
             </Link>
-            <Button variant="outline" className="border-2 border-white text-primary hover:bg-white hover:text-primary text-xl px-10 py-5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 bg-white\n">
+            <Button variant="outline" className="btn-futuristic">
               Call: 8097465332
             </Button>
           </div>
