@@ -24,7 +24,7 @@ const FloatingActions = () => {
       </div>
 
       <div className="floating-tab appointment-tab" onClick={handleBookAppointment}>
-        <div className="space-y-1 px-0 px-0.5 ">
+        <div className="flex flex-col items-center space-y-1">
           <Calendar className="w-4 h-4" />
           <span className="text-xs font-medium">Book Appointment</span>
         </div>
