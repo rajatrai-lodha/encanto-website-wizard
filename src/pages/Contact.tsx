@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,7 +11,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { useEffect } from "react";
-
 const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
@@ -21,27 +19,27 @@ const Contact = () => {
     phone: "",
     message: ""
   });
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
     toast.success("Thank you for your inquiry! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -79,58 +77,22 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your full name"
-                          className="glass-effect"
-                        />
+                        <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Your full name" className="glass-effect" />
                       </div>
                       <div>
                         <Label htmlFor="phone">Phone Number *</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="Your phone number"
-                          className="glass-effect"
-                        />
+                        <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="Your phone number" className="glass-effect" />
                       </div>
                     </div>
                     
                     <div>
                       <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your.email@example.com"
-                        className="glass-effect"
-                      />
+                      <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your.email@example.com" className="glass-effect" />
                     </div>
                     
                     <div>
                       <Label htmlFor="message">Message *</Label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your parking requirements..."
-                        rows={5}
-                        className="flex w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 glass-effect"
-                      />
+                      <textarea id="message" name="message" required value={formData.message} onChange={handleChange} placeholder="Tell us about your parking requirements..." rows={5} className="flex w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 glass-effect" />
                     </div>
                     
                     <Button type="submit" className="w-full btn-futuristic">
@@ -267,7 +229,7 @@ const Contact = () => {
               <Button size="lg" className="btn-futuristic">
                 Call: 8097465332
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-background glass-effect">
+              <Button size="lg" variant="outline" className="btn-futuristic">
                 WhatsApp: 8097465332
               </Button>
             </div>
@@ -277,8 +239,6 @@ const Contact = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
