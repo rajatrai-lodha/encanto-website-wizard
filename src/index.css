@@ -1,9 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced Professional Theme - Blue and White */
+/* Enhanced Professional Theme - Brand Blue and White */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -15,26 +14,33 @@
     --popover: 0 0% 100%;
     --popover-foreground: 214 32% 15%;
 
-    --primary: 214 84% 56%;
+    --primary: 198 100% 60%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 214 15% 95%;
+    --secondary: 198 15% 95%;
     --secondary-foreground: 214 32% 15%;
 
-    --muted: 214 15% 95%;
+    --muted: 198 15% 95%;
     --muted-foreground: 214 20% 45%;
 
-    --accent: 214 84% 56%;
+    --accent: 198 100% 60%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 88%;
-    --input: 214 32% 88%;
-    --ring: 214 84% 56%;
+    --border: 198 32% 88%;
+    --input: 198 32% 88%;
+    --ring: 198 100% 60%;
 
     --radius: 0.5rem;
+    
+    /* Brand specific colors using #36B5FF */
+    --brand-primary: #36B5FF;
+    --brand-primary-light: #5AC2FF;
+    --brand-primary-lighter: #7DCDFF;
+    --brand-primary-dark: #1A9FE6;
+    --brand-primary-darker: #0D88CC;
   }
 }
 
@@ -93,13 +99,26 @@
   animation: floatAnimation 3s ease-in-out infinite;
 }
 
-/* Enhanced Button Styles */
+/* Enhanced Button Styles with Brand Colors */
 .btn-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  background: var(--brand-primary);
+  color: white;
+  @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+}
+
+.btn-primary:hover {
+  background: var(--brand-primary-dark);
 }
 
 .btn-secondary {
-  @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
+  border: 2px solid var(--brand-primary);
+  color: var(--brand-primary);
+  @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105;
+}
+
+.btn-secondary:hover {
+  background: var(--brand-primary);
+  color: white;
 }
 
 /* Enhanced Floating Action Styles - Fixed positioning and removed shake */
@@ -126,8 +145,12 @@
 }
 
 .appointment-tab {
-  @apply bg-blue-600 hover:bg-blue-700;
+  background: var(--brand-primary);
   margin-top: 20px;
+}
+
+.appointment-tab:hover {
+  background: var(--brand-primary-dark);
 }
 
 /* Enhanced Card Styles */
@@ -145,15 +168,15 @@
 }
 
 .section-bg-light-blue {
-  @apply bg-gradient-to-br from-blue-50 to-blue-100/70;
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
 }
 
 .section-bg-primary {
-  @apply bg-gradient-to-br from-primary to-primary/90;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
 }
 
 .section-bg-dark-blue {
-  @apply bg-gradient-to-br from-slate-800 to-slate-900;
+  background: linear-gradient(135deg, var(--brand-primary-darker) 0%, #0F172A 100%);
 }
 
 .section-bg-light-gray {
@@ -174,13 +197,13 @@
 .header-blur {
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(214, 84, 156, 0.1);
+  border-bottom: 1px solid rgba(54, 181, 255, 0.1);
 }
 
-/* Enhanced Typography with Better Contrast */
+/* Enhanced Typography with Brand Colors */
 .hero-title {
   @apply text-5xl md:text-7xl font-bold leading-tight;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -220,16 +243,17 @@
 }
 
 .solution-icon {
-  @apply w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg;
+  background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--brand-primary) 100%);
+  @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg;
 }
 
-/* Enhanced Gradients */
+/* Enhanced Gradients with Brand Colors */
 .hero-gradient {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #60a5fa 70%, #93c5fd 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
 }
 
 .cta-gradient {
-  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 50%, var(--brand-primary-light) 100%);
 }
 
 /* Better Background Gradients */
@@ -238,13 +262,13 @@
 }
 
 .bg-hero-gradient {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
 }
 
 .grid-bg {
   background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(54, 181, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 181, 255, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -255,12 +279,13 @@
 }
 
 .neon-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 20px rgba(54, 181, 255, 0.3);
 }
 
 /* Stats Enhancement */
 .stat-number {
-  @apply text-5xl md:text-6xl font-bold text-primary mb-2;
+  color: var(--brand-primary);
+  @apply text-5xl md:text-6xl font-bold mb-2;
 }
 
 .stat-label {
@@ -278,7 +303,13 @@
 
 /* Futuristic Button Style */
 .btn-futuristic {
-  @apply bg-gradient-to-r from-primary to-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-primary/20;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 100%);
+  @apply text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  border: 1px solid var(--brand-primary-light);
+}
+
+.btn-futuristic:hover {
+  background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 100%);
 }
 
 /* Animation utilities */
@@ -306,7 +337,7 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar with Brand Colors */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -316,10 +347,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: var(--brand-primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e40af;
+  background: var(--brand-primary-dark);
 }
