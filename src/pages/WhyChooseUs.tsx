@@ -4,13 +4,16 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import InteractiveCard from "@/components/InteractiveCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Clock, Shield, Wrench, Leaf, Phone } from "lucide-react";
+import { CheckCircle, Clock, Shield, Wrench, Leaf, Phone, Building, Eye, Star } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const WhyChooseUs = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
   const advantages = [{
     title: "Stress-Free Maintenance",
     description: "Our systems are designed for minimal maintenance with robust components and proactive support services.",
@@ -42,6 +45,7 @@ const WhyChooseUs = () => {
     icon: Phone,
     features: ["IoT-enabled monitoring", "Mobile app integration", "Predictive maintenance alerts", "Remote troubleshooting", "Data analytics and reporting"]
   }];
+  
   const testimonials = [{
     client: "Nirmitee Developers",
     project: "Suman Apartments",
@@ -53,7 +57,17 @@ const WhyChooseUs = () => {
     quote: "The tower parking system has significantly improved our patient experience by providing quick and convenient parking. The support team is always responsive.",
     rating: 5
   }];
-  return <div className="min-h-screen bg-background relative overflow-hidden">
+
+  const highlightedProjects = [
+    { name: "Suman Apartments", client: "Nirmitee Developers" },
+    { name: "Kamal Nivas", client: "Eskay Elevators Ltd" },
+    { name: "Hawa Mahal", client: "H. Rishabraj" },
+    { name: "Sagar Darshan", client: "Anmol Nirmitee Developers" },
+    { name: "21st Century Hospital, Vapi", client: "Nadkarni Foundation" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -73,6 +87,101 @@ const WhyChooseUs = () => {
               <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100">
                 Experience the difference with our comprehensive approach to parking solutions
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* About Us Section */}
+        <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+                About Encanto Industries
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <InteractiveCard hoverEffect="lift" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100">
+              <CardHeader>
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                    <Building className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="text-center space-y-6">
+                <p className="text-lg text-slate-700 leading-relaxed">
+                  Welcome to <span className="font-semibold text-blue-600">Encanto Industries</span>, your premier destination for innovative parking solutions tailored to the demands of modern urban living.
+                </p>
+                <p className="text-lg text-slate-700 leading-relaxed">
+                  At Encanto, we are committed to revolutionizing the way cities approach parking. Our space-efficient systems are designed to optimize convenience, efficiency, and sustainability. Discover a new era in parking with our cutting-edge technology and unwavering commitment to excellence. Say goodbye to parking woes and hello to a seamless parking experience with Stack Parking.
+                </p>
+              </CardContent>
+            </InteractiveCard>
+          </div>
+        </section>
+
+        {/* Our Vision Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-700">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Our Vision
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-white to-blue-200 mx-auto rounded-full"></div>
+            </div>
+            
+            <InteractiveCard hoverEffect="glow" className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md border border-white/20">
+              <CardHeader>
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl flex items-center justify-center border border-white/30">
+                    <Eye className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-lg text-white/90 leading-relaxed">
+                  Encanto Industries is driven by a singular mission: to revolutionize urban parking and create a better parking experience for all. With a focus on innovation, efficiency, and sustainability, we're building a future where finding parking is hassle-free and cities are free to thrive without parking congestion.
+                </p>
+              </CardContent>
+            </InteractiveCard>
+          </div>
+        </section>
+
+        {/* Highlighted Projects Section */}
+        <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+                Highlighted Projects
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+              <p className="text-xl text-slate-600 mt-6">
+                Showcasing our successful partnerships and innovative solutions
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {highlightedProjects.map((project, index) => (
+                <InteractiveCard key={index} hoverEffect="lift" className="bg-white/80 backdrop-blur-sm border border-blue-100">
+                  <CardHeader>
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <Star className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                    <CardTitle className="text-lg text-center text-slate-800">
+                      {project.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-slate-600 font-medium">{project.client}</p>
+                    <div className="mt-4 px-4 py-2 bg-blue-50 rounded-full">
+                      <span className="text-blue-600 text-sm font-medium">Completed Project</span>
+                    </div>
+                  </CardContent>
+                </InteractiveCard>
+              ))}
             </div>
           </div>
         </section>
@@ -112,7 +221,7 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Value Propositions */}
-        <section className="py-16 relative">
+        <section className="py-16 relative bg-gradient-to-br from-slate-50 to-blue-50">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -189,6 +298,8 @@ const WhyChooseUs = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default WhyChooseUs;
