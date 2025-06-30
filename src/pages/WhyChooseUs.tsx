@@ -92,7 +92,7 @@ const WhyChooseUs = () => {
         </section>
 
         {/* About Us Section */}
-        <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section className="py-16" style={{ backgroundColor: '#F0F8FF' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
@@ -149,7 +149,7 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Highlighted Projects Section */}
-        <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section className="py-16" style={{ backgroundColor: '#F3F7FA' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
@@ -221,7 +221,7 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Value Propositions */}
-        <section className="py-16 relative bg-gradient-to-br from-slate-50 to-blue-50">
+        <section className="py-16 relative" style={{ backgroundColor: '#F5FBFF' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
