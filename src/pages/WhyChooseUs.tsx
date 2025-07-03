@@ -91,7 +91,7 @@ const WhyChooseUs = () => {
           </div>
         </section>
 
-        {/* About Us Section */}
+        {/* About Us Section - Updated background color */}
         <section className="py-16" style={{ backgroundColor: '#F0F8FF' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -121,26 +121,26 @@ const WhyChooseUs = () => {
           </div>
         </section>
 
-        {/* Our Vision Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-700">
+        {/* Our Vision Section - Updated background color */}
+        <section className="py-16" style={{ backgroundColor: '#F5FBFF' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
                 Our Vision
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-white to-blue-200 mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
             </div>
             
-            <InteractiveCard hoverEffect="glow" className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md border border-white/20">
+            <InteractiveCard hoverEffect="glow" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100">
               <CardHeader>
                 <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl flex items-center justify-center border border-white/30">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
                     <Eye className="w-8 h-8 text-white" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-lg text-white/90 leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed">
                   Encanto Industries is driven by a singular mission: to revolutionize urban parking and create a better parking experience for all. With a focus on innovation, efficiency, and sustainability, we're building a future where finding parking is hassle-free and cities are free to thrive without parking congestion.
                 </p>
               </CardContent>
@@ -148,7 +148,7 @@ const WhyChooseUs = () => {
           </div>
         </section>
 
-        {/* Highlighted Projects Section */}
+        {/* Highlighted Projects Section - Updated background color */}
         <section className="py-16" style={{ backgroundColor: '#F3F7FA' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
