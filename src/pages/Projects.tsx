@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -7,6 +8,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import ImageGallery from "@/components/ImageGallery";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { MapPin, Building, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -88,10 +90,10 @@ const Projects = () => {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case "Residential": return "bg-blue-100 text-blue-800";
-      case "Commercial": return "bg-green-100 text-green-800";
-      case "Healthcare": return "bg-purple-100 text-purple-800";
-      default: return "bg-gray-100 text-gray-800";
+      case "Residential": return "bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-300";
+      case "Commercial": return "bg-green-100 text-green-800 hover:bg-green-200 transition-colors duration-300";
+      case "Healthcare": return "bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors duration-300";
+      default: return "bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300";
     }
   };
 
@@ -109,11 +111,11 @@ const Projects = () => {
           <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+            <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow">
                 Our Projects
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100">
+              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
                 Trusted by leading developers and institutions across India
               </p>
             </div>
@@ -124,15 +126,17 @@ const Projects = () => {
         <section className="py-16 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 Project Gallery
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground animate-slideInRight delay-200">
                 Interactive showcase of our completed parking systems - click to explore
               </p>
             </div>
-            <ImageGallery />
+            <div className="animate-fade-in-up delay-400">
+              <ImageGallery />
+            </div>
           </div>
         </section>
 
@@ -141,16 +145,16 @@ const Projects = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
-                    <stat.icon className="h-8 w-8 text-primary" />
+                <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" style={{ animationDelay: `${index * 150}ms` }}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                    <stat.icon className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
                   <AnimatedCounter
                     end={stat.number}
                     suffix={stat.suffix}
-                    className="text-3xl font-bold mb-2"
+                    className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300"
                   />
-                  <div className="text-muted-foreground">{stat.label}</div>
+                  <div className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -160,51 +164,56 @@ const Projects = () => {
         {/* Projects Grid */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 Featured Projects
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground animate-slideInRight delay-200">
                 Showcasing our expertise across different sectors and applications
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <InteractiveCard key={index} hoverEffect="lift">
+                <InteractiveCard 
+                  key={index} 
+                  hoverEffect="lift" 
+                  className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl">{project.name}</CardTitle>
-                      <Badge className={getTypeColor(project.type)}>{project.type}</Badge>
+                      <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{project.name}</CardTitle>
+                      <Badge className={`${getTypeColor(project.type)} transform transition-all duration-300 hover:scale-110`}>{project.type}</Badge>
                     </div>
-                    <CardDescription className="font-medium text-primary">
+                    <CardDescription className="font-medium text-primary group-hover:text-primary/80 transition-colors duration-300">
                       {project.client}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4 mr-2" />
+                      <div className="flex items-center text-sm text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                        <MapPin className="h-4 w-4 mr-2 group-hover:text-primary transition-colors duration-300" />
                         {project.location}
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
                           <span className="font-medium">System:</span>
-                          <p className="text-muted-foreground">{project.system}</p>
+                          <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{project.system}</p>
                         </div>
                         <div>
                           <span className="font-medium">Capacity:</span>
-                          <p className="text-muted-foreground">{project.capacity}</p>
+                          <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{project.capacity}</p>
                         </div>
                       </div>
                       
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                         {project.description}
                       </p>
                       
                       <div className="flex justify-between items-center pt-2">
-                        <span className="text-xs text-muted-foreground">Completed: {project.year}</span>
+                        <span className="text-xs text-muted-foreground group-hover:text-slate-600 transition-colors duration-300">Completed: {project.year}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -218,60 +227,95 @@ const Projects = () => {
         <section className="py-16 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 Industries We Serve
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground animate-slideInRight delay-200">
                 Providing parking solutions across diverse sectors
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <InteractiveCard hoverEffect="glow" className="text-center">
+              <InteractiveCard 
+                hoverEffect="glow" 
+                className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
+                style={{ animationDelay: '100ms' }}
+              >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
-                    <Building className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                    <Building className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <CardTitle>Residential Complexes</CardTitle>
+                  <CardTitle className="group-hover:text-primary transition-colors duration-300">Residential Complexes</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
                     Apartment buildings, housing societies, and residential towers requiring 
                     efficient parking solutions for residents and visitors.
                   </p>
                 </CardContent>
               </InteractiveCard>
               
-              <InteractiveCard hoverEffect="glow" className="text-center">
+              <InteractiveCard 
+                hoverEffect="glow" 
+                className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
+                style={{ animationDelay: '200ms' }}
+              >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
-                    <MapPin className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                    <MapPin className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <CardTitle>Commercial Buildings</CardTitle>
+                  <CardTitle className="group-hover:text-primary transition-colors duration-300">Commercial Buildings</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
                     Office complexes, shopping centers, and commercial establishments 
                     needing high-capacity parking for employees and customers.
                   </p>
                 </CardContent>
               </InteractiveCard>
               
-              <InteractiveCard hoverEffect="glow" className="text-center">
+              <InteractiveCard 
+                hoverEffect="glow" 
+                className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
+                style={{ animationDelay: '300ms' }}
+              >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue">
-                    <Users className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                    <Users className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <CardTitle>Healthcare Facilities</CardTitle>
+                  <CardTitle className="group-hover:text-primary transition-colors duration-300">Healthcare Facilities</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
                     Hospitals, clinics, and medical centers requiring organized parking 
                     for patients, visitors, and medical staff.
                   </p>
                 </CardContent>
               </InteractiveCard>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <div className="animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white transform transition-all duration-700 hover:scale-105">
+                Ready to Start Your Project?
+              </h2>
+              <p className="text-xl mb-8 opacity-90 text-blue-100 animate-slideInRight delay-200">
+                Contact us today to discuss your parking solution requirements
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
+                <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                  Get Quote
+                </Button>
+                <Button size="lg" variant="outline" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                  View Portfolio
+                </Button>
+              </div>
             </div>
           </div>
         </section>

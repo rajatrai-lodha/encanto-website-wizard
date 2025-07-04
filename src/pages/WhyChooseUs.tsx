@@ -80,11 +80,11 @@ const WhyChooseUs = () => {
           <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+            <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow">
                 Why Choose Encanto Industries?
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100">
+              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
                 Experience the difference with our comprehensive approach to parking solutions
               </p>
             </div>
@@ -94,26 +94,26 @@ const WhyChooseUs = () => {
         {/* About Us Section - Updated background color */}
         <section className="py-16" style={{ backgroundColor: '#F0F8FF' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
                 About Encanto Industries
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full animate-pulse"></div>
             </div>
             
-            <InteractiveCard hoverEffect="lift" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100">
+            <InteractiveCard hoverEffect="lift" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
               <CardHeader>
                 <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                    <Building className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                    <Building className="w-8 h-8 text-white group-hover:animate-bounce" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="text-center space-y-6">
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  Welcome to <span className="font-semibold text-blue-600">Encanto Industries</span>, your premier destination for innovative parking solutions tailored to the demands of modern urban living.
+                <p className="text-lg text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
+                  Welcome to <span className="font-semibold text-blue-600 group-hover:text-blue-700 transition-colors duration-300">Encanto Industries</span>, your premier destination for innovative parking solutions tailored to the demands of modern urban living.
                 </p>
-                <p className="text-lg text-slate-700 leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
                   At Encanto, we are committed to revolutionizing the way cities approach parking. Our space-efficient systems are designed to optimize convenience, efficiency, and sustainability. Discover a new era in parking with our cutting-edge technology and unwavering commitment to excellence. Say goodbye to parking woes and hello to a seamless parking experience with Stack Parking.
                 </p>
               </CardContent>
@@ -124,23 +124,23 @@ const WhyChooseUs = () => {
         {/* Our Vision Section - Updated background color */}
         <section className="py-16" style={{ backgroundColor: '#F5FBFF' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
                 Our Vision
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full animate-pulse"></div>
             </div>
             
-            <InteractiveCard hoverEffect="glow" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100">
+            <InteractiveCard hoverEffect="glow" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
               <CardHeader>
                 <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                    <Eye className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                    <Eye className="w-8 h-8 text-white group-hover:animate-bounce" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-lg text-slate-700 leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
                   Encanto Industries is driven by a singular mission: to revolutionize urban parking and create a better parking experience for all. With a focus on innovation, efficiency, and sustainability, we're building a future where finding parking is hassle-free and cities are free to thrive without parking congestion.
                 </p>
               </CardContent>
@@ -151,33 +151,38 @@ const WhyChooseUs = () => {
         {/* Highlighted Projects Section - Updated background color */}
         <section className="py-16" style={{ backgroundColor: '#F3F7FA' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
                 Highlighted Projects
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
-              <p className="text-xl text-slate-600 mt-6">
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full animate-pulse"></div>
+              <p className="text-xl text-slate-600 mt-6 animate-slideInRight delay-200">
                 Showcasing our successful partnerships and innovative solutions
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {highlightedProjects.map((project, index) => (
-                <InteractiveCard key={index} hoverEffect="lift" className="bg-white/80 backdrop-blur-sm border border-blue-100">
+                <InteractiveCard 
+                  key={index} 
+                  hoverEffect="lift" 
+                  className="bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader>
                     <div className="flex items-center justify-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                        <Star className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                        <Star className="w-6 h-6 text-white group-hover:animate-bounce" />
                       </div>
                     </div>
-                    <CardTitle className="text-lg text-center text-slate-800">
+                    <CardTitle className="text-lg text-center text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
                       {project.name}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <p className="text-slate-600 font-medium">{project.client}</p>
-                    <div className="mt-4 px-4 py-2 bg-blue-50 rounded-full">
-                      <span className="text-blue-600 text-sm font-medium">Completed Project</span>
+                    <p className="text-slate-600 font-medium group-hover:text-slate-700 transition-colors duration-300">{project.client}</p>
+                    <div className="mt-4 px-4 py-2 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors duration-300">
+                      <span className="text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-300">Completed Project</span>
                     </div>
                   </CardContent>
                 </InteractiveCard>
@@ -189,33 +194,42 @@ const WhyChooseUs = () => {
         {/* Key Advantages */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 Our Competitive Advantages
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground animate-slideInRight delay-200">
                 What sets us apart in the parking solutions industry
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {advantages.map((advantage, index) => <InteractiveCard key={index} hoverEffect="tilt">
+              {advantages.map((advantage, index) => 
+                <InteractiveCard 
+                  key={index} 
+                  hoverEffect="tilt" 
+                  className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mb-4 neon-blue">
-                      <advantage.icon className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <advantage.icon className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
-                    <CardTitle className="text-xl">{advantage.title}</CardTitle>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{advantage.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{advantage.description}</p>
+                    <p className="text-muted-foreground mb-4 group-hover:text-slate-700 transition-colors duration-300">{advantage.description}</p>
                     <ul className="space-y-2">
-                      {advantage.features.map((feature, idx) => <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      {advantage.features.map((feature, idx) => 
+                        <li key={idx} className="flex items-start text-sm text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0 group-hover:animate-pulse" />
                           {feature}
-                        </li>)}
+                        </li>
+                      )}
                     </ul>
                   </CardContent>
-                </InteractiveCard>)}
+                </InteractiveCard>
+              )}
             </div>
           </div>
         </section>
@@ -225,38 +239,38 @@ const WhyChooseUs = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <div className="animate-fade-in-up">
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                   Commitment to Excellence
                 </h2>
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1" />
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 animate-pulse" />
                     <div>
-                      <h3 className="font-semibold mb-2">Quality Assurance</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="font-semibold mb-2 hover:text-primary transition-colors duration-300">Quality Assurance</h3>
+                      <p className="text-muted-foreground hover:text-slate-700 transition-colors duration-300">
                         Rigorous testing and quality control processes ensure reliable performance 
                         and longevity of our parking systems.
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1" />
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 animate-pulse" />
                     <div>
-                      <h3 className="font-semibold mb-2">Customer-Centric Approach</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="font-semibold mb-2 hover:text-primary transition-colors duration-300">Customer-Centric Approach</h3>
+                      <p className="text-muted-foreground hover:text-slate-700 transition-colors duration-300">
                         We prioritize customer satisfaction through personalized service, 
                         transparent communication, and responsive support.
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1" />
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 animate-pulse" />
                     <div>
-                      <h3 className="font-semibold mb-2">Continuous Innovation</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="font-semibold mb-2 hover:text-primary transition-colors duration-300">Continuous Innovation</h3>
+                      <p className="text-muted-foreground hover:text-slate-700 transition-colors duration-300">
                         Investment in research and development keeps us at the forefront 
                         of parking technology and industry best practices.
                       </p>
@@ -265,24 +279,24 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               
-              <InteractiveCard hoverEffect="glow" className="glass-effect">
+              <InteractiveCard hoverEffect="glow" className="glass-effect transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-300 group">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Our Promise</CardTitle>
+                  <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Our Promise</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="glass-effect rounded-lg p-4 neon-blue">
-                    <h4 className="font-semibold text-primary mb-2">Reliability</h4>
-                    <p className="text-muted-foreground">Systems designed for 99%+ uptime with minimal maintenance requirements.</p>
+                  <div className="glass-effect rounded-lg p-4 neon-blue transform transition-all duration-300 hover:scale-105 group-hover:bg-blue-50">
+                    <h4 className="font-semibold text-primary mb-2 group-hover:animate-pulse">Reliability</h4>
+                    <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Systems designed for 99%+ uptime with minimal maintenance requirements.</p>
                   </div>
                   
-                  <div className="glass-effect rounded-lg p-4 neon-blue">
-                    <h4 className="font-semibold text-primary mb-2">Safety</h4>
-                    <p className="text-muted-foreground">Multiple safety features and fail-safe mechanisms protect vehicles and users.</p>
+                  <div className="glass-effect rounded-lg p-4 neon-blue transform transition-all duration-300 hover:scale-105 group-hover:bg-blue-50">
+                    <h4 className="font-semibold text-primary mb-2 group-hover:animate-pulse">Safety</h4>
+                    <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Multiple safety features and fail-safe mechanisms protect vehicles and users.</p>
                   </div>
                   
-                  <div className="glass-effect rounded-lg p-4 neon-blue">
-                    <h4 className="font-semibold text-primary mb-2">Support</h4>
-                    <p className="text-muted-foreground">Comprehensive support throughout the system lifecycle with guaranteed response times.</p>
+                  <div className="glass-effect rounded-lg p-4 neon-blue transform transition-all duration-300 hover:scale-105 group-hover:bg-blue-50">
+                    <h4 className="font-semibold text-primary mb-2 group-hover:animate-pulse">Support</h4>
+                    <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Comprehensive support throughout the system lifecycle with guaranteed response times.</p>
                   </div>
                 </CardContent>
               </InteractiveCard>
