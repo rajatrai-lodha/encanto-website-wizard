@@ -99,6 +99,23 @@
   50% { transform: translateY(-10px); }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(54, 181, 255, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(54, 181, 255, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* New Interactive Animations */
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -111,15 +128,79 @@
   animation: floatAnimation 3s ease-in-out infinite;
 }
 
+.animate-pulse-slow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Interactive Button Enhancements */
+.interactive-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.interactive-button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.interactive-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(54, 181, 255, 0.4);
+}
+
+.interactive-button:active {
+  transform: translateY(0);
+}
+
 /* Enhanced Button Styles with Brand Colors */
 .btn-primary {
   background: var(--brand-primary);
   color: white;
+  position: relative;
+  overflow: hidden;
   @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.btn-primary:active::before {
+  width: 200px;
+  height: 200px;
 }
 
 .btn-primary:hover {
   background: var(--brand-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(54, 181, 255, 0.4);
 }
 
 .btn-secondary {
@@ -131,6 +212,7 @@
 .btn-secondary:hover {
   background: var(--brand-primary);
   color: white;
+  transform: translateY(-2px);
 }
 
 /* Enhanced Floating Action Styles - Fixed positioning and removed shake */
@@ -148,7 +230,7 @@
 
 .floating-tab:hover {
   @apply shadow-xl;
-  transform: translateY(-50%) translateX(-3px);
+  transform: translateY(-50%) translateX(-3px) scale(1.05);
 }
 
 .download-tab {
@@ -168,6 +250,23 @@
 /* Enhanced Card Styles */
 .professional-card {
   @apply bg-white border border-border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  position: relative;
+  overflow: hidden;
+}
+
+.professional-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(54, 181, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.professional-card:hover::before {
+  left: 100%;
 }
 
 .hero-card {
@@ -177,10 +276,23 @@
 /* Enhanced Section Backgrounds */
 .section-bg-white {
   @apply bg-white;
+  position: relative;
 }
 
 .section-bg-light-blue {
   background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+  position: relative;
+}
+
+.section-bg-light-blue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2336B5FF' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
 }
 
 .section-bg-primary {
@@ -205,6 +317,10 @@
   @apply fixed bottom-8 right-8 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white shadow-xl hover:shadow-2xl transition-all duration-300 z-50 hover:scale-110;
 }
 
+.whatsapp-float:hover {
+  animation: pulseGlow 1s ease-in-out;
+}
+
 /* Header Styles Enhanced */
 .header-blur {
   backdrop-filter: blur(12px);
@@ -227,6 +343,19 @@
 
 .section-title {
   @apply text-4xl md:text-5xl font-bold mb-6 text-slate-800;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-light));
+  border-radius: 2px;
 }
 
 .section-title-white {
@@ -257,11 +386,35 @@
 .solution-icon {
   background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--brand-primary) 100%);
   @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg;
+  position: relative;
+}
+
+.solution-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--brand-primary) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.solution-icon:hover::before {
+  opacity: 0.8;
 }
 
 /* Enhanced Gradients with Brand Colors */
 .hero-gradient {
   background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 50%, var(--brand-primary-lighter) 100%);
+  position: relative;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpolygon points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
 }
 
 .cta-gradient {
@@ -298,6 +451,23 @@
 .stat-number {
   color: var(--brand-primary);
   @apply text-5xl md:text-6xl font-bold mb-2;
+  position: relative;
+}
+
+.stat-number::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.stat-number:hover::before {
+  opacity: 1;
 }
 
 .stat-label {
@@ -329,6 +499,12 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Delay utilities for staggered animations */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
 /* Mobile Responsive Utilities */
 @media (max-width: 768px) {
   .floating-tab {
@@ -346,6 +522,10 @@
 
   .whatsapp-float {
     @apply bottom-6 right-6 w-14 h-14;
+  }
+
+  .interactive-button {
+    @apply px-6 py-3 text-lg;
   }
 }
 
@@ -365,4 +545,17 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--brand-primary-dark);
+}
+
+/* Smooth scrolling for all browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.interactive-button:focus,
+.btn-primary:focus,
+.btn-secondary:focus {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
 }

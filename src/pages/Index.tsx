@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,11 +7,33 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    // Observe all sections
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
+
   const solutions = [{
     title: "G+1 Stack Parking",
     description: "Double your parking capacity with our efficient two-level stacking system.",
@@ -42,6 +65,7 @@ const Index = () => {
     features: ["Vertical storage", "Automated system", "High capacity"],
     image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
   }];
+
   const projects = [{
     name: "Suman Apartments",
     client: "Nirmitee Developers",
@@ -63,6 +87,7 @@ const Index = () => {
     description: "Pit stack parking solution for space-constrained areas",
     image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
   }];
+
   const stats = [{
     number: "1000+",
     label: "Parking Spaces Created"
@@ -76,6 +101,7 @@ const Index = () => {
     number: "99%",
     label: "Uptime Reliability"
   }];
+
   const whyChooseUs = [{
     icon: Shield,
     title: "Expert Engineering",
@@ -93,24 +119,30 @@ const Index = () => {
     title: "Cost Effective",
     desc: "Maximize space utilization while minimizing operational costs"
   }];
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Enhanced Hero Section - Split Layout */}
+      {/* Enhanced Hero Section - Split Layout with Animated Background */}
       <section className="pt-32 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100/30 to-blue-200/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-blue-200/20 to-blue-100/30 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-50/40 to-blue-100/30 rounded-full blur-2xl animate-pulse"></div>
+        </div>
+
         {/* Blue Top Half */}
-        <div className="hero-gradient section-padding">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          </div>
-          
+        <div className="hero-gradient section-padding relative">
           <div className="max-w-7xl mx-auto text-center relative z-10">
-            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0'}`}>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8">
+            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 animate-pulse-slow">
                 Revolutionizing Urban Parking
               </h1>
-              <h2 className="text-2xl mb-6 md:text-2xl font-medium text-center text-slate-200">PARKING EXCELLENCE THROUGH SMART TECHNOLOGY</h2>
+              <h2 className={`text-2xl mb-6 md:text-2xl font-medium text-center text-slate-200 transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
+                PARKING EXCELLENCE THROUGH SMART TECHNOLOGY
+              </h2>
             </div>
           </div>
         </div>
@@ -118,15 +150,16 @@ const Index = () => {
         {/* White Bottom Half */}
         <div className="bg-white section-padding">
           <div className="max-w-7xl mx-auto text-center">
-            <p className="text-xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className={`text-xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
               Welcome to Encanto Industries, your premier destination for innovative parking solutions 
               tailored to modern urban living.
             </p>
             
-            <div className="flex justify-center">
+            <div className={`flex justify-center transition-all duration-1000 delay-700 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
               <Link to="/projects">
-                <Button className="bg-primary text-white hover:bg-primary/90 px-10 py-5 text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  Explore Solutions
+                <Button className="interactive-button bg-primary text-white hover:bg-primary/90 px-10 py-5 text-xl font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
+                  <span className="relative z-10">Explore Solutions</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </Link>
             </div>
@@ -134,22 +167,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Stats Section */}
-      <section className="section-padding section-bg-light-blue">
+      {/* Enhanced Stats Section with Scroll Animation */}
+      <section 
+        id="stats" 
+        data-animate
+        className={`section-padding section-bg-light-blue transition-all duration-1000 ${
+          visibleSections.has('stats') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => <div key={index} className="text-center group">
-                <div className="stat-number group-hover:scale-110 transition-transform duration-300">
+            {stats.map((stat, index) => (
+              <div 
+                key={index} 
+                className={`text-center group hover:scale-105 transition-all duration-300 hover:-translate-y-2 cursor-pointer delay-${index * 100}`}
+              >
+                <div className="stat-number group-hover:scale-110 transition-transform duration-300 bg-gradient-to-b from-primary to-blue-600 bg-clip-text text-transparent">
                   {stat.number}
                 </div>
-                <p className="stat-label">{stat.label}</p>
-              </div>)}
+                <p className="stat-label group-hover:text-primary transition-colors duration-300">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Enhanced About Section */}
-      <section className="section-padding section-bg-white">
+      {/* Enhanced About Section with Scroll Animation */}
+      <section 
+        id="about" 
+        data-animate
+        className={`section-padding section-bg-white transition-all duration-1000 ${
+          visibleSections.has('about') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">About Encanto Industries</h2>
@@ -160,23 +210,36 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChooseUs.map((item, index) => <Card key={index} className="professional-card text-center group">
+            {whyChooseUs.map((item, index) => (
+              <Card 
+                key={index} 
+                className="professional-card text-center group hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white cursor-pointer"
+              >
                 <CardHeader>
-                  <div className="solution-icon mx-auto">
+                  <div className="solution-icon mx-auto group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
                     <item.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold">{item.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                    {item.desc}
+                  </p>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Enhanced Solutions Showcase */}
-      <section className="section-padding section-bg-light-blue">
+      {/* Enhanced Solutions Showcase with Scroll Animation */}
+      <section 
+        id="solutions" 
+        data-animate
+        className={`section-padding section-bg-light-blue transition-all duration-1000 ${
+          visibleSections.has('solutions') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">Our Parking Solutions</h2>
@@ -186,34 +249,53 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => <Card key={index} className="professional-card group overflow-hidden">
-                <div className="project-image mb-6">
-                  <img src={solution.image} alt={solution.title} className="w-full h-48 object-cover" />
+            {solutions.map((solution, index) => (
+              <Card 
+                key={index} 
+                className="professional-card group overflow-hidden hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 cursor-pointer hover:bg-gradient-to-br hover:from-white hover:to-blue-50"
+              >
+                <div className="project-image mb-6 overflow-hidden">
+                  <img 
+                    src={solution.image} 
+                    alt={solution.title} 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+                  />
                 </div>
                 <CardHeader>
-                  <div className="solution-icon">
+                  <div className="solution-icon group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
                     <solution.icon className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold">{solution.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                    {solution.title}
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                     {solution.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {solution.features.map((feature, idx) => <li key={idx} className="flex items-center text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mr-4"></div>
+                    {solution.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
                         <span className="font-medium">{feature}</span>
-                      </li>)}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Enhanced Projects Section */}
-      <section className="section-padding section-bg-light-blue">
+      {/* Enhanced Projects Section with Scroll Animation */}
+      <section 
+        id="projects" 
+        data-animate
+        className={`section-padding section-bg-light-blue transition-all duration-1000 ${
+          visibleSections.has('projects') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">Our Recent Projects</h2>
@@ -223,39 +305,55 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => <Card key={index} className="professional-card group overflow-hidden">
-                <div className="project-image mb-6">
-                  <img src={project.image} alt={project.name} className="w-full h-64 object-cover" />
+            {projects.map((project, index) => (
+              <Card 
+                key={index} 
+                className="professional-card group overflow-hidden hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 cursor-pointer hover:bg-gradient-to-br hover:from-white hover:to-blue-50"
+              >
+                <div className="project-image mb-6 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.name} 
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+                  />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-primary">
+                  <CardTitle className="text-xl font-bold text-primary group-hover:text-blue-700 transition-colors duration-300">
                     {project.name}
                   </CardTitle>
-                  <CardDescription className="text-sm font-semibold text-muted-foreground">
+                  <CardDescription className="text-sm font-semibold text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
                     {project.client}
                   </CardDescription>
-                  <p className="text-muted-foreground leading-relaxed mt-2">
+                  <p className="text-muted-foreground leading-relaxed mt-2 group-hover:text-slate-700 transition-colors duration-300">
                     {project.description}
                   </p>
                 </CardHeader>
-              </Card>)}
+              </Card>
+            ))}
           </div>
           
           <div className="text-center mt-12">
             <Link to="/projects">
-              <Button className="btn-primary text-lg">
-                View All Projects
+              <Button className="btn-primary text-lg hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all duration-300 relative overflow-hidden group">
+                <span className="relative z-10">View All Projects</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="section-padding cta-gradient text-white relative overflow-hidden">
+      {/* Enhanced CTA Section with Scroll Animation */}
+      <section 
+        id="cta" 
+        data-animate
+        className={`section-padding cta-gradient text-white relative overflow-hidden transition-all duration-1000 ${
+          visibleSections.has('cta') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -267,12 +365,17 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/contact">
-              <Button className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                Get Free Quote
+              <Button className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
+                <span className="relative z-10">Get Free Quote</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </Link>
-            <Button variant="outline" className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              Call: 8097465332
+            <Button 
+              variant="outline" 
+              className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Call: 8097465332</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
           </div>
         </div>
@@ -280,6 +383,8 @@ const Index = () => {
 
       <Footer />
       <FloatingActions />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
