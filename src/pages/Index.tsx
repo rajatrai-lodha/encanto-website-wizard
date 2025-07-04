@@ -1,10 +1,12 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import FloatingIcons from "@/components/FloatingIcons";
+import AnimatedStatsRow from "@/components/AnimatedStatsRow";
+import ScrollDownIndicator from "@/components/ScrollDownIndicator";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -124,8 +126,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Enhanced Hero Section - Split Layout with Animated Background */}
-      <section className="pt-32 relative overflow-hidden">
+      {/* Enhanced Hero Section - Dynamic and Premium */}
+      <section className="pt-32 relative overflow-hidden min-h-screen flex flex-col justify-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100/30 to-blue-200/20 rounded-full blur-3xl animate-float"></div>
@@ -133,18 +135,29 @@ const Index = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-50/40 to-blue-100/30 rounded-full blur-2xl animate-pulse"></div>
         </div>
 
-        {/* Blue Top Half */}
-        <div className="hero-gradient section-padding relative">
+        {/* Blue Background with Floating Icons */}
+        <div className="hero-gradient section-padding relative flex-1 flex flex-col justify-center">
+          {/* Floating Icons */}
+          <FloatingIcons />
+          
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 animate-pulse-slow">
                 Revolutionizing Urban Parking
               </h1>
-              <h2 className={`text-2xl mb-6 md:text-2xl font-medium text-center text-slate-200 transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
+              <h2 className={`text-2xl mb-8 md:text-2xl font-medium text-center text-slate-200 transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
                 PARKING EXCELLENCE THROUGH SMART TECHNOLOGY
               </h2>
+              
+              {/* Animated Stats Row */}
+              <div className={`transition-all duration-1000 delay-500 ${isLoaded ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
+                <AnimatedStatsRow />
+              </div>
             </div>
           </div>
+          
+          {/* Scroll Down Indicator */}
+          <ScrollDownIndicator />
         </div>
 
         {/* White Bottom Half */}
