@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
                 About Encanto Industries
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full animate-pulse"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-600 mx-auto rounded-full animate-pulse"></div>
             </div>
             
             <InteractiveCard hoverEffect="lift" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
