@@ -155,44 +155,7 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Highlighted Projects Section - Updated background color */}
-        <section style={{
-        backgroundColor: '#F3F7FA'
-      }} className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
-                Highlighted Projects
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-600 mx-auto rounded-full animate-pulse"></div>
-              <p className="text-xl text-slate-600 mt-6 animate-slideInRight delay-200">
-                Showcasing our successful partnerships and innovative solutions
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {highlightedProjects.map((project, index) => <InteractiveCard key={index} hoverEffect="lift" className="bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group" style={{
-              animationDelay: `${index * 100}ms`
-            }}>
-                  <CardHeader>
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-600 rounded-xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                        <Star className="w-6 h-6 text-white group-hover:animate-bounce" />
-                      </div>
-                    </div>
-                    <CardTitle className="text-lg text-center text-slate-800 group-hover:text-sky-500 transition-colors duration-300">
-                      {project.name}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-slate-600 font-medium group-hover:text-slate-700 transition-colors duration-300">{project.client}</p>
-                    <div className="mt-4 px-4 py-2 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors duration-300">
-                      <span className="text-sky-600 text-sm font-medium group-hover:text-sky-700 transition-colors duration-300">Completed Project</span>
-                    </div>
-                  </CardContent>
-                </InteractiveCard>)}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Key Advantages */}
         <section className="py-16 bg-white">
