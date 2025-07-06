@@ -57,7 +57,7 @@ const About = () => {
         
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+          <div className="absolute inset-0 bg-hero-gradient opacity-90 py-0"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -81,7 +81,7 @@ const About = () => {
         
 
         {/* Core Values */}
-        <section className="py-16 section-bg-light-gray">
+        <section className="section-bg-light-gray py-[64px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="section-title-dark transform transition-all duration-700 hover:scale-105">
