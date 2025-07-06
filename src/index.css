@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -114,6 +115,16 @@
   100% { transform: translateX(100%); }
 }
 
+/* Pulse Heartbeat Animation for Hero Title */
+@keyframes pulseHeartbeat {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.02);
+  }
+}
+
 /* New Interactive Animations */
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out;
@@ -133,6 +144,10 @@
 
 .animate-shimmer {
   animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-pulse-heartbeat {
+  animation: pulseHeartbeat 2s ease-in-out infinite;
 }
 
 /* Interactive Button Enhancements */
@@ -792,7 +807,8 @@ html {
   .card-hover-effect,
   .animate-fade-in-up,
   .animate-slideInRight,
-  .animate-bounce {
+  .animate-bounce,
+  .animate-pulse-heartbeat {
     animation: none;
     transition: none;
   }

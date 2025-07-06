@@ -9,18 +9,20 @@ import HeroFloatingActions from "@/components/HeroFloatingActions";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const [currentSlide, setCurrentSlide] = useState(0);
   const heroImages = ['/lovable-uploads/e00c7cb2-90a7-4240-811a-85243021b9bd.png', '/lovable-uploads/6458eff2-4014-47e2-9cd0-7ca81b6afb38.png', '/lovable-uploads/ad25aa1a-6441-4e51-80a0-02404b5c8d06.png'];
+
   useEffect(() => {
     setIsLoaded(true);
 
-    // Background image slider
+    // Background image slider - changed to 4000ms (4 seconds)
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % heroImages.length);
-    }, 1000);
+    }, 4000);
 
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(entries => {
@@ -42,37 +44,39 @@ const Index = () => {
       observer.disconnect();
     };
   }, [heroImages.length]);
+
   const solutions = [{
     title: "G+1 Stack Parking",
     description: "Double your parking capacity with our efficient two-level stacking system.",
     icon: ArrowUp,
     features: ["Space efficient", "Cost effective", "Easy operation"],
-    image: "/lovable-uploads/e3478f7c-bec3-4dec-b41c-8035d4461ff3.png"
+    image: "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png"
   }, {
     title: "G+2 Stack Parking",
     description: "Triple your parking space with our advanced three-level stacking solution.",
     icon: ArrowUp,
     features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
-    image: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png"
+    image: "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png"
   }, {
     title: "Pit Stack Parking",
     description: "Underground parking solution for limited overhead space areas.",
     icon: ArrowDown,
     features: ["Underground solution", "Weather protected", "Space optimization"],
-    image: "/lovable-uploads/2c017785-0a73-4f9a-aa75-3749e785d9b3.png"
+    image: "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png"
   }, {
     title: "Puzzle Parking",
     description: "Horizontal sliding puzzle system for maximum space efficiency.",
     icon: CircleParking,
     features: ["Horizontal movement", "No pit required", "Modular design"],
-    image: "/lovable-uploads/afe66f3d-b0ac-493c-a429-015287bc5098.png"
+    image: "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
   }, {
     title: "Tower Parking",
     description: "Vertical automated parking towers for high-density parking needs.",
     icon: CircleParkingOff,
     features: ["Vertical storage", "Automated system", "High capacity"],
-    image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
+    image: "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
   }];
+
   const projects = [{
     name: "Suman Apartments",
     client: "Nirmitee Developers",
@@ -94,6 +98,7 @@ const Index = () => {
     description: "Pit stack parking solution for space-constrained areas",
     image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
   }];
+
   const stats = [{
     number: "1000+",
     label: "Parking Spaces Created"
@@ -107,6 +112,7 @@ const Index = () => {
     number: "99%",
     label: "Uptime Reliability"
   }];
+
   const whyChooseUs = [{
     icon: Shield,
     title: "Expert Engineering",
@@ -124,6 +130,7 @@ const Index = () => {
     title: "Cost Effective",
     desc: "Maximize space utilization while minimizing operational costs"
   }];
+
   return <div className="min-h-screen bg-background">
       <Header />
       
@@ -143,7 +150,7 @@ const Index = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl px-[200px]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl whitespace-nowrap animate-pulse-heartbeat">
               Revolutionizing Urban Parking
             </h1>
             <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -320,4 +327,5 @@ const Index = () => {
       <WhatsAppButton />
     </div>;
 };
+
 export default Index;
