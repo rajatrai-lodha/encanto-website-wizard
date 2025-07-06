@@ -24,10 +24,10 @@ const Index = () => {
   useEffect(() => {
     setIsLoaded(true);
 
-    // Background image slider
+    // Background image slider - slowed down to 4 seconds
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 1000);
+    }, 4000);
 
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(entries => {
@@ -56,31 +56,31 @@ const Index = () => {
     description: "Double your parking capacity with our efficient two-level stacking system.",
     icon: ArrowUp,
     features: ["Space efficient", "Cost effective", "Easy operation"],
-    image: "/lovable-uploads/e3478f7c-bec3-4dec-b41c-8035d4461ff3.png"
+    image: "/lovable-uploads/5af586df-fa6e-4ce4-87e3-83efd2f99b74.png"
   }, {
     title: "G+2 Stack Parking",
     description: "Triple your parking space with our advanced three-level stacking solution.",
     icon: ArrowUp,
     features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
-    image: "/lovable-uploads/33071eca-b479-4777-946a-807e2e52ed64.png"
+    image: "/lovable-uploads/f133c5b2-866d-44d2-bb07-82acf5899fad.png"
   }, {
     title: "Pit Stack Parking",
     description: "Underground parking solution for limited overhead space areas.",
     icon: ArrowDown,
     features: ["Underground solution", "Weather protected", "Space optimization"],
-    image: "/lovable-uploads/2c017785-0a73-4f9a-aa75-3749e785d9b3.png"
+    image: "/lovable-uploads/04663be5-2b57-4a96-a57a-339654ebed65.png"
   }, {
     title: "Puzzle Parking",
     description: "Horizontal sliding puzzle system for maximum space efficiency.",
     icon: CircleParking,
     features: ["Horizontal movement", "No pit required", "Modular design"],
-    image: "/lovable-uploads/afe66f3d-b0ac-493c-a429-015287bc5098.png"
+    image: "/lovable-uploads/2a711c53-e1ba-4a40-939d-1591cfe6b0eb.png"
   }, {
     title: "Tower Parking",
     description: "Vertical automated parking towers for high-density parking needs.",
     icon: CircleParkingOff,
     features: ["Vertical storage", "Automated system", "High capacity"],
-    image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
+    image: "/lovable-uploads/7513b904-0b04-4d00-ba33-fe3ad0ea3ffa.png"
   }];
 
   const projects = [{
@@ -168,7 +168,13 @@ const Index = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl whitespace-nowrap bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent animate-[shimmer_3s_ease-in-out_infinite] bg-[length:200%_100%]">
+              <style jsx>{`
+                @keyframes shimmer {
+                  0% { background-position: -200% 0; }
+                  100% { background-position: 200% 0; }
+                }
+              `}</style>
               Revolutionizing Urban Parking
             </h1>
             <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -332,7 +338,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </Link>
-            <Button variant="outline" className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
+            <Button variant="outline" className="bg-white text-primary hover:bg-primary hover:text-white border-2 border-primary text-xl px-10 py-5 rounded-xl font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
               <span className="relative z-10">Call: 8097465332</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
