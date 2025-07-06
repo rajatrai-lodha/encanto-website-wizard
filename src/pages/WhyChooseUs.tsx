@@ -140,7 +140,7 @@ const WhyChooseUs = () => {
             <InteractiveCard hoverEffect="glow" className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
               <CardHeader>
                 <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                  <div className="w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-600 rounded-2xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <Eye className="w-8 h-8 text-white group-hover:animate-bounce" />
                   </div>
                 </div>
