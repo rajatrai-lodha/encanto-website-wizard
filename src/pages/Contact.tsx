@@ -193,7 +193,27 @@ const Contact = () => {
         </section>
 
         {/* Map Section */}
-        
+        <section className="py-16 relative">
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center mb-8 animate-fade-in-up">
+              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
+                Find Us
+              </h2>
+              <p className="text-xl text-muted-foreground animate-slideInRight delay-200">Visit our office for direct consultation</p>
+            </div>
+            
+            <div className="glass-effect rounded-lg h-96 flex items-center justify-center neon-blue transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-300 group">
+              <div className="text-center">
+                <MapPin className="h-16 w-16 text-primary mx-auto mb-4 animate-float group-hover:animate-bounce" />
+                <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Interactive map will be embedded here</p>
+                <p className="text-sm text-muted-foreground mt-2 group-hover:text-slate-600 transition-colors duration-300">
+                  308/B Moreshwar Krupa, Eksar Road, Borivali West, Mumbai - 400092
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 relative">
@@ -210,7 +230,9 @@ const Contact = () => {
                 <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
                   Call: 8097465332
                 </Button>
-                
+                <Button size="lg" variant="outline" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                  WhatsApp: 8097465332
+                </Button>
               </div>
             </div>
           </div>
