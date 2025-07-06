@@ -4,101 +4,68 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import InteractiveCard from "@/components/InteractiveCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import ImageGallery from "@/components/ImageGallery";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Building, Users } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const Projects = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-  const projects = [{
-    name: "Suman Apartments",
-    client: "Nirmitee Developers",
-    location: "Mumbai, Maharashtra",
-    type: "Residential",
-    system: "G+1 Stack Parking",
-    capacity: "24 Cars",
-    year: "2023",
-    description: "Advanced stack parking solution for modern residential complex with space optimization."
-  }, {
-    name: "Kamal Nivas",
-    client: "ESKAY ELEVATORS LTD",
-    location: "Mumbai, Maharashtra",
-    type: "Residential",
-    system: "G+2 Stack Parking",
-    capacity: "36 Cars",
-    year: "2023",
-    description: "Triple-level stacking system providing maximum parking capacity in limited space."
-  }, {
-    name: "Hawa Mahal",
-    client: "H. RISHABRAJ",
-    location: "Rajasthan",
-    type: "Commercial",
-    system: "Puzzle Parking",
-    capacity: "20 Cars",
-    year: "2023",
-    description: "Horizontal sliding puzzle system designed for heritage area with space constraints."
-  }, {
-    name: "Sagar Darshan",
-    client: "Anmol Nirmitee Developers",
-    location: "Mumbai, Maharashtra",
-    type: "Residential",
-    system: "G+1 Stack Parking",
-    capacity: "28 Cars",
-    year: "2023",
-    description: "Efficient two-level parking solution for premium residential development."
-  }, {
-    name: "21st Century Hospital",
-    client: "Nadkarni Foundation",
-    location: "Vapi, Gujarat",
-    type: "Healthcare",
-    system: "Tower Parking",
-    capacity: "50 Cars",
-    year: "2023",
-    description: "Automated tower parking system for high-traffic healthcare facility."
-  }, {
-    name: "Hemgiri Apartments",
-    client: "Pyramid Developers",
-    location: "Mumbai, Maharashtra",
-    type: "Residential",
-    system: "Pit Stack Parking",
-    capacity: "32 Cars",
-    year: "2023",
-    description: "Underground parking solution optimized for limited overhead space."
-  }];
-  const stats = [{
-    number: 50,
-    suffix: "+",
-    label: "Projects Completed",
-    icon: Building
-  }, {
-    number: 1000,
-    suffix: "+",
-    label: "Parking Spaces Created",
-    icon: MapPin
-  }, {
-    number: 45,
-    suffix: "+",
-    label: "Satisfied Clients",
-    icon: Users
-  }];
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case "Residential":
-        return "bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-300";
-      case "Commercial":
-        return "bg-green-100 text-green-800 hover:bg-green-200 transition-colors duration-300";
-      case "Healthcare":
-        return "bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors duration-300";
-      default:
-        return "bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300";
+
+  const projects = [
+    {
+      name: "Suman Apartments",
+      client: "Nirmitee Developers"
+    },
+    {
+      name: "Kamal Nivas", 
+      client: "ESKAY ELEVATORS LTD"
+    },
+    {
+      name: "Hawa Mahal",
+      client: "H. RISHABRAJ"
+    },
+    {
+      name: "Sagar Darshan",
+      client: "Anmol Nirmitee Developers"
+    },
+    {
+      name: "21st Century Hospital",
+      client: "Nadkarni Foundation"
+    },
+    {
+      name: "Hemgiri Apartments",
+      client: "Pyramid Developers"
     }
-  };
-  return <div className="min-h-screen bg-background relative overflow-hidden">
+  ];
+
+  const stats = [
+    {
+      number: 50,
+      suffix: "+",
+      label: "Projects Completed", 
+      icon: Building
+    },
+    {
+      number: 1000,
+      suffix: "+", 
+      label: "Parking Spaces Created",
+      icon: MapPin
+    },
+    {
+      number: 45,
+      suffix: "+",
+      label: "Satisfied Clients",
+      icon: Users
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -122,27 +89,34 @@ const Projects = () => {
           </div>
         </section>
 
-        {/* Interactive Project Gallery */}
-        
-
         {/* Stats Section */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {stats.map((stat, index) => <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" style={{
-              animationDelay: `${index * 150}ms`
-            }}>
+              {stats.map((stat, index) => (
+                <div 
+                  key={index} 
+                  className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" 
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <stat.icon className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <AnimatedCounter end={stat.number} suffix={stat.suffix} className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300" />
-                  <div className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{stat.label}</div>
-                </div>)}
+                  <AnimatedCounter 
+                    end={stat.number} 
+                    suffix={stat.suffix} 
+                    className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300" 
+                  />
+                  <div className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Projects Grid */}
+        {/* Simplified Projects Grid */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
@@ -155,46 +129,23 @@ const Projects = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => <InteractiveCard key={index} hoverEffect="lift" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group" style={{
-              animationDelay: `${index * 100}ms`
-            }}>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{project.name}</CardTitle>
-                      <Badge className={`${getTypeColor(project.type)} transform transition-all duration-300 hover:scale-110`}>{project.type}</Badge>
-                    </div>
-                    <CardDescription className="font-medium text-primary group-hover:text-primary/80 transition-colors duration-300">
+              {projects.map((project, index) => (
+                <InteractiveCard 
+                  key={index}
+                  hoverEffect="lift" 
+                  className="transform transition-all duration-700 hover:scale-105 hover:shadow-2xl animate-fade-in-up group bg-gradient-to-br from-white to-blue-50/30 border border-blue-100" 
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <CardHeader className="text-center py-8">
+                    <CardTitle className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-500 text-slate-800">
+                      {project.name}
+                    </CardTitle>
+                    <p className="text-lg font-medium text-primary group-hover:text-blue-600 transition-colors duration-500">
                       {project.client}
-                    </CardDescription>
+                    </p>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex items-center text-sm text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
-                        <MapPin className="h-4 w-4 mr-2 group-hover:text-primary transition-colors duration-300" />
-                        {project.location}
-                      </div>
-                      
-                      <div className="grid grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <span className="font-medium">System:</span>
-                          <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{project.system}</p>
-                        </div>
-                        <div>
-                          <span className="font-medium">Capacity:</span>
-                          <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{project.capacity}</p>
-                        </div>
-                      </div>
-                      
-                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
-                        {project.description}
-                      </p>
-                      
-                      <div className="flex justify-between items-center pt-2">
-                        <span className="text-xs text-muted-foreground group-hover:text-slate-600 transition-colors duration-300">Completed: {project.year}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </InteractiveCard>)}
+                </InteractiveCard>
+              ))}
             </div>
           </div>
         </section>
@@ -291,6 +242,8 @@ const Projects = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Projects;

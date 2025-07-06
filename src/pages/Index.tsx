@@ -8,9 +8,11 @@ import HeroImageSlider from "@/components/HeroImageSlider";
 import HeroFloatingActions from "@/components/HeroFloatingActions";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+
   useEffect(() => {
     setIsLoaded(true);
 
@@ -31,6 +33,7 @@ const Index = () => {
     sections.forEach(section => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
   const solutions = [{
     title: "G+1 Stack Parking",
     description: "Double your parking capacity with our efficient two-level stacking system.",
@@ -62,6 +65,7 @@ const Index = () => {
     features: ["Vertical storage", "Automated system", "High capacity"],
     image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
   }];
+
   const projects = [{
     name: "Suman Apartments",
     client: "Nirmitee Developers",
@@ -83,6 +87,7 @@ const Index = () => {
     description: "Pit stack parking solution for space-constrained areas",
     image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
   }];
+
   const stats = [{
     number: "1000+",
     label: "Parking Spaces Created"
@@ -96,6 +101,7 @@ const Index = () => {
     number: "99%",
     label: "Uptime Reliability"
   }];
+
   const whyChooseUs = [{
     icon: Shield,
     title: "Expert Engineering",
@@ -113,37 +119,49 @@ const Index = () => {
     title: "Cost Effective",
     desc: "Maximize space utilization while minimizing operational costs"
   }];
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Enhanced Hero Section - New Design with Image Slider */}
-      <HeroImageSlider>
-        <div className="min-h-screen flex items-center justify-center relative">
-          {/* Hero Floating Actions */}
-          <HeroFloatingActions />
-          
-          {/* Hero Content */}
-          <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-            <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl">
-                Revolutionizing Urban Parking
-              </h1>
-              <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                PARKING EXCELLENCE THROUGH SMART TECHNOLOGY
-              </h2>
-              
-              <div className={`flex justify-center transition-all duration-1000 delay-700 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <Link to="/projects">
-                  <Button className="interactive-button text-white px-10 py-5 text-xl font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group bg-sky-700 hover:bg-sky-600">
-                    <span className="relative z-10">Explore Solutions</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  </Button>
-                </Link>
-              </div>
+      {/* Enhanced Hero Section with New Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/lovable-uploads/bd1b98e7-8298-4016-90c2-100bcf98c413.png"
+            alt="Automated Parking System"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
+        
+        {/* Hero Floating Actions */}
+        <HeroFloatingActions />
+        
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl">
+              Revolutionizing Urban Parking
+            </h1>
+            <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              PARKING EXCELLENCE THROUGH SMART TECHNOLOGY
+            </h2>
+            
+            <div className={`flex justify-center transition-all duration-1000 delay-700 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <Link to="/projects">
+                <Button className="interactive-button text-white px-10 py-5 text-xl font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group bg-sky-700 hover:bg-sky-600">
+                  <span className="relative z-10">Explore Solutions</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
-      </HeroImageSlider>
+      </section>
 
       {/* Enhanced Stats Section with Scroll Animation */}
       <section id="stats" data-animate className={`section-padding section-bg-light-blue transition-all duration-1000 ${visibleSections.has('stats') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
@@ -300,6 +318,8 @@ const Index = () => {
 
       <Footer />
       <FloatingActions />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
