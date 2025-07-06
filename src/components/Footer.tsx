@@ -1,20 +1,13 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-white border-t border-border">
+  return <footer className="bg-white border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <img 
-                src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" 
-                alt="Encanto Industries" 
-                className="h-10 w-auto mr-3"
-              />
+              <img src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" alt="Encanto Industries" className="h-10 w-auto mr-3" />
               <div>
                 <h3 className="text-lg font-bold text-primary">Encanto Industries</h3>
                 <p className="text-xs text-muted-foreground">Smart Parking Solutions</p>
@@ -84,13 +77,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-muted-foreground text-sm">
-            © 2024 Encanto Industries. All rights reserved.
-          </p>
+          <p className="text-muted-foreground text-sm">© 2025 Encanto Industries. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

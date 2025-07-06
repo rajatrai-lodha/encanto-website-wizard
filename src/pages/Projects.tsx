@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -11,94 +10,95 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Building, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-
 const Projects = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
-  const projects = [
-    {
-      name: "Suman Apartments",
-      client: "Nirmitee Developers",
-      location: "Mumbai, Maharashtra",
-      type: "Residential",
-      system: "G+1 Stack Parking",
-      capacity: "24 Cars",
-      year: "2023",
-      description: "Advanced stack parking solution for modern residential complex with space optimization."
-    },
-    {
-      name: "Kamal Nivas",
-      client: "ESKAY ELEVATORS LTD",
-      location: "Mumbai, Maharashtra",
-      type: "Residential",
-      system: "G+2 Stack Parking",
-      capacity: "36 Cars",
-      year: "2023",
-      description: "Triple-level stacking system providing maximum parking capacity in limited space."
-    },
-    {
-      name: "Hawa Mahal",
-      client: "H. RISHABRAJ",
-      location: "Rajasthan",
-      type: "Commercial",
-      system: "Puzzle Parking",
-      capacity: "20 Cars",
-      year: "2023",
-      description: "Horizontal sliding puzzle system designed for heritage area with space constraints."
-    },
-    {
-      name: "Sagar Darshan",
-      client: "Anmol Nirmitee Developers",
-      location: "Mumbai, Maharashtra",
-      type: "Residential",
-      system: "G+1 Stack Parking",
-      capacity: "28 Cars",
-      year: "2023",
-      description: "Efficient two-level parking solution for premium residential development."
-    },
-    {
-      name: "21st Century Hospital",
-      client: "Nadkarni Foundation",
-      location: "Vapi, Gujarat",
-      type: "Healthcare",
-      system: "Tower Parking",
-      capacity: "50 Cars",
-      year: "2023",
-      description: "Automated tower parking system for high-traffic healthcare facility."
-    },
-    {
-      name: "Hemgiri Apartments",
-      client: "Pyramid Developers",
-      location: "Mumbai, Maharashtra",
-      type: "Residential",
-      system: "Pit Stack Parking",
-      capacity: "32 Cars",
-      year: "2023",
-      description: "Underground parking solution optimized for limited overhead space."
-    }
-  ];
-
-  const stats = [
-    { number: 50, suffix: "+", label: "Projects Completed", icon: Building },
-    { number: 1000, suffix: "+", label: "Parking Spaces Created", icon: MapPin },
-    { number: 45, suffix: "+", label: "Satisfied Clients", icon: Users }
-  ];
-
+  const projects = [{
+    name: "Suman Apartments",
+    client: "Nirmitee Developers",
+    location: "Mumbai, Maharashtra",
+    type: "Residential",
+    system: "G+1 Stack Parking",
+    capacity: "24 Cars",
+    year: "2023",
+    description: "Advanced stack parking solution for modern residential complex with space optimization."
+  }, {
+    name: "Kamal Nivas",
+    client: "ESKAY ELEVATORS LTD",
+    location: "Mumbai, Maharashtra",
+    type: "Residential",
+    system: "G+2 Stack Parking",
+    capacity: "36 Cars",
+    year: "2023",
+    description: "Triple-level stacking system providing maximum parking capacity in limited space."
+  }, {
+    name: "Hawa Mahal",
+    client: "H. RISHABRAJ",
+    location: "Rajasthan",
+    type: "Commercial",
+    system: "Puzzle Parking",
+    capacity: "20 Cars",
+    year: "2023",
+    description: "Horizontal sliding puzzle system designed for heritage area with space constraints."
+  }, {
+    name: "Sagar Darshan",
+    client: "Anmol Nirmitee Developers",
+    location: "Mumbai, Maharashtra",
+    type: "Residential",
+    system: "G+1 Stack Parking",
+    capacity: "28 Cars",
+    year: "2023",
+    description: "Efficient two-level parking solution for premium residential development."
+  }, {
+    name: "21st Century Hospital",
+    client: "Nadkarni Foundation",
+    location: "Vapi, Gujarat",
+    type: "Healthcare",
+    system: "Tower Parking",
+    capacity: "50 Cars",
+    year: "2023",
+    description: "Automated tower parking system for high-traffic healthcare facility."
+  }, {
+    name: "Hemgiri Apartments",
+    client: "Pyramid Developers",
+    location: "Mumbai, Maharashtra",
+    type: "Residential",
+    system: "Pit Stack Parking",
+    capacity: "32 Cars",
+    year: "2023",
+    description: "Underground parking solution optimized for limited overhead space."
+  }];
+  const stats = [{
+    number: 50,
+    suffix: "+",
+    label: "Projects Completed",
+    icon: Building
+  }, {
+    number: 1000,
+    suffix: "+",
+    label: "Parking Spaces Created",
+    icon: MapPin
+  }, {
+    number: 45,
+    suffix: "+",
+    label: "Satisfied Clients",
+    icon: Users
+  }];
   const getTypeColor = (type: string) => {
     switch (type) {
-      case "Residential": return "bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-300";
-      case "Commercial": return "bg-green-100 text-green-800 hover:bg-green-200 transition-colors duration-300";
-      case "Healthcare": return "bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors duration-300";
-      default: return "bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300";
+      case "Residential":
+        return "bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-300";
+      case "Commercial":
+        return "bg-green-100 text-green-800 hover:bg-green-200 transition-colors duration-300";
+      case "Healthcare":
+        return "bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors duration-300";
+      default:
+        return "bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300";
     }
   };
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -144,25 +144,21 @@ const Projects = () => {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" style={{ animationDelay: `${index * 150}ms` }}>
+              {stats.map((stat, index) => <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <stat.icon className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <AnimatedCounter
-                    end={stat.number}
-                    suffix={stat.suffix}
-                    className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300"
-                  />
+                  <AnimatedCounter end={stat.number} suffix={stat.suffix} className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300" />
                   <div className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">{stat.label}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
 
         {/* Projects Grid */}
-        <section className="py-16">
+        <section className="py-16 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
@@ -174,13 +170,9 @@ const Projects = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <InteractiveCard 
-                  key={index} 
-                  hoverEffect="lift" 
-                  className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {projects.map((project, index) => <InteractiveCard key={index} hoverEffect="lift" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
                       <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{project.name}</CardTitle>
@@ -217,15 +209,14 @@ const Projects = () => {
                       </div>
                     </div>
                   </CardContent>
-                </InteractiveCard>
-              ))}
+                </InteractiveCard>)}
             </div>
           </div>
         </section>
 
         {/* Industry Sectors */}
         <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-zinc-100"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
@@ -237,11 +228,9 @@ const Projects = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <InteractiveCard 
-                hoverEffect="glow" 
-                className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
-                style={{ animationDelay: '100ms' }}
-              >
+              <InteractiveCard hoverEffect="glow" className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group" style={{
+              animationDelay: '100ms'
+            }}>
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <Building className="h-8 w-8 text-primary group-hover:animate-bounce" />
@@ -256,11 +245,9 @@ const Projects = () => {
                 </CardContent>
               </InteractiveCard>
               
-              <InteractiveCard 
-                hoverEffect="glow" 
-                className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
-                style={{ animationDelay: '200ms' }}
-              >
+              <InteractiveCard hoverEffect="glow" className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group" style={{
+              animationDelay: '200ms'
+            }}>
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <MapPin className="h-8 w-8 text-primary group-hover:animate-bounce" />
@@ -275,11 +262,9 @@ const Projects = () => {
                 </CardContent>
               </InteractiveCard>
               
-              <InteractiveCard 
-                hoverEffect="glow" 
-                className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
-                style={{ animationDelay: '300ms' }}
-              >
+              <InteractiveCard hoverEffect="glow" className="text-center transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group" style={{
+              animationDelay: '300ms'
+            }}>
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <Users className="h-8 w-8 text-primary group-hover:animate-bounce" />
@@ -299,22 +284,20 @@ const Projects = () => {
 
         {/* CTA Section */}
         <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 bg-gray-50"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <div className="animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white transform transition-all duration-700 hover:scale-105">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-700 hover:scale-105 text-slate-900">
                 Ready to Start Your Project?
               </h2>
-              <p className="text-xl mb-8 opacity-90 text-blue-100 animate-slideInRight delay-200">
+              <p className="text-xl mb-8 opacity-90 animate-slideInRight delay-200 text-zinc-500">
                 Contact us today to discuss your parking solution requirements
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
                 <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
                   Get Quote
                 </Button>
-                <Button size="lg" variant="outline" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
-                  View Portfolio
-                </Button>
+                
               </div>
             </div>
           </div>
@@ -323,8 +306,6 @@ const Projects = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Projects;
