@@ -9,13 +9,11 @@ import HeroFloatingActions from "@/components/HeroFloatingActions";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
-
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const [currentSlide, setCurrentSlide] = useState(0);
   const heroImages = ['/lovable-uploads/e00c7cb2-90a7-4240-811a-85243021b9bd.png', '/lovable-uploads/6458eff2-4014-47e2-9cd0-7ca81b6afb38.png', '/lovable-uploads/ad25aa1a-6441-4e51-80a0-02404b5c8d06.png'];
-
   useEffect(() => {
     setIsLoaded(true);
 
@@ -44,7 +42,6 @@ const Index = () => {
       observer.disconnect();
     };
   }, [heroImages.length]);
-
   const solutions = [{
     title: "G+1 Stack Parking",
     description: "Double your parking capacity with our efficient two-level stacking system.",
@@ -76,7 +73,6 @@ const Index = () => {
     features: ["Vertical storage", "Automated system", "High capacity"],
     image: "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
   }];
-
   const projects = [{
     name: "Suman Apartments",
     client: "Nirmitee Developers",
@@ -98,7 +94,6 @@ const Index = () => {
     description: "Pit stack parking solution for space-constrained areas",
     image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
   }];
-
   const stats = [{
     number: "1000+",
     label: "Parking Spaces Created"
@@ -112,7 +107,6 @@ const Index = () => {
     number: "99%",
     label: "Uptime Reliability"
   }];
-
   const whyChooseUs = [{
     icon: Shield,
     title: "Expert Engineering",
@@ -130,7 +124,6 @@ const Index = () => {
     title: "Cost Effective",
     desc: "Maximize space utilization while minimizing operational costs"
   }];
-
   return <div className="min-h-screen bg-background">
       <Header />
       
@@ -314,10 +307,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </Link>
-            <Button variant="outline" className="bg-white text-primary hover:bg-gray-100 text-xl px-10 py-5 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
-              <span className="relative z-10">Call: 8097465332</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </Button>
+            
           </div>
         </div>
       </section>
@@ -327,5 +317,4 @@ const Index = () => {
       <WhatsAppButton />
     </div>;
 };
-
 export default Index;
