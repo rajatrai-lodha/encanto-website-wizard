@@ -111,8 +111,8 @@ const About = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 section-bg-primary relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <section className="section-bg-primary relative py-[6px]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative py-[10px]">
             <h2 className="section-title-white animate-fade-in-up transform transition-all duration-700 hover:scale-105">
               Why Choose Encanto Industries?
             </h2>
@@ -160,9 +160,7 @@ const About = () => {
             </div>
 
             <div className="mt-12 animate-fade-in-up delay-400">
-              <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
-                Learn More About Us
-              </Button>
+              
             </div>
           </div>
         </section>
