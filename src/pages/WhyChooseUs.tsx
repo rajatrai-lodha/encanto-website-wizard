@@ -186,7 +186,7 @@ const WhyChooseUs = () => {
                   <CardContent className="text-center">
                     <p className="text-slate-600 font-medium group-hover:text-slate-700 transition-colors duration-300">{project.client}</p>
                     <div className="mt-4 px-4 py-2 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors duration-300">
-                      <span className="text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-300">Completed Project</span>
+                      <span className="text-sky-600 text-sm font-medium group-hover:text-sky-700 transition-colors duration-300">Completed Project</span>
                     </div>
                   </CardContent>
                 </InteractiveCard>)}
