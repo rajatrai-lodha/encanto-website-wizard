@@ -124,7 +124,7 @@ const Projects = () => {
 
         {/* Interactive Project Gallery */}
         <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-zinc-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
@@ -141,7 +141,7 @@ const Projects = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-zinc-50">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {stats.map((stat, index) => <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" style={{
@@ -269,7 +269,7 @@ const Projects = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <Users className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <CardTitle className="group-hover:text-primary transition-colors duration-300 bg-zinc-50">Healthcare Facilities</CardTitle>
+                  <CardTitle className="group-hover:text-primary transition-colors duration-300">Healthcare Facilities</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
