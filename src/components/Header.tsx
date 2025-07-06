@@ -31,15 +31,15 @@ const Header = () => {
   }];
   const isActive = (path: string) => location.pathname === path;
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'header-blur' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="flex justify-between items-center py-6 bg-white">
           {/* Enhanced Logo with Better Company Name Visibility */}
           <Link to="/" className="flex items-center space-x-6 group">
-            <div className="bg-white rounded-lg p-2 shadow-sm">
+            <div className="p-2 drop-shadow-sm px-[20px] py-0">
               <img src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" alt="Encanto Industries Logo" className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" />
             </div>
             <div className="">
-              <h1 className="text-3xl font-bold leading-tight drop-shadow-sm text-accent-DEFAULT">
+              <h1 className="text-3xl font-bold text-slate-800 leading-tight drop-shadow-sm">
                 Encanto Industries
               </h1>
               <p className="text-base text-slate-700 font-semibold">
