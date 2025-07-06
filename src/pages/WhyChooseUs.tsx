@@ -175,7 +175,7 @@ const WhyChooseUs = () => {
             }}>
                   <CardHeader>
                     <div className="flex items-center justify-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-600 rounded-xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                         <Star className="w-6 h-6 text-white group-hover:animate-bounce" />
                       </div>
                     </div>
