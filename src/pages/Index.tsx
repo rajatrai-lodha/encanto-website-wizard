@@ -189,7 +189,7 @@ const Index = () => {
       </section>
 
       {/* Enhanced Solutions Showcase with Scroll Animation */}
-      <section id="solutions" data-animate className={`section-padding section-bg-light-blue transition-all duration-1000 ${visibleSections.has('solutions') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
+      <section id="solutions" data-animate className="">
         <div className="max-w-7xl mx-auto bg-zinc-50">
           <div className="text-center mb-16">
             <h2 className="section-title">Our Parking Solutions</h2>

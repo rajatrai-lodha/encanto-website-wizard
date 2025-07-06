@@ -32,7 +32,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'header-blur' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 bg-white lg:px-[3px]">
-        <div className="flex justify-between items-center py-6">
+        <div className="flex justify-between items-center py-6 px-[15px]">
           {/* Enhanced Logo with Better Company Name Visibility */}
           <Link to="/" className="flex items-center space-x-6 group">
             <div className="bg-white rounded-lg p-2 shadow-sm">
