@@ -230,9 +230,7 @@ const Contact = () => {
                 <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
                   Call: 8097465332
                 </Button>
-                <Button size="lg" variant="outline" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
-                  WhatsApp: 8097465332
-                </Button>
+                
               </div>
             </div>
           </div>
