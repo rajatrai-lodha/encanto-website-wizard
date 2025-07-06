@@ -163,7 +163,7 @@ const WhyChooseUs = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
                 Highlighted Projects
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full animate-pulse"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-600 mx-auto rounded-full animate-pulse"></div>
               <p className="text-xl text-slate-600 mt-6 animate-slideInRight delay-200">
                 Showcasing our successful partnerships and innovative solutions
               </p>
