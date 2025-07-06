@@ -6,15 +6,28 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import HeroImageSlider from "@/components/HeroImageSlider";
 import HeroFloatingActions from "@/components/HeroFloatingActions";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    '/lovable-uploads/e00c7cb2-90a7-4240-811a-85243021b9bd.png',
+    '/lovable-uploads/6458eff2-4014-47e2-9cd0-7ca81b6afb38.png',
+    '/lovable-uploads/ad25aa1a-6441-4e51-80a0-02404b5c8d06.png'
+  ];
 
   useEffect(() => {
     setIsLoaded(true);
+
+    // Background image slider
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 1000);
 
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(entries => {
@@ -31,8 +44,12 @@ const Index = () => {
     // Observe all sections
     const sections = document.querySelectorAll('[data-animate]');
     sections.forEach(section => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
+    
+    return () => {
+      clearInterval(interval);
+      observer.disconnect();
+    };
+  }, [heroImages.length]);
 
   const solutions = [{
     title: "G+1 Stack Parking",
@@ -124,16 +141,23 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Enhanced Hero Section with New Image */}
+      {/* Enhanced Hero Section with Background Image Slider */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="/lovable-uploads/bd1b98e7-8298-4016-90c2-100bcf98c413.png"
-            alt="Automated Parking System"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {/* Background Images with Slider */}
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Parking solution ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
         
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
@@ -318,6 +342,7 @@ const Index = () => {
 
       <Footer />
       <FloatingActions />
+      <WhatsAppButton />
     </div>
   );
 };

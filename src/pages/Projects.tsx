@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -8,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Building, Users } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -137,6 +139,9 @@ const Projects = () => {
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <CardHeader className="text-center py-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-110">
+                      <Building className="h-8 w-8 text-primary group-hover:scale-110 group-hover:animate-pulse transition-all duration-300" />
+                    </div>
                     <CardTitle className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-500 text-slate-800">
                       {project.name}
                     </CardTitle>
@@ -230,10 +235,11 @@ const Projects = () => {
                 Contact us today to discuss your parking solution requirements
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
-                <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
-                  Get Quote
-                </Button>
-                
+                <Link to="/contact">
+                  <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                    Get Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
