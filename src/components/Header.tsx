@@ -39,10 +39,10 @@ const Header = () => {
               <img src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" alt="Encanto Industries Logo" className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" />
             </div>
             <div className="">
-              <h1 className="text-3xl font-bold leading-tight drop-shadow-sm text-sky-500">
+              <h1 className="text-3xl font-bold leading-tight drop-shadow-sm text-brand-light">
                 Encanto Industries
               </h1>
-              <p className="text-base font-semibold text-sky-500">
+              <p className="text-base font-semibold text-brand-light">
                 Smart Parking Solutions
               </p>
             </div>
@@ -51,7 +51,7 @@ const Header = () => {
           {/* Desktop Navigation with Smooth Animations */}
           <nav className="hidden lg:flex items-center space-x-2">
             {navigation.map(item => <Link key={item.name} to={item.href} className={`relative px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-500 ease-out overflow-hidden group ${isActive(item.href) ? 'bg-white text-primary shadow-md font-bold border-2 border-primary/20 transform scale-105' : 'text-foreground hover:text-primary hover:bg-white/20 hover:shadow-lg hover:scale-102'}`}>
-                <span className="relative z-10 transition-all duration-300 text-sky-500">
+                <span className="relative z-10 transition-all duration-300 text-brand-light">
                   {item.name}
                 </span>
                 {/* Animated underline effect */}
