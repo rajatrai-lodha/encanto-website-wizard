@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-6 bg-white">
           {/* Enhanced Logo with Better Company Name Visibility */}
           <Link to="/" className="flex items-center space-x-6 group">
-            <div className="p-2 drop-shadow-sm ">
+            <div className="p-2 drop-shadow-sm px-[20px] py-0">
               <img src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" alt="Encanto Industries Logo" className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" />
             </div>
             <div className="">
