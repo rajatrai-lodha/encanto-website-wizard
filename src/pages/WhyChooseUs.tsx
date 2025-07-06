@@ -6,14 +6,11 @@ import InteractiveCard from "@/components/InteractiveCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Clock, Shield, Wrench, Leaf, Phone, Building, Eye, Star } from "lucide-react";
 import { useEffect, useState } from "react";
-
 const WhyChooseUs = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
   const advantages = [{
     title: "Stress-Free Maintenance",
     description: "Our systems are designed for minimal maintenance with robust components and proactive support services.",
@@ -45,7 +42,6 @@ const WhyChooseUs = () => {
     icon: Phone,
     features: ["IoT-enabled monitoring", "Mobile app integration", "Predictive maintenance alerts", "Remote troubleshooting", "Data analytics and reporting"]
   }];
-  
   const testimonials = [{
     client: "Nirmitee Developers",
     project: "Suman Apartments",
@@ -57,17 +53,23 @@ const WhyChooseUs = () => {
     quote: "The tower parking system has significantly improved our patient experience by providing quick and convenient parking. The support team is always responsive.",
     rating: 5
   }];
-
-  const highlightedProjects = [
-    { name: "Suman Apartments", client: "Nirmitee Developers" },
-    { name: "Kamal Nivas", client: "Eskay Elevators Ltd" },
-    { name: "Hawa Mahal", client: "H. Rishabraj" },
-    { name: "Sagar Darshan", client: "Anmol Nirmitee Developers" },
-    { name: "21st Century Hospital, Vapi", client: "Nadkarni Foundation" }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+  const highlightedProjects = [{
+    name: "Suman Apartments",
+    client: "Nirmitee Developers"
+  }, {
+    name: "Kamal Nivas",
+    client: "Eskay Elevators Ltd"
+  }, {
+    name: "Hawa Mahal",
+    client: "H. Rishabraj"
+  }, {
+    name: "Sagar Darshan",
+    client: "Anmol Nirmitee Developers"
+  }, {
+    name: "21st Century Hospital, Vapi",
+    client: "Nadkarni Foundation"
+  }];
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -92,7 +94,9 @@ const WhyChooseUs = () => {
         </section>
 
         {/* About Us Section - Updated background color */}
-        <section className="py-16" style={{ backgroundColor: '#F0F8FF' }}>
+        <section style={{
+        backgroundColor: '#F0F8FF'
+      }} className="py-16 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
@@ -122,7 +126,9 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Our Vision Section - Updated background color */}
-        <section className="py-16" style={{ backgroundColor: '#F5FBFF' }}>
+        <section style={{
+        backgroundColor: '#F5FBFF'
+      }} className="py-16 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
@@ -149,7 +155,9 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Highlighted Projects Section - Updated background color */}
-        <section className="py-16" style={{ backgroundColor: '#F3F7FA' }}>
+        <section style={{
+        backgroundColor: '#F3F7FA'
+      }} className="py-16 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
@@ -162,13 +170,9 @@ const WhyChooseUs = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {highlightedProjects.map((project, index) => (
-                <InteractiveCard 
-                  key={index} 
-                  hoverEffect="lift" 
-                  className="bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {highlightedProjects.map((project, index) => <InteractiveCard key={index} hoverEffect="lift" className="bg-white/80 backdrop-blur-sm border border-blue-100 transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <CardHeader>
                     <div className="flex items-center justify-center mb-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
@@ -185,14 +189,13 @@ const WhyChooseUs = () => {
                       <span className="text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-300">Completed Project</span>
                     </div>
                   </CardContent>
-                </InteractiveCard>
-              ))}
+                </InteractiveCard>)}
             </div>
           </div>
         </section>
 
         {/* Key Advantages */}
-        <section className="py-16">
+        <section className="py-16 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
@@ -204,13 +207,9 @@ const WhyChooseUs = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {advantages.map((advantage, index) => 
-                <InteractiveCard 
-                  key={index} 
-                  hoverEffect="tilt" 
-                  className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {advantages.map((advantage, index) => <InteractiveCard key={index} hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up group" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <CardHeader>
                     <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                       <advantage.icon className="h-6 w-6 text-primary group-hover:animate-bounce" />
@@ -220,23 +219,22 @@ const WhyChooseUs = () => {
                   <CardContent>
                     <p className="text-muted-foreground mb-4 group-hover:text-slate-700 transition-colors duration-300">{advantage.description}</p>
                     <ul className="space-y-2">
-                      {advantage.features.map((feature, idx) => 
-                        <li key={idx} className="flex items-start text-sm text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                      {advantage.features.map((feature, idx) => <li key={idx} className="flex items-start text-sm text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
                           <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0 group-hover:animate-pulse" />
                           {feature}
-                        </li>
-                      )}
+                        </li>)}
                     </ul>
                   </CardContent>
-                </InteractiveCard>
-              )}
+                </InteractiveCard>)}
             </div>
           </div>
         </section>
 
         {/* Value Propositions */}
-        <section className="py-16 relative" style={{ backgroundColor: '#F5FBFF' }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+        <section className="py-16 relative" style={{
+        backgroundColor: '#F5FBFF'
+      }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-zinc-50"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in-up">
@@ -305,15 +303,11 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Client Testimonials */}
-        <section className="py-16">
-          
-        </section>
+        
 
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default WhyChooseUs;
