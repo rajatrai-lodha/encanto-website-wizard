@@ -269,7 +269,7 @@ const Projects = () => {
 
         {/* CTA Section */}
         <section className="py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 bg-white"></div>
+          
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <div className="animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-700 hover:scale-105 text-slate-900">
