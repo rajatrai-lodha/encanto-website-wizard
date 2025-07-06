@@ -143,7 +143,7 @@ const Index = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl px-[200px]">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl px-[40px]">
               Revolutionizing Urban Parking
             </h1>
             <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
