@@ -42,7 +42,7 @@ const Header = () => {
               <h1 className="text-3xl font-bold leading-tight drop-shadow-sm text-sky-500">
                 Encanto Industries
               </h1>
-              <p className="text-base font-semibold text-sky-500">
+              <p className="text-sky-400 text-base font-medium">
                 Smart Parking Solutions
               </p>
             </div>
