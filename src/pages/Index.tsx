@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -96,7 +97,7 @@ const Index = () => {
   }, {
     name: "Puzzle System Setup",
     client: "Residential Building",
-    description: "Horizontal sliding puzzle parking system implementation",
+    description: "Horizontal sliding puzzle system implementation",
     image: "/lovable-uploads/e42c0120-3dbf-43b8-b97a-ab71474d4cc7.png"
   }, {
     name: "Underground Platform",
@@ -169,12 +170,6 @@ const Index = () => {
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl whitespace-nowrap bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent animate-[shimmer_3s_ease-in-out_infinite] bg-[length:200%_100%]">
-              <style jsx>{`
-                @keyframes shimmer {
-                  0% { background-position: -200% 0; }
-                  100% { background-position: 200% 0; }
-                }
-              `}</style>
               Revolutionizing Urban Parking
             </h1>
             <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -338,7 +333,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Button>
             </Link>
-            <Button variant="outline" className="bg-white text-primary hover:bg-primary hover:text-white border-2 border-primary text-xl px-10 py-5 rounded-xl font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
+            <Button className="bg-white text-primary hover:bg-primary hover:text-white border-2 border-primary text-xl px-10 py-5 rounded-xl font-bold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
               <span className="relative z-10">Call: 8097465332</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
