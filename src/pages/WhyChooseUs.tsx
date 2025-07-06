@@ -96,7 +96,7 @@ const WhyChooseUs = () => {
         {/* About Us Section - Updated background color */}
         <section style={{
         backgroundColor: '#F0F8FF'
-      }} className="py-16 bg-zinc-50">
+      }} className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
@@ -128,7 +128,7 @@ const WhyChooseUs = () => {
         {/* Our Vision Section - Updated background color */}
         <section style={{
         backgroundColor: '#F5FBFF'
-      }} className="py-16 bg-zinc-50">
+      }} className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
@@ -157,7 +157,7 @@ const WhyChooseUs = () => {
         {/* Highlighted Projects Section - Updated background color */}
         <section style={{
         backgroundColor: '#F3F7FA'
-      }} className="py-16 bg-zinc-50">
+      }} className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 transform transition-all duration-700 hover:scale-105">
@@ -195,7 +195,7 @@ const WhyChooseUs = () => {
         </section>
 
         {/* Key Advantages */}
-        <section className="py-16 bg-zinc-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
@@ -234,7 +234,7 @@ const WhyChooseUs = () => {
         <section className="py-16 relative" style={{
         backgroundColor: '#F5FBFF'
       }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-zinc-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-white"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in-up">
