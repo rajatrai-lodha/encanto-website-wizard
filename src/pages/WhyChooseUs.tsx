@@ -115,7 +115,7 @@ const WhyChooseUs = () => {
               </CardHeader>
               <CardContent className="text-center space-y-6">
                 <p className="text-lg text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
-                  Welcome to <span className="font-semibold text-blue-600 group-hover:text-blue-700 transition-colors duration-300">Encanto Industries</span>, your premier destination for innovative parking solutions tailored to the demands of modern urban living.
+                  Welcome to <span className="font-semibold transition-colors duration-300 text-sky-400">Encanto Industries</span>, your premier destination for innovative parking solutions tailored to the demands of modern urban living.
                 </p>
                 <p className="text-lg text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
                   At Encanto, we are committed to revolutionizing the way cities approach parking. Our space-efficient systems are designed to optimize convenience, efficiency, and sustainability. Discover a new era in parking with our cutting-edge technology and unwavering commitment to excellence. Say goodbye to parking woes and hello to a seamless parking experience with Stack Parking.
