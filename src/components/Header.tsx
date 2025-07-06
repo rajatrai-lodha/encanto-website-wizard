@@ -39,10 +39,10 @@ const Header = () => {
               <img src="/lovable-uploads/74d07b43-ca4f-4186-979f-77ff43b96e58.png" alt="Encanto Industries Logo" className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" />
             </div>
             <div className="">
-              <h1 className="text-3xl font-bold leading-tight drop-shadow-sm text-primary-DEFAULT">
+              <h1 className="text-3xl font-bold leading-tight drop-shadow-sm text-brand-light">
                 Encanto Industries
               </h1>
-              <p className="text-base font-semibold text-primary-DEFAULT">
+              <p className="text-base font-semibold text-brand-light">
                 Smart Parking Solutions
               </p>
             </div>
