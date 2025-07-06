@@ -112,7 +112,7 @@ const Projects = () => {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow">
+              <h1 className="text-6xl mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow font-bold md:text-6xl">
                 Our Projects
               </h1>
               <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
@@ -125,7 +125,7 @@ const Projects = () => {
         {/* Interactive Project Gallery */}
         <section className="py-16 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-white"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 Project Gallery
@@ -218,7 +218,7 @@ const Projects = () => {
         <section className="py-16 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 bg-white"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative bg-white">
-            <div className="text-center mb-12 animate-fade-in-up bg-inherit">
+            <div className="text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 Industries We Serve
               </h2>
