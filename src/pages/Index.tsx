@@ -228,7 +228,7 @@ const Index = () => {
       </section>
 
       {/* Enhanced Projects Section with Scroll Animation */}
-      <section id="projects" data-animate className={`section-padding section-bg-light-blue transition-all duration-1000 ${visibleSections.has('projects') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
+      <section id="projects" data-animate className="">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">Our Recent Projects</h2>
