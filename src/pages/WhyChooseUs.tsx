@@ -179,7 +179,7 @@ const WhyChooseUs = () => {
                         <Star className="w-6 h-6 text-white group-hover:animate-bounce" />
                       </div>
                     </div>
-                    <CardTitle className="text-lg text-center text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
+                    <CardTitle className="text-lg text-center text-slate-800 group-hover:text-sky-500 transition-colors duration-300">
                       {project.name}
                     </CardTitle>
                   </CardHeader>
