@@ -53,10 +53,10 @@ const Contact = () => {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-zinc-800">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-4xl md:text-6xl mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text animate-pulse-slow text-white font-bold">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text animate-pulse-slow text-white">
                 Contact Us
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto animate-slideInRight delay-300 text-neutral-800">
+              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
                 Get in touch for a free consultation and customized parking solution
               </p>
             </div>
