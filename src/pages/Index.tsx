@@ -9,24 +9,17 @@ import HeroFloatingActions from "@/components/HeroFloatingActions";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
-
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const heroImages = [
-    '/lovable-uploads/e00c7cb2-90a7-4240-811a-85243021b9bd.png',
-    '/lovable-uploads/6458eff2-4014-47e2-9cd0-7ca81b6afb38.png',
-    '/lovable-uploads/ad25aa1a-6441-4e51-80a0-02404b5c8d06.png'
-  ];
-
+  const heroImages = ['/lovable-uploads/e00c7cb2-90a7-4240-811a-85243021b9bd.png', '/lovable-uploads/6458eff2-4014-47e2-9cd0-7ca81b6afb38.png', '/lovable-uploads/ad25aa1a-6441-4e51-80a0-02404b5c8d06.png'];
   useEffect(() => {
     setIsLoaded(true);
 
     // Background image slider
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+      setCurrentSlide(prev => (prev + 1) % heroImages.length);
     }, 1000);
 
     // Intersection Observer for scroll animations
@@ -44,13 +37,11 @@ const Index = () => {
     // Observe all sections
     const sections = document.querySelectorAll('[data-animate]');
     sections.forEach(section => observer.observe(section));
-    
     return () => {
       clearInterval(interval);
       observer.disconnect();
     };
   }, [heroImages.length]);
-
   const solutions = [{
     title: "G+1 Stack Parking",
     description: "Double your parking capacity with our efficient two-level stacking system.",
@@ -82,7 +73,6 @@ const Index = () => {
     features: ["Vertical storage", "Automated system", "High capacity"],
     image: "/lovable-uploads/3fb4ab07-360c-4b78-9243-524b8cd231a4.png"
   }];
-
   const projects = [{
     name: "Suman Apartments",
     client: "Nirmitee Developers",
@@ -104,7 +94,6 @@ const Index = () => {
     description: "Pit stack parking solution for space-constrained areas",
     image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
   }];
-
   const stats = [{
     number: "1000+",
     label: "Parking Spaces Created"
@@ -118,7 +107,6 @@ const Index = () => {
     number: "99%",
     label: "Uptime Reliability"
   }];
-
   const whyChooseUs = [{
     icon: Shield,
     title: "Expert Engineering",
@@ -136,28 +124,15 @@ const Index = () => {
     title: "Cost Effective",
     desc: "Maximize space utilization while minimizing operational costs"
   }];
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       {/* Enhanced Hero Section with Background Image Slider */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Images with Slider */}
-        {heroImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <img
-              src={image}
-              alt={`Parking solution ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+        {heroImages.map((image, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
+            <img src={image} alt={`Parking solution ${index + 1}`} className="w-full h-full object-cover" />
+          </div>)}
         
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
@@ -168,7 +143,7 @@ const Index = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl px-[40px]">
               Revolutionizing Urban Parking
             </h1>
             <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -343,8 +318,6 @@ const Index = () => {
       <Footer />
       <FloatingActions />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
