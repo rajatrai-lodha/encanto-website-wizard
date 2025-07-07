@@ -48,7 +48,7 @@ const Contact = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative min-h-[30vh] sm:mobile-section-center flex items-center justify-center overflow-hidden text-base">
+        <section className="relative min-h-[60vh] sm:mobile-section-center flex items-center justify-center overflow-hidden text-base">
           <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-zinc-800 mobile-safe-padding">
