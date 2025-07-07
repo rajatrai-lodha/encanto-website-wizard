@@ -61,9 +61,7 @@ const About = () => {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-pulse-slow">
-                About Encanto Industries
-              </h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-pulse-slow">About Us</h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto animate-slideInRight delay-300">
                 Leading the revolution in smart parking solutions across India
               </p>
