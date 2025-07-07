@@ -207,8 +207,8 @@ const Contact = () => {
                 Call us now for immediate assistance or to schedule a site visit
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
-                <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
-                  Call: 8097465332
+                <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl" asChild>
+                  <a href="tel:8097465332">Call: 8097465332</a>
                 </Button>
                 
               </div>

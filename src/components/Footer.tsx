@@ -24,8 +24,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors text-sm">Home</Link></li>
               <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">About Us</Link></li>
-              <li><Link to="/solutions" className="text-muted-foreground hover:text-primary transition-colors text-sm">Solutions</Link></li>
               <li><Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors text-sm">Projects</Link></li>
+              <li><Link to="/why-choose-us" className="text-muted-foreground hover:text-primary transition-colors text-sm">Why Choose Us</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
@@ -37,14 +37,14 @@ const Footer = () => {
               <div className="flex items-start">
                 <Phone className="h-4 w-4 mr-2 mt-0.5 text-primary" />
                 <div className="text-sm">
-                  <p className="text-muted-foreground">8097465332</p>
-                  <p className="text-muted-foreground">7990047746</p>
-                  <p className="text-muted-foreground">022 3561 1681</p>
+                  <p><a href="tel:8097465332" className="text-muted-foreground hover:text-primary transition-colors">8097465332</a></p>
+                  <p><a href="tel:7990047746" className="text-muted-foreground hover:text-primary transition-colors">7990047746</a></p>
+                  <p><a href="tel:02235611681" className="text-muted-foreground hover:text-primary transition-colors">022 3561 1681</a></p>
                 </div>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-primary" />
-                <p className="text-muted-foreground text-sm">info@encanto.co.in</p>
+                <p className="text-sm"><a href="mailto:info@encanto.co.in" className="text-muted-foreground hover:text-primary transition-colors">info@encanto.co.in</a></p>
               </div>
             </div>
           </div>
