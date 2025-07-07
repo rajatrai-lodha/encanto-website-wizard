@@ -113,9 +113,7 @@ const About = () => {
         {/* Why Choose Us */}
         <section className="section-bg-primary relative py-[6px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative py-[10px]">
-            <h2 className="section-title-white animate-fade-in-up transform transition-all duration-700 hover:scale-105">
-              Why Choose Encanto Industries?
-            </h2>
+            <h2 className="section-title-white animate-fade-in-up transform transition-all duration-700 hover:scale-105">Why Encanto Industries?</h2>
             <p className="section-subtitle-white mb-8 animate-slideInRight delay-200">
               Experience the difference with our comprehensive approach to parking solutions
             </p>
