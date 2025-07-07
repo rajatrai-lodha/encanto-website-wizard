@@ -56,7 +56,7 @@ const About = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] sm:mobile-section-center flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[30vh] sm:mobile-section-center flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient opacity-90 py-0"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mobile-safe-padding">
