@@ -76,15 +76,15 @@ const Projects = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] sm:mobile-section-center flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mobile-safe-padding">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-6xl mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow font-bold md:text-6xl">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow font-bold">
                 Our Projects
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
+              <p className="text-lg sm:text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
                 Trusted by leading developers and institutions across India
               </p>
             </div>

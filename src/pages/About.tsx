@@ -56,13 +56,13 @@ const About = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] sm:mobile-section-center flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient opacity-90 py-0"></div>
           
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mobile-safe-padding">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-pulse-slow">About Us</h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto animate-slideInRight delay-300">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white animate-pulse-slow">About Us</h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto animate-slideInRight delay-300">
                 Leading the revolution in smart parking solutions across India
               </p>
             </div>

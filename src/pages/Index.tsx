@@ -128,7 +128,7 @@ const Index = () => {
       <Header />
       
       {/* Enhanced Hero Section with Background Image Slider */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden sm:mobile-hero-center">
         {/* Background Images with Slider */}
         {heroImages.map((image, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
             <img src={image} alt={`Parking solution ${index + 1}`} className="w-full h-full object-cover" />
@@ -141,18 +141,18 @@ const Index = () => {
         <HeroFloatingActions />
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mobile-safe-padding">
           <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl whitespace-nowrap animate-pulse-heartbeat">
+            <h1 className="mobile-headline-responsive md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white mb-8 drop-shadow-2xl animate-pulse-heartbeat">
               Revolutionizing Urban Parking
             </h1>
-            <h2 className={`text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className={`text-lg sm:text-xl md:text-2xl font-medium text-center text-slate-200 mb-12 drop-shadow-xl transition-all duration-1000 delay-300 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               PARKING EXCELLENCE THROUGH SMART TECHNOLOGY
             </h2>
             
             <div className={`flex justify-center transition-all duration-1000 delay-700 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Link to="/projects">
-                <Button className="interactive-button text-white px-10 py-5 text-xl font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group bg-sky-700 hover:bg-sky-600">
+                <Button className="interactive-button text-white px-6 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group bg-sky-700 hover:bg-sky-600">
                   <span className="relative z-10">Explore Solutions</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
