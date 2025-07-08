@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -10,64 +9,47 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Building, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 const Projects = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
-  const projects = [
-    {
-      name: "Suman Apartments",
-      client: "Nirmitee Developers"
-    },
-    {
-      name: "Kamal Nivas", 
-      client: "ESKAY ELEVATORS LTD"
-    },
-    {
-      name: "Hawa Mahal",
-      client: "H. RISHABRAJ"
-    },
-    {
-      name: "Sagar Darshan",
-      client: "Anmol Nirmitee Developers"
-    },
-    {
-      name: "21st Century Hospital",
-      client: "Nadkarni Foundation"
-    },
-    {
-      name: "Hemgiri Apartments",
-      client: "Pyramid Developers"
-    }
-  ];
-
-  const stats = [
-    {
-      number: 50,
-      suffix: "+",
-      label: "Projects Completed", 
-      icon: Building
-    },
-    {
-      number: 1000,
-      suffix: "+", 
-      label: "Parking Spaces Created",
-      icon: MapPin
-    },
-    {
-      number: 45,
-      suffix: "+",
-      label: "Satisfied Clients",
-      icon: Users
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+  const projects = [{
+    name: "Suman Apartments",
+    client: "Nirmitee Developers"
+  }, {
+    name: "Kamal Nivas",
+    client: "ESKAY ELEVATORS LTD"
+  }, {
+    name: "Hawa Mahal",
+    client: "H. RISHABRAJ"
+  }, {
+    name: "Sagar Darshan",
+    client: "Anmol Nirmitee Developers"
+  }, {
+    name: "21st Century Hospital",
+    client: "Nadkarni Foundation"
+  }, {
+    name: "Hemgiri Apartments",
+    client: "Pyramid Developers"
+  }];
+  const stats = [{
+    number: 50,
+    suffix: "+",
+    label: "Projects Completed",
+    icon: Building
+  }, {
+    number: 1000,
+    suffix: "+",
+    label: "Parking Spaces Created",
+    icon: MapPin
+  }, {
+    number: 45,
+    suffix: "+",
+    label: "Satisfied Clients",
+    icon: Users
+  }];
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
       <AnimatedBackground />
@@ -76,15 +58,15 @@ const Projects = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] sm:mobile-section-center flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
           
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mobile-safe-padding">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 transform ${isLoaded ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-slow font-bold">
+              <h1 className="text-6xl mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text animate-pulse-slow font-bold md:text-6xl text-white">
                 Our Projects
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
+              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 animate-slideInRight delay-300">
                 Trusted by leading developers and institutions across India
               </p>
             </div>
@@ -95,25 +77,17 @@ const Projects = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index} 
-                  className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" 
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
+              {stats.map((stat, index) => <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-fade-in-up group" style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
                     <stat.icon className="h-8 w-8 text-primary group-hover:animate-bounce" />
                   </div>
-                  <AnimatedCounter 
-                    end={stat.number} 
-                    suffix={stat.suffix} 
-                    className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300" 
-                  />
+                  <AnimatedCounter end={stat.number} suffix={stat.suffix} className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors duration-300" />
                   <div className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
                     {stat.label}
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -131,13 +105,9 @@ const Projects = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <InteractiveCard 
-                  key={index}
-                  hoverEffect="lift" 
-                  className="transform transition-all duration-700 hover:scale-105 hover:shadow-2xl animate-fade-in-up group bg-gradient-to-br from-white to-blue-50/30 border border-blue-100" 
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
+              {projects.map((project, index) => <InteractiveCard key={index} hoverEffect="lift" className="transform transition-all duration-700 hover:scale-105 hover:shadow-2xl animate-fade-in-up group bg-gradient-to-br from-white to-blue-50/30 border border-blue-100" style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                   <CardHeader className="text-center py-8">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-110">
                       <Building className="h-8 w-8 text-primary group-hover:scale-110 group-hover:animate-pulse transition-all duration-300" />
@@ -149,8 +119,7 @@ const Projects = () => {
                       {project.client}
                     </p>
                   </CardHeader>
-                </InteractiveCard>
-              ))}
+                </InteractiveCard>)}
             </div>
           </div>
         </section>
@@ -248,8 +217,6 @@ const Projects = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Projects;
