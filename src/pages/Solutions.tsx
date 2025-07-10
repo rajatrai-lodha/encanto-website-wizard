@@ -194,27 +194,93 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                                 if (paragraph.startsWith('- **')) {
                                   // Special handling for Tower Parking capacity table
                                   if (solution.title === "Tower Parking" && paragraph.includes('18 Cars:')) {
-                                    const capacityData = [
-                                      { cars: 18, sedan: 14, suv: 4, height: 22100 },
-                                      { cars: 20, sedan: 16, suv: 4, height: 23750 },
-                                      { cars: 22, sedan: 18, suv: 4, height: 25400 },
-                                      { cars: 24, sedan: 18, suv: 6, height: 27600 },
-                                      { cars: 25, sedan: 20, suv: 6, height: 29250 },
-                                      { cars: 28, sedan: 22, suv: 6, height: 30900 },
-                                      { cars: 30, sedan: 24, suv: 6, height: 32550 },
-                                      { cars: 32, sedan: 24, suv: 8, height: 24750 },
-                                      { cars: 34, sedan: 26, suv: 8, height: 36400 },
-                                      { cars: 36, sedan: 28, suv: 8, height: 38050 },
-                                      { cars: 38, sedan: 30, suv: 8, height: 39700 },
-                                      { cars: 40, sedan: 30, suv: 10, height: 41900 },
-                                      { cars: 42, sedan: 32, suv: 10, height: 43550 },
-                                      { cars: 44, sedan: 34, suv: 10, height: 45220 },
-                                      { cars: 46, sedan: 36, suv: 10, height: 46850 },
-                                      { cars: 48, sedan: 36, suv: 12, height: 49050 },
-                                      { cars: 50, sedan: 38, suv: 12, height: 50700 }
-                                    ];
-                                    return (
-                                      <div key={pIdx} className="mt-4 overflow-x-auto">
+                                    const capacityData = [{
+                                      cars: 18,
+                                      sedan: 14,
+                                      suv: 4,
+                                      height: 22100
+                                    }, {
+                                      cars: 20,
+                                      sedan: 16,
+                                      suv: 4,
+                                      height: 23750
+                                    }, {
+                                      cars: 22,
+                                      sedan: 18,
+                                      suv: 4,
+                                      height: 25400
+                                    }, {
+                                      cars: 24,
+                                      sedan: 18,
+                                      suv: 6,
+                                      height: 27600
+                                    }, {
+                                      cars: 25,
+                                      sedan: 20,
+                                      suv: 6,
+                                      height: 29250
+                                    }, {
+                                      cars: 28,
+                                      sedan: 22,
+                                      suv: 6,
+                                      height: 30900
+                                    }, {
+                                      cars: 30,
+                                      sedan: 24,
+                                      suv: 6,
+                                      height: 32550
+                                    }, {
+                                      cars: 32,
+                                      sedan: 24,
+                                      suv: 8,
+                                      height: 24750
+                                    }, {
+                                      cars: 34,
+                                      sedan: 26,
+                                      suv: 8,
+                                      height: 36400
+                                    }, {
+                                      cars: 36,
+                                      sedan: 28,
+                                      suv: 8,
+                                      height: 38050
+                                    }, {
+                                      cars: 38,
+                                      sedan: 30,
+                                      suv: 8,
+                                      height: 39700
+                                    }, {
+                                      cars: 40,
+                                      sedan: 30,
+                                      suv: 10,
+                                      height: 41900
+                                    }, {
+                                      cars: 42,
+                                      sedan: 32,
+                                      suv: 10,
+                                      height: 43550
+                                    }, {
+                                      cars: 44,
+                                      sedan: 34,
+                                      suv: 10,
+                                      height: 45220
+                                    }, {
+                                      cars: 46,
+                                      sedan: 36,
+                                      suv: 10,
+                                      height: 46850
+                                    }, {
+                                      cars: 48,
+                                      sedan: 36,
+                                      suv: 12,
+                                      height: 49050
+                                    }, {
+                                      cars: 50,
+                                      sedan: 38,
+                                      suv: 12,
+                                      height: 50700
+                                    }];
+                                    return <div key={pIdx} className="mt-4 overflow-x-auto">
                                         <Table className="w-full">
                                           <TableHeader>
                                             <TableRow className="bg-primary/5">
@@ -225,18 +291,15 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                                             </TableRow>
                                           </TableHeader>
                                           <TableBody>
-                                            {capacityData.map((row, idx) => (
-                                              <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                                            {capacityData.map((row, idx) => <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
                                                 <TableCell className="font-medium">{row.cars}</TableCell>
                                                 <TableCell>{row.sedan}</TableCell>
                                                 <TableCell>{row.suv}</TableCell>
                                                 <TableCell>{row.height}</TableCell>
-                                              </TableRow>
-                                            ))}
+                                              </TableRow>)}
                                           </TableBody>
                                         </Table>
-                                      </div>
-                                    );
+                                      </div>;
                                   }
                                   return <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
                                           {paragraph.split('\n').map((line, lIdx) => <div key={lIdx} className="text-sm bg-white p-3 rounded border border-slate-200">
@@ -264,12 +327,7 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
         {/* CTA Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent"></div>
-          <div className="absolute inset-0">
-            <div className="absolute top-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" style={{
-            animationDelay: '1s'
-          }}></div>
-          </div>
+          
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
