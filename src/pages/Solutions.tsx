@@ -10,97 +10,64 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Settings, Zap, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 const Solutions = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
-  const parkingSolutions = [
-    {
-      title: "G+1 Stack Parking",
-      summary: "Double your parking capacity with our efficient two-level stacking system.",
-      icon: ArrowUp,
-      color: "from-blue-500 to-blue-700",
-      features: [
-        "Space efficient",
-        "Cost effective", 
-        "Easy operation",
-        "Customizable for site requirements"
-      ],
-      moreDetails: `Can be designed to fit specific site requirements and constraints, allowing for customization based on available space and architectural considerations.
+  const parkingSolutions = [{
+    title: "G+1 Stack Parking",
+    summary: "Double your parking capacity with our efficient two-level stacking system.",
+    icon: ArrowUp,
+    color: "from-blue-500 to-blue-700",
+    features: ["Space efficient", "Cost effective", "Easy operation", "Customizable for site requirements"],
+    moreDetails: `Can be designed to fit specific site requirements and constraints, allowing for customization based on available space and architectural considerations.
 
 Offers quick and convenient access to vehicles, minimizing the time required for retrieval.
 
 This system is also available in 4 pole model.`,
-      image: "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png"
-    },
-    {
-      title: "G+2 Stack Parking", 
-      summary: "Triple your parking space with our advanced three-level stacking solution.",
-      icon: Layers3,
-      color: "from-indigo-500 to-indigo-700",
-      features: [
-        "Maximum space utilization",
-        "Advanced safety",
-        "Quick retrieval", 
-        "Customizable design"
-      ],
-      moreDetails: `Can be designed to fit specific site requirements and constraints, allowing for customization based on available space and architectural considerations.
+    image: "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png"
+  }, {
+    title: "G+2 Stack Parking",
+    summary: "Triple your parking space with our advanced three-level stacking solution.",
+    icon: Layers3,
+    color: "from-indigo-500 to-indigo-700",
+    features: ["Maximum space utilization", "Advanced safety", "Quick retrieval", "Customizable design"],
+    moreDetails: `Can be designed to fit specific site requirements and constraints, allowing for customization based on available space and architectural considerations.
 
 Offers quick and convenient access to vehicles, minimizing the time required for retrieval.
 
 This system is also available in 4 pole model.`,
-      image: "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png"
-    },
-    {
-      title: "Pit Stack Parking",
-      summary: "Underground parking solution for areas with limited overhead space.",
-      icon: ArrowDown,
-      color: "from-purple-500 to-purple-700", 
-      features: [
-        "Uses hydraulic lifts/platforms",
-        "Maximizes space by storing vehicles below ground level",
-        "Improved traffic flow in urban areas",
-        "Suitable for densely populated locations"
-      ],
-      moreDetails: `By utilizing both above-ground and below-ground levels for parking, pit stack systems can accommodate more vehicles compared to traditional methods.
+    image: "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png"
+  }, {
+    title: "Pit Stack Parking",
+    summary: "Underground parking solution for areas with limited overhead space.",
+    icon: ArrowDown,
+    color: "from-purple-500 to-purple-700",
+    features: ["Uses hydraulic lifts/platforms", "Maximizes space by storing vehicles below ground level", "Improved traffic flow in urban areas", "Suitable for densely populated locations"],
+    moreDetails: `By utilizing both above-ground and below-ground levels for parking, pit stack systems can accommodate more vehicles compared to traditional methods.
 
 Efficient storage and retrieval processes help minimize congestion and parking-related traffic.
 
 This system is also available in 4 pole model.`,
-      image: "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png"
-    },
-    {
-      title: "Puzzle Parking",
-      summary: "Horizontal sliding puzzle system for maximum space efficiency.",
-      icon: Puzzle,
-      color: "from-cyan-500 to-cyan-700",
-      features: [
-        "Efficient use of vertical space",
-        "User-friendly and automated", 
-        "Fast car retrieval",
-        "Modular and flexible configuration"
-      ],
-      moreDetails: `Users typically drop off their cars at a designated area, and the automated system takes care of parking and retrieval.
+    image: "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png"
+  }, {
+    title: "Puzzle Parking",
+    summary: "Horizontal sliding puzzle system for maximum space efficiency.",
+    icon: Puzzle,
+    color: "from-cyan-500 to-cyan-700",
+    features: ["Efficient use of vertical space", "User-friendly and automated", "Fast car retrieval", "Modular and flexible configuration"],
+    moreDetails: `Users typically drop off their cars at a designated area, and the automated system takes care of parking and retrieval.
 
 Simple upkeep and dependable functionality for hassle-free maintenance.`,
-      image: "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
-    },
-    {
-      title: "Tower Parking",
-      summary: "Vertical automated parking towers for high-density needs.",
-      icon: Building2,
-      color: "from-teal-500 to-teal-700",
-      features: [
-        "Vertical storage",
-        "Automated system",
-        "High capacity", 
-        "Computer-controlled efficiency"
-      ],
-      moreDetails: `Accommodates parking for up to four cars within the space typically needed for three.
+    image: "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
+  }, {
+    title: "Tower Parking",
+    summary: "Vertical automated parking towers for high-density needs.",
+    icon: Building2,
+    color: "from-teal-500 to-teal-700",
+    features: ["Vertical storage", "Automated system", "High capacity", "Computer-controlled efficiency"],
+    moreDetails: `Accommodates parking for up to four cars within the space typically needed for three.
 
 Simple upkeep and dependable functionality for hassle-free maintenance.
 
@@ -128,12 +95,9 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
 - **46 Cars:** 36 Sedan, 10 SUV, Total Height: 46850mm
 - **48 Cars:** 36 Sedan, 12 SUV, Total Height: 49050mm
 - **50 Cars:** 38 Sedan, 12 SUV, Total Height: 50700mm`,
-      image: "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    image: "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+  }];
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient opacity-30"></div>
       <div className="fixed inset-0 grid-bg opacity-10"></div>
       <AnimatedBackground />
@@ -147,7 +111,7 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-pulse-heartbeat">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text animate-pulse-heartbeat text-white">
                 Parking Solutions
               </h1>
               <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-blue-100 leading-relaxed">
@@ -171,21 +135,13 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
             </div>
             
             <div className="space-y-12">
-              {parkingSolutions.map((solution, index) => (
-                <div key={index} className={`animate-fade-in-up delay-${index * 100}`}>
-                  <InteractiveCard 
-                    hoverEffect="lift" 
-                    className="p-8 bg-white/80 backdrop-blur-sm border-2 border-primary/10 hover:border-primary/30 transition-all duration-500"
-                  >
+              {parkingSolutions.map((solution, index) => <div key={index} className={`animate-fade-in-up delay-${index * 100}`}>
+                  <InteractiveCard hoverEffect="lift" className="p-8 bg-white/80 backdrop-blur-sm border-2 border-primary/10 hover:border-primary/30 transition-all duration-500">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                       {/* Image Section */}
                       <div className="lg:col-span-1">
                         <div className="relative group overflow-hidden rounded-xl shadow-lg">
-                          <img 
-                            src={solution.image} 
-                            alt={solution.title}
-                            className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
+                          <img src={solution.image} alt={solution.title} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                       </div>
@@ -213,16 +169,10 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                             Key Features
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            {solution.features.map((feature, idx) => (
-                              <Badge 
-                                key={idx} 
-                                variant="secondary" 
-                                className="text-sm p-3 bg-primary/10 text-primary hover:bg-primary/20 transition-colors cursor-default justify-start"
-                              >
+                            {solution.features.map((feature, idx) => <Badge key={idx} variant="secondary" className="text-sm p-3 bg-primary/10 text-primary hover:bg-primary/20 transition-colors cursor-default justify-start">
                                 <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                 {feature}
-                              </Badge>
-                            ))}
+                              </Badge>)}
                           </div>
                         </div>
                         
@@ -237,30 +187,22 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                               <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
                                 <div className="prose prose-slate max-w-none">
                                   {solution.moreDetails.split('\n\n').map((paragraph, pIdx) => {
-                                    if (paragraph.startsWith('## ')) {
-                                      return (
-                                        <h4 key={pIdx} className="text-lg font-semibold text-slate-800 mt-6 mb-3">
+                                if (paragraph.startsWith('## ')) {
+                                  return <h4 key={pIdx} className="text-lg font-semibold text-slate-800 mt-6 mb-3">
                                           {paragraph.replace('## ', '')}
-                                        </h4>
-                                      );
-                                    }
-                                    if (paragraph.startsWith('- **')) {
-                                      return (
-                                        <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
-                                          {paragraph.split('\n').map((line, lIdx) => (
-                                            <div key={lIdx} className="text-sm bg-white p-3 rounded border border-slate-200">
+                                        </h4>;
+                                }
+                                if (paragraph.startsWith('- **')) {
+                                  return <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
+                                          {paragraph.split('\n').map((line, lIdx) => <div key={lIdx} className="text-sm bg-white p-3 rounded border border-slate-200">
                                               {line.replace('- **', '').replace('**', ': ')}
-                                            </div>
-                                          ))}
-                                        </div>
-                                      );
-                                    }
-                                    return (
-                                      <p key={pIdx} className="text-slate-700 leading-relaxed mb-4">
+                                            </div>)}
+                                        </div>;
+                                }
+                                return <p key={pIdx} className="text-slate-700 leading-relaxed mb-4">
                                         {paragraph}
-                                      </p>
-                                    );
-                                  })}
+                                      </p>;
+                              })}
                                 </div>
                               </div>
                             </AccordionContent>
@@ -269,8 +211,7 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                       </div>
                     </div>
                   </InteractiveCard>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -280,7 +221,9 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
           <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent"></div>
           <div className="absolute inset-0">
             <div className="absolute top-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute bottom-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" style={{
+            animationDelay: '1s'
+          }}></div>
           </div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -298,11 +241,7 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                   Get Free Consultation
                 </Button>
               </Link>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 interactive-button"
-              >
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 interactive-button">
                 <Clock className="mr-2 h-5 w-5" />
                 Schedule Site Visit
               </Button>
@@ -313,8 +252,6 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
         <Footer />
         <WhatsAppButton />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Solutions;
