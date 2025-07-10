@@ -129,9 +129,7 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
               <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Our Solutions Portfolio
               </h2>
-              <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                Explore our comprehensive range of parking systems, each designed to solve specific space and operational challenges
-              </p>
+              
             </div>
             
             <div className="space-y-12">
