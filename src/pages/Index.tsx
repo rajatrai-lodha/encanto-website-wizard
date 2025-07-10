@@ -153,7 +153,7 @@ const Index = () => {
             <div className={`flex justify-center transition-all duration-1000 delay-700 ${isLoaded ? 'animate-fadeInUp opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <Link to="/projects">
                 <Button className="interactive-button text-white px-6 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 active:scale-95 relative overflow-hidden group bg-sky-700 hover:bg-sky-600">
-                  <span className="relative z-10">Explore Solutions</span>
+                  <span className="relative z-10">Explore Projects</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </Link>
@@ -246,47 +246,12 @@ const Index = () => {
 
       {/* Enhanced Projects Section with Scroll Animation */}
       <section id="projects" data-animate className="">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Recent Projects</h2>
-            <p className="section-subtitle">
-              Trusted by leading developers and institutions across India
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => <Card key={index} className="professional-card group overflow-hidden hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 cursor-pointer hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
-                <div className="project-image mb-6 overflow-hidden">
-                  <img src={project.image} alt={project.name} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold text-primary group-hover:text-blue-700 transition-colors duration-300">
-                    {project.name}
-                  </CardTitle>
-                  <CardDescription className="text-sm font-semibold text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
-                    {project.client}
-                  </CardDescription>
-                  <p className="text-muted-foreground leading-relaxed mt-2 group-hover:text-slate-700 transition-colors duration-300">
-                    {project.description}
-                  </p>
-                </CardHeader>
-              </Card>)}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/projects">
-              <Button className="btn-primary text-lg hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all duration-300 relative overflow-hidden group">
-                <span className="relative z-10">View All Projects</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </Button>
-            </Link>
-          </div>
-        </div>
+        
       </section>
 
       {/* Enhanced CTA Section with Scroll Animation */}
       <section id="cta" data-animate className={`section-padding cta-gradient text-white relative overflow-hidden transition-all duration-1000 ${visibleSections.has('cta') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10 bg-blue-400">
           <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse" style={{
           animationDelay: '1s'
