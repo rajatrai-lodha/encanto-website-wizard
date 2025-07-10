@@ -251,7 +251,7 @@ const Index = () => {
 
       {/* Enhanced CTA Section with Scroll Animation */}
       <section id="cta" data-animate className={`section-padding cta-gradient text-white relative overflow-hidden transition-all duration-1000 ${visibleSections.has('cta') ? 'animate-fadeInUp' : 'opacity-0 translate-y-8'}`}>
-        <div className="absolute inset-0 opacity-10 bg-blue-400">
+        <div className="absolute inset-0 opacity-10 bg-brand-lighter">
           <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse" style={{
           animationDelay: '1s'
