@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Settings, Zap, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -191,6 +192,52 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                                         </h4>;
                                 }
                                 if (paragraph.startsWith('- **')) {
+                                  // Special handling for Tower Parking capacity table
+                                  if (solution.title === "Tower Parking" && paragraph.includes('18 Cars:')) {
+                                    const capacityData = [
+                                      { cars: 18, sedan: 14, suv: 4, height: 22100 },
+                                      { cars: 20, sedan: 16, suv: 4, height: 23750 },
+                                      { cars: 22, sedan: 18, suv: 4, height: 25400 },
+                                      { cars: 24, sedan: 18, suv: 6, height: 27600 },
+                                      { cars: 25, sedan: 20, suv: 6, height: 29250 },
+                                      { cars: 28, sedan: 22, suv: 6, height: 30900 },
+                                      { cars: 30, sedan: 24, suv: 6, height: 32550 },
+                                      { cars: 32, sedan: 24, suv: 8, height: 24750 },
+                                      { cars: 34, sedan: 26, suv: 8, height: 36400 },
+                                      { cars: 36, sedan: 28, suv: 8, height: 38050 },
+                                      { cars: 38, sedan: 30, suv: 8, height: 39700 },
+                                      { cars: 40, sedan: 30, suv: 10, height: 41900 },
+                                      { cars: 42, sedan: 32, suv: 10, height: 43550 },
+                                      { cars: 44, sedan: 34, suv: 10, height: 45220 },
+                                      { cars: 46, sedan: 36, suv: 10, height: 46850 },
+                                      { cars: 48, sedan: 36, suv: 12, height: 49050 },
+                                      { cars: 50, sedan: 38, suv: 12, height: 50700 }
+                                    ];
+                                    return (
+                                      <div key={pIdx} className="mt-4 overflow-x-auto">
+                                        <Table className="w-full">
+                                          <TableHeader>
+                                            <TableRow className="bg-primary/5">
+                                              <TableHead className="font-bold text-slate-800">No. of Cars</TableHead>
+                                              <TableHead className="font-bold text-slate-800">No. of Sedan</TableHead>
+                                              <TableHead className="font-bold text-slate-800">No. of SUV</TableHead>
+                                              <TableHead className="font-bold text-slate-800">Total Height (mm)</TableHead>
+                                            </TableRow>
+                                          </TableHeader>
+                                          <TableBody>
+                                            {capacityData.map((row, idx) => (
+                                              <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                                                <TableCell className="font-medium">{row.cars}</TableCell>
+                                                <TableCell>{row.sedan}</TableCell>
+                                                <TableCell>{row.suv}</TableCell>
+                                                <TableCell>{row.height}</TableCell>
+                                              </TableRow>
+                                            ))}
+                                          </TableBody>
+                                        </Table>
+                                      </div>
+                                    );
+                                  }
                                   return <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
                                           {paragraph.split('\n').map((line, lIdx) => <div key={lIdx} className="text-sm bg-white p-3 rounded border border-slate-200">
                                               {line.replace('- **', '').replace('**', ': ')}
