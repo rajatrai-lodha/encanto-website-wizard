@@ -325,32 +325,7 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent"></div>
-          
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Ready to Transform Your Parking Space?
-            </h2>
-            <p className="text-xl mb-10 max-w-3xl mx-auto text-white/90 leading-relaxed">
-              Get expert consultation and discover the perfect parking solution for your specific requirements. 
-              Our team will help you optimize space, reduce costs, and enhance user experience.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/contact">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 interactive-button">
-                  <Shield className="mr-2 h-5 w-5" />
-                  Get Free Consultation
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 interactive-button">
-                <Clock className="mr-2 h-5 w-5" />
-                Schedule Site Visit
-              </Button>
-            </div>
-          </div>
-        </section>
+        
 
         <Footer />
         <WhatsAppButton />
