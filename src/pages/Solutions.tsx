@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Settings, Zap, Shield, Clock } from "lucide-react";
+import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Settings, Zap, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 const Solutions = () => {
@@ -16,88 +16,130 @@ const Solutions = () => {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+  const [selectedImages, setSelectedImages] = useState<{[key: number]: number}>({});
+
   const parkingSolutions = [{
     title: "G+1 Stack Parking",
     summary: "Double your parking capacity with our efficient two-level stacking system.",
     icon: ArrowUp,
     color: "from-blue-500 to-blue-700",
     features: ["Space efficient", "Cost effective", "Easy operation", "Customizable for site requirements"],
-    moreDetails: `Can be designed to fit specific site requirements and constraints, allowing for customization based on available space and architectural considerations.
-
-Offers quick and convenient access to vehicles, minimizing the time required for retrieval.
-
-This system is also available in 4 pole model.`,
-    image: "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png"
+    moreDetails: [
+      "G+1 stack parking can be a cost-effective solution, especially when the cost of land is high. By maximizing the use of vertical space, it reduces the amount of land required for parking, potentially lowering overall project costs.",
+      "G+1 stack parking systems can be designed to fit specific site requirements and constraints. This flexibility allows for customization based on available space and architectural considerations.",
+      "Users of G+1 stack parking can generally enjoy quick and convenient access to their vehicles. The stack parking system is designed for efficient retrieval, minimizing the time required for users to get their cars.",
+      "This system is also available in 4 pole model."
+    ],
+    images: [
+      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
+      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
+      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
+      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
+      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+    ]
   }, {
     title: "G+2 Stack Parking",
     summary: "Triple your parking space with our advanced three-level stacking solution.",
     icon: Layers3,
     color: "from-indigo-500 to-indigo-700",
     features: ["Maximum space utilization", "Advanced safety", "Quick retrieval", "Customizable design"],
-    moreDetails: `Can be designed to fit specific site requirements and constraints, allowing for customization based on available space and architectural considerations.
-
-Offers quick and convenient access to vehicles, minimizing the time required for retrieval.
-
-This system is also available in 4 pole model.`,
-    image: "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png"
+    moreDetails: [
+      "G+2 stack parking can be a cost-effective solution, especially when the cost of land is high. By maximizing the use of vertical space, it reduces the amount of land required for parking, potentially lowering overall project costs.",
+      "G+2 stack parking systems can be designed to fit specific site requirements and constraints. This flexibility allows for customization based on available space and architectural considerations.",
+      "Users of G+2 stack parking can generally enjoy quick and convenient access to their vehicles. The stack parking system is designed for efficient retrieval, minimizing the time required for users to get their cars.",
+      "This system is also available in 4 pole model."
+    ],
+    images: [
+      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
+      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
+      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
+      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
+      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+    ]
   }, {
     title: "Pit Stack Parking",
     summary: "Underground parking solution for areas with limited overhead space.",
     icon: ArrowDown,
     color: "from-purple-500 to-purple-700",
     features: ["Uses hydraulic lifts/platforms", "Maximizes space by storing vehicles below ground level", "Improved traffic flow in urban areas", "Suitable for densely populated locations"],
-    moreDetails: `By utilizing both above-ground and below-ground levels for parking, pit stack systems can accommodate more vehicles compared to traditional methods.
-
-Efficient storage and retrieval processes help minimize congestion and parking-related traffic.
-
-This system is also available in 4 pole model.`,
-    image: "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png"
+    moreDetails: [
+      "These systems utilize hydraulic lifts or platforms to lower vehicles into the pits for storage and retrieval.",
+      "Pit stack parking maximizes the use of available space by storing vehicles below ground level. This makes it suitable for areas with limited surface area for parking, allowing for more efficient land use.",
+      "By utilizing both above-ground and below-ground levels for parking, pit stack systems can accommodate more vehicles compared to traditional parking methods. This is particularly beneficial in densely populated urban areas where parking demand is high.",
+      "Pit stack parking systems can contribute to improved traffic flow in urban areas by reducing the time spent searching for parking spaces. Efficient storage and retrieval processes help minimize congestion and alleviate parking-related traffic.",
+      "This system is also available in 4 pole model."
+    ],
+    images: [
+      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
+      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
+      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
+      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
+      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+    ]
   }, {
     title: "Puzzle Parking",
     summary: "Horizontal sliding puzzle system for maximum space efficiency.",
     icon: Puzzle,
     color: "from-cyan-500 to-cyan-700",
     features: ["Efficient use of vertical space", "User-friendly and automated", "Fast car retrieval", "Modular and flexible configuration"],
-    moreDetails: `Users typically drop off their cars at a designated area, and the automated system takes care of parking and retrieval.
-
-Simple upkeep and dependable functionality for hassle-free maintenance.`,
-    image: "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
+    moreDetails: [
+      "They utilize vertical space efficiently, making them suitable for areas with limited horizontal space. Simple upkeep and dependable functionality for hassle-free maintenance.",
+      "Puzzle parking systems are user-friendly and convenient. Users typically drop off their cars at a designated area, and the automated system takes care of the parking process.",
+      "Automated parking systems can retrieve cars faster than traditional parking methods.",
+      "Puzzle parking systems can be designed to fit specific site requirements and constraints. The modular nature of these systems allows for flexibility in configuration, making them suitable for various environments."
+    ],
+    images: [
+      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
+      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
+      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
+      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
+      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+    ]
   }, {
     title: "Tower Parking",
     summary: "Vertical automated parking towers for high-density needs.",
     icon: Building2,
     color: "from-teal-500 to-teal-700",
     features: ["Vertical storage", "Automated system", "High capacity", "Computer-controlled efficiency"],
-    moreDetails: `Accommodates parking for up to four cars within the space typically needed for three.
-
-Simple upkeep and dependable functionality for hassle-free maintenance.
-
-Can be set up as an independent structure.
-
-Design tailored to enhance user experience and human comfort.
-
-Incorporation of sophisticated computer-controlled systems for efficient operations.
-
-## Capacity Table:
-- **18 Cars:** 14 Sedan, 4 SUV, Total Height: 22100mm
-- **20 Cars:** 16 Sedan, 4 SUV, Total Height: 23750mm  
-- **22 Cars:** 18 Sedan, 4 SUV, Total Height: 25400mm
-- **24 Cars:** 18 Sedan, 6 SUV, Total Height: 27600mm
-- **25 Cars:** 20 Sedan, 6 SUV, Total Height: 29250mm
-- **28 Cars:** 22 Sedan, 6 SUV, Total Height: 30900mm
-- **30 Cars:** 24 Sedan, 6 SUV, Total Height: 32550mm
-- **32 Cars:** 24 Sedan, 8 SUV, Total Height: 24750mm
-- **34 Cars:** 26 Sedan, 8 SUV, Total Height: 36400mm
-- **36 Cars:** 28 Sedan, 8 SUV, Total Height: 38050mm
-- **38 Cars:** 30 Sedan, 8 SUV, Total Height: 39700mm
-- **40 Cars:** 30 Sedan, 10 SUV, Total Height: 41900mm
-- **42 Cars:** 32 Sedan, 10 SUV, Total Height: 43550mm
-- **44 Cars:** 34 Sedan, 10 SUV, Total Height: 45220mm
-- **46 Cars:** 36 Sedan, 10 SUV, Total Height: 46850mm
-- **48 Cars:** 36 Sedan, 12 SUV, Total Height: 49050mm
-- **50 Cars:** 38 Sedan, 12 SUV, Total Height: 50700mm`,
-    image: "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+    moreDetails: [
+      "Accommodates parking for up to four cars within the space typically needed for three.",
+      "Simple upkeep and dependable functionality for hassle-free maintenance.",
+      "Can be set up as an independent structure, standing on its own.",
+      "Design tailored to enhance user experience and human comfort.",
+      "Incorporation of sophisticated computer-controlled systems for efficient operations."
+    ],
+    images: [
+      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png",
+      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
+      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
+      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
+      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
+    ]
   }];
+
+  const handleImageSelect = (solutionIndex: number, imageIndex: number) => {
+    setSelectedImages(prev => ({
+      ...prev,
+      [solutionIndex]: imageIndex
+    }));
+  };
+
+  const navigateImage = (solutionIndex: number, direction: 'prev' | 'next') => {
+    const currentIndex = selectedImages[solutionIndex] || 0;
+    const maxIndex = parkingSolutions[solutionIndex].images.length - 1;
+    
+    let newIndex;
+    if (direction === 'prev') {
+      newIndex = currentIndex === 0 ? maxIndex : currentIndex - 1;
+    } else {
+      newIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
+    }
+    
+    setSelectedImages(prev => ({
+      ...prev,
+      [solutionIndex]: newIndex
+    }));
+  };
   return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient opacity-30"></div>
       <div className="fixed inset-0 grid-bg opacity-10"></div>
@@ -137,11 +179,53 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
               {parkingSolutions.map((solution, index) => <div key={index} className={`animate-fade-in-up delay-${index * 100}`}>
                   <InteractiveCard hoverEffect="lift" className="p-8 bg-white/80 backdrop-blur-sm border-2 border-primary/10 hover:border-primary/30 transition-all duration-500">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                      {/* Image Section */}
+                      {/* Image Gallery Section */}
                       <div className="lg:col-span-1">
-                        <div className="relative group overflow-hidden rounded-xl shadow-lg">
-                          <img src={solution.image} alt={solution.title} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="space-y-4">
+                          {/* Main Image */}
+                          <div className="relative group overflow-hidden rounded-xl shadow-lg">
+                            <img 
+                              src={solution.images[selectedImages[index] || 0]} 
+                              alt={solution.title} 
+                              className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            
+                            {/* Navigation Arrows */}
+                            <button 
+                              onClick={() => navigateImage(index, 'prev')}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+                            >
+                              <ChevronLeft className="h-5 w-5" />
+                            </button>
+                            <button 
+                              onClick={() => navigateImage(index, 'next')}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+                            >
+                              <ChevronRight className="h-5 w-5" />
+                            </button>
+                          </div>
+                          
+                          {/* Thumbnail Navigation */}
+                          <div className="grid grid-cols-5 gap-2">
+                            {solution.images.map((image, imageIndex) => (
+                              <button
+                                key={imageIndex}
+                                onClick={() => handleImageSelect(index, imageIndex)}
+                                className={`relative overflow-hidden rounded-lg transition-all duration-300 ${
+                                  (selectedImages[index] || 0) === imageIndex 
+                                    ? 'ring-2 ring-primary scale-105' 
+                                    : 'hover:scale-105 opacity-70 hover:opacity-100'
+                                }`}
+                              >
+                                <img 
+                                  src={image} 
+                                  alt={`${solution.title} ${imageIndex + 1}`} 
+                                  className="w-full h-12 object-cover"
+                                />
+                              </button>
+                            ))}
+                          </div>
                         </div>
                       </div>
                       
@@ -185,132 +269,65 @@ Incorporation of sophisticated computer-controlled systems for efficient operati
                             <AccordionContent className="pt-4">
                               <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
                                 <div className="prose prose-slate max-w-none">
-                                  {solution.moreDetails.split('\n\n').map((paragraph, pIdx) => {
-                                if (paragraph.startsWith('## ')) {
-                                  return <h4 key={pIdx} className="text-lg font-semibold text-slate-800 mt-6 mb-3">
-                                          {paragraph.replace('## ', '')}
-                                        </h4>;
-                                }
-                                if (paragraph.startsWith('- **')) {
-                                  // Special handling for Tower Parking capacity table
-                                  if (solution.title === "Tower Parking" && paragraph.includes('18 Cars:')) {
-                                    const capacityData = [{
-                                      cars: 18,
-                                      sedan: 14,
-                                      suv: 4,
-                                      height: 22100
-                                    }, {
-                                      cars: 20,
-                                      sedan: 16,
-                                      suv: 4,
-                                      height: 23750
-                                    }, {
-                                      cars: 22,
-                                      sedan: 18,
-                                      suv: 4,
-                                      height: 25400
-                                    }, {
-                                      cars: 24,
-                                      sedan: 18,
-                                      suv: 6,
-                                      height: 27600
-                                    }, {
-                                      cars: 25,
-                                      sedan: 20,
-                                      suv: 6,
-                                      height: 29250
-                                    }, {
-                                      cars: 28,
-                                      sedan: 22,
-                                      suv: 6,
-                                      height: 30900
-                                    }, {
-                                      cars: 30,
-                                      sedan: 24,
-                                      suv: 6,
-                                      height: 32550
-                                    }, {
-                                      cars: 32,
-                                      sedan: 24,
-                                      suv: 8,
-                                      height: 24750
-                                    }, {
-                                      cars: 34,
-                                      sedan: 26,
-                                      suv: 8,
-                                      height: 36400
-                                    }, {
-                                      cars: 36,
-                                      sedan: 28,
-                                      suv: 8,
-                                      height: 38050
-                                    }, {
-                                      cars: 38,
-                                      sedan: 30,
-                                      suv: 8,
-                                      height: 39700
-                                    }, {
-                                      cars: 40,
-                                      sedan: 30,
-                                      suv: 10,
-                                      height: 41900
-                                    }, {
-                                      cars: 42,
-                                      sedan: 32,
-                                      suv: 10,
-                                      height: 43550
-                                    }, {
-                                      cars: 44,
-                                      sedan: 34,
-                                      suv: 10,
-                                      height: 45220
-                                    }, {
-                                      cars: 46,
-                                      sedan: 36,
-                                      suv: 10,
-                                      height: 46850
-                                    }, {
-                                      cars: 48,
-                                      sedan: 36,
-                                      suv: 12,
-                                      height: 49050
-                                    }, {
-                                      cars: 50,
-                                      sedan: 38,
-                                      suv: 12,
-                                      height: 50700
-                                    }];
-                                    return <div key={pIdx} className="mt-4 overflow-x-auto">
-                                        <Table className="w-full">
-                                          <TableHeader>
-                                            <TableRow className="bg-primary/5">
-                                              <TableHead className="font-bold text-slate-800">No. of Cars</TableHead>
-                                              <TableHead className="font-bold text-slate-800">No. of Sedan</TableHead>
-                                              <TableHead className="font-bold text-slate-800">No. of SUV</TableHead>
-                                              <TableHead className="font-bold text-slate-800">Total Height (mm)</TableHead>
-                                            </TableRow>
-                                          </TableHeader>
-                                          <TableBody>
-                                            {capacityData.map((row, idx) => <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                                                <TableCell className="font-medium">{row.cars}</TableCell>
-                                                <TableCell>{row.sedan}</TableCell>
-                                                <TableCell>{row.suv}</TableCell>
-                                                <TableCell>{row.height}</TableCell>
-                                              </TableRow>)}
-                                          </TableBody>
-                                        </Table>
-                                      </div>;
-                                  }
-                                  return <div key={pIdx} className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
-                                          {paragraph.split('\n').map((line, lIdx) => <div key={lIdx} className="text-sm bg-white p-3 rounded border border-slate-200">
-                                              {line.replace('- **', '').replace('**', ': ')}
-                                            </div>)}
-                                        </div>;
-                                }
-                                return <p key={pIdx} className="text-slate-700 leading-relaxed mb-4">
-                                        {paragraph}
-                                      </p>;
-                              })}
+                                  <div className="space-y-4">
+                                    {solution.moreDetails.map((detail, detailIndex) => (
+                                      <div key={detailIndex} className="flex items-start gap-3">
+                                        <div className="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-sm font-semibold mt-0.5">
+                                          {detailIndex + 1}
+                                        </div>
+                                        <p className="text-slate-700 leading-relaxed">
+                                          {detail}
+                                        </p>
+                                      </div>
+                                    ))}
+                                    
+                                    {/* Tower Parking Capacity Table */}
+                                    {solution.title === "Tower Parking" && (
+                                      <div className="mt-6">
+                                        <h4 className="text-lg font-semibold text-slate-800 mb-4">Capacity Table</h4>
+                                        <div className="overflow-x-auto">
+                                          <Table className="w-full">
+                                            <TableHeader>
+                                              <TableRow className="bg-primary/5">
+                                                <TableHead className="font-bold text-slate-800">No. of Cars</TableHead>
+                                                <TableHead className="font-bold text-slate-800">No. of Sedan</TableHead>
+                                                <TableHead className="font-bold text-slate-800">No. of SUV</TableHead>
+                                                <TableHead className="font-bold text-slate-800">Total Height (mm)</TableHead>
+                                              </TableRow>
+                                            </TableHeader>
+                                            <TableBody>
+                                              {[
+                                                { cars: 18, sedan: 14, suv: 4, height: 22100 },
+                                                { cars: 20, sedan: 16, suv: 4, height: 23750 },
+                                                { cars: 22, sedan: 18, suv: 4, height: 25400 },
+                                                { cars: 24, sedan: 18, suv: 6, height: 27600 },
+                                                { cars: 25, sedan: 20, suv: 6, height: 29250 },
+                                                { cars: 28, sedan: 22, suv: 6, height: 30900 },
+                                                { cars: 30, sedan: 24, suv: 6, height: 32550 },
+                                                { cars: 32, sedan: 24, suv: 8, height: 24750 },
+                                                { cars: 34, sedan: 26, suv: 8, height: 36400 },
+                                                { cars: 36, sedan: 28, suv: 8, height: 38050 },
+                                                { cars: 38, sedan: 30, suv: 8, height: 39700 },
+                                                { cars: 40, sedan: 30, suv: 10, height: 41900 },
+                                                { cars: 42, sedan: 32, suv: 10, height: 43550 },
+                                                { cars: 44, sedan: 34, suv: 10, height: 45220 },
+                                                { cars: 46, sedan: 36, suv: 10, height: 46850 },
+                                                { cars: 48, sedan: 36, suv: 12, height: 49050 },
+                                                { cars: 50, sedan: 38, suv: 12, height: 50700 }
+                                              ].map((row, idx) => (
+                                                <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                                                  <TableCell className="font-medium">{row.cars}</TableCell>
+                                                  <TableCell>{row.sedan}</TableCell>
+                                                  <TableCell>{row.suv}</TableCell>
+                                                  <TableCell>{row.height}</TableCell>
+                                                </TableRow>
+                                              ))}
+                                            </TableBody>
+                                          </Table>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             </AccordionContent>
