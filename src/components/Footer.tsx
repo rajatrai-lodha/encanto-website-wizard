@@ -22,11 +22,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors text-sm">Home</Link></li>
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">About Us</Link></li>
-              <li><Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors text-sm">Projects</Link></li>
-              <li><Link to="/why-choose-us" className="text-muted-foreground hover:text-primary transition-colors text-sm">Why Choose Us</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">Contact</Link></li>
+              <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary transition-colors text-sm">Home</Link></li>
+              <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary transition-colors text-sm">About Us</Link></li>
+              <li><Link to="/projects" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary transition-colors text-sm">Projects</Link></li>
+              <li><Link to="/solutions" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary transition-colors text-sm">Solutions</Link></li>
+              <li><Link to="/why-choose-us" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary transition-colors text-sm">Why Choose Us</Link></li>
+              <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
 

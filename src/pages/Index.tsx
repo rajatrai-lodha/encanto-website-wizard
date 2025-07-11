@@ -9,6 +9,7 @@ import HeroFloatingActions from "@/components/HeroFloatingActions";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
@@ -95,16 +96,20 @@ const Index = () => {
     image: "/lovable-uploads/1e5e40d0-2411-45d5-947b-ff24aecc2b92.png"
   }];
   const stats = [{
-    number: "1000+",
+    number: 1000,
+    suffix: "+",
     label: "Parking Spaces Created"
   }, {
-    number: "50+",
+    number: 50,
+    suffix: "+",
     label: "Projects Completed"
   }, {
-    number: "45+",
+    number: 45,
+    suffix: "+",
     label: "Satisfied Clients"
   }, {
-    number: "99%",
+    number: 99,
+    suffix: "%",
     label: "Uptime Reliability"
   }];
   const whyChooseUs = [{
@@ -167,9 +172,12 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => <div key={index} className={`text-center group hover:scale-105 transition-all duration-300 hover:-translate-y-2 cursor-pointer delay-${index * 100}`}>
-                <div className="stat-number group-hover:scale-110 transition-transform duration-300 bg-gradient-to-b from-primary to-blue-600 bg-clip-text text-transparent">
-                  {stat.number}
-                </div>
+                <AnimatedCounter
+                  end={stat.number}
+                  suffix={stat.suffix}
+                  duration={2000}
+                  className="stat-number group-hover:scale-110 transition-transform duration-300 bg-gradient-to-b from-primary to-blue-600 bg-clip-text text-transparent"
+                />
                 <p className="stat-label group-hover:text-primary transition-colors duration-300">{stat.label}</p>
               </div>)}
           </div>

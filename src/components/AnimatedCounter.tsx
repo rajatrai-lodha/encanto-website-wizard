@@ -23,9 +23,14 @@ const AnimatedCounter = ({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
+        if (entry.isIntersecting) {
+          // Reset and restart animation every time it comes into view
+          setCount(0);
           setIsVisible(true);
           animateCount();
+        } else {
+          // Reset when leaving view
+          setIsVisible(false);
         }
       },
       { threshold: 0.1 }

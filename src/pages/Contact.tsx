@@ -4,41 +4,15 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import InteractiveCard from "@/components/InteractiveCard";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { toast } from "sonner";
 import { useEffect } from "react";
 const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
+  
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    toast.success("Thank you for your inquiry! We'll get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
   return <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-tech-gradient"></div>
       <div className="fixed inset-0 grid-bg opacity-20"></div>
@@ -63,131 +37,94 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Form and Info */}
+        {/* Contact Information */}
         <section className="py-16 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <InteractiveCard hoverEffect="glow" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Get in Touch */}
+              <InteractiveCard hoverEffect="lift" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group">
                 <CardHeader>
-                  <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Send us a Message</CardTitle>
+                  <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Get in Touch</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="transform transition-all duration-300 hover:scale-105">
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Your full name" className="glass-effect transition-all duration-300 focus:scale-105" />
-                      </div>
-                      <div className="transform transition-all duration-300 hover:scale-105">
-                        <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="Your phone number" className="glass-effect transition-all duration-300 focus:scale-105" />
-                      </div>
+                <CardContent className="space-y-6">
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <Phone className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
-                    
-                    <div className="transform transition-all duration-300 hover:scale-105">
-                      <Label htmlFor="email">Email Address *</Label>
-                      <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your.email@example.com" className="glass-effect transition-all duration-300 focus:scale-105" />
+                    <div>
+                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Phone Numbers</h3>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">8097465332</p>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">7990047746</p>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">022 3561 1681</p>
                     </div>
-                    
-                    <div className="transform transition-all duration-300 hover:scale-105">
-                      <Label htmlFor="message">Message *</Label>
-                      <textarea id="message" name="message" required value={formData.message} onChange={handleChange} placeholder="Tell us about your parking requirements..." rows={5} className="flex w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 glass-effect transition-all duration-300 focus:scale-105" />
+                  </div>
+                  
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <Mail className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
-                    
-                    <Button type="submit" className="w-full btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
-                      Send Message
-                    </Button>
-                  </form>
+                    <div>
+                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Email Address</h3>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">info@encanto.co.in</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <Clock className="h-6 w-6 text-primary group-hover:animate-bounce" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Business Hours</h3>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Sunday: Emergency support only</p>
+                    </div>
+                  </div>
                 </CardContent>
               </InteractiveCard>
 
-              {/* Contact Information */}
-              <div className="space-y-8">
-                <InteractiveCard hoverEffect="lift" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
-                  <CardHeader>
-                    <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Get in Touch</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                        <Phone className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Phone Numbers</h3>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">8097465332</p>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">7990047746</p>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">022 3561 1681</p>
-                      </div>
+              {/* Office Address */}
+              <InteractiveCard hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
+                <CardHeader>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">Office Address</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
-                    
-                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                        <Mail className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Email Address</h3>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">info@encanto.co.in</p>
-                      </div>
+                    <div>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                        308/B Moreshwar Krupa<br />
+                        Eksar Road, Borivali West<br />
+                        Mumbai - 400092<br />
+                        Maharashtra, India
+                      </p>
                     </div>
-                    
-                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                        <Clock className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Business Hours</h3>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Sunday: Emergency support only</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </InteractiveCard>
+                  </div>
+                </CardContent>
+              </InteractiveCard>
 
-                {/* Office Address */}
-                <InteractiveCard hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up delay-300 group">
-                  <CardHeader>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">Office Address</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                        <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                      </div>
-                      <div>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
-                          308/B Moreshwar Krupa<br />
-                          Eksar Road, Borivali West<br />
-                          Mumbai - 400092<br />
-                          Maharashtra, India
-                        </p>
-                      </div>
+              {/* Factory Address */}
+              <InteractiveCard hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-300 group">
+                <CardHeader>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">Factory Address</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                      <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
-                  </CardContent>
-                </InteractiveCard>
-
-                {/* Factory Address */}
-                <InteractiveCard hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl animate-fade-in-up delay-400 group">
-                  <CardHeader>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">Factory Address</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                        <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                      </div>
-                      <div>
-                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
-                          Umar Compound Industrial<br />
-                          Sopara Phata, Nallasopara East<br />
-                          Palghar - 401209<br />
-                          Maharashtra, India
-                        </p>
-                      </div>
+                    <div>
+                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                        Umar Compound Industrial<br />
+                        Sopara Phata, Nallasopara East<br />
+                        Palghar - 401209<br />
+                        Maharashtra, India
+                      </p>
                     </div>
-                  </CardContent>
-                </InteractiveCard>
-              </div>
+                  </div>
+                </CardContent>
+              </InteractiveCard>
             </div>
           </div>
         </section>
@@ -207,9 +144,9 @@ const Contact = () => {
                 Call us now for immediate assistance or to schedule a site visit
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
-                <Button size="lg" className="btn-futuristic interactive-button transform transition-all duration-300 hover:scale-110 hover:shadow-2xl" asChild>
-                  <a href="tel:8097465332">Call: 8097465332</a>
-                </Button>
+                <a href="tel:8097465332" className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                  Call: 8097465332
+                </a>
                 
               </div>
             </div>
