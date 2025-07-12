@@ -204,19 +204,25 @@ const Solutions = () => {
                                </div>
                              </div>
                             
-                            {/* Navigation Arrows */}
-                            <button 
-                              onClick={() => navigateImage(index, 'prev')}
-                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
-                            >
-                              <ChevronLeft className="h-5 w-5" />
-                            </button>
-                            <button 
-                              onClick={() => navigateImage(index, 'next')}
-                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
-                            >
-                              <ChevronRight className="h-5 w-5" />
-                            </button>
+                             {/* Navigation Arrows */}
+                             <button 
+                               onClick={(e) => {
+                                 e.stopPropagation();
+                                 navigateImage(index, 'prev');
+                               }}
+                               className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+                             >
+                               <ChevronLeft className="h-5 w-5" />
+                             </button>
+                             <button 
+                               onClick={(e) => {
+                                 e.stopPropagation();
+                                 navigateImage(index, 'next');
+                               }}
+                               className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+                             >
+                               <ChevronRight className="h-5 w-5" />
+                             </button>
                           </div>
                           
                           {/* Thumbnail Navigation */}
