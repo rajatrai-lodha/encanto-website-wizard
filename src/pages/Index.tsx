@@ -224,7 +224,8 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => <Card key={index} className="professional-card group overflow-hidden hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 cursor-pointer hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
+            {solutions.map((solution, index) => <Link key={index} to={`/solutions#${solution.title.toLowerCase().replace(/\s+/g, '-').replace(/\+/g, '')}`}>
+                <Card className="professional-card group overflow-hidden hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 cursor-pointer hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
                 <div className="project-image mb-6 overflow-hidden">
                   <img src={solution.image} alt={solution.title} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
@@ -247,7 +248,8 @@ const Index = () => {
                       </li>)}
                   </ul>
                 </CardContent>
-              </Card>)}
+              </Card>
+              </Link>)}
           </div>
         </div>
       </section>

@@ -31,11 +31,12 @@ const Solutions = () => {
       "This system is also available in 4 pole model."
     ],
     images: [
-      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
-      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
-      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
-      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
-      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+      "/lovable-uploads/f0e7e380-c391-4fb6-bc87-5238f060265f.png",
+      "/lovable-uploads/1881797d-6228-4b4d-b7ec-bb670d8201ef.png",
+      "/lovable-uploads/99da3557-ee03-40c1-9c8c-b334304a4ed2.png",
+      "/lovable-uploads/cf084950-875e-46ea-a986-c0dfc0a75dcc.png",
+      "/lovable-uploads/352c61ee-2e4a-4740-b3fc-475b359ae2e6.png",
+      "/lovable-uploads/be437f42-08ea-414d-9c61-f2529728a023.png"
     ]
   }, {
     title: "G+2 Stack Parking",
@@ -50,11 +51,10 @@ const Solutions = () => {
       "This system is also available in 4 pole model."
     ],
     images: [
-      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
-      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
-      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
-      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
-      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+      "/lovable-uploads/98e63056-5eb8-4001-b8a1-7c254510f749.png",
+      "/lovable-uploads/cffffc37-0a89-40d2-80d3-fe8f92343747.png",
+      "/lovable-uploads/bc5e830a-456e-4bc5-800b-7a0faf8c4430.png",
+      "/lovable-uploads/161d2cb5-da8c-41f3-b4a5-bebdd6d3e869.png"
     ]
   }, {
     title: "Pit Stack Parking",
@@ -176,7 +176,7 @@ const Solutions = () => {
             </div>
             
             <div className="space-y-12">
-              {parkingSolutions.map((solution, index) => <div key={index} className={`animate-fade-in-up delay-${index * 100}`}>
+              {parkingSolutions.map((solution, index) => <div key={index} id={solution.title.toLowerCase().replace(/\s+/g, '-').replace(/\+/g, '')} className={`scroll-mt-32 animate-fade-in-up delay-${index * 100}`}>
                   <InteractiveCard hoverEffect="lift" className="p-8 bg-white/80 backdrop-blur-sm border-2 border-primary/10 hover:border-primary/30 transition-all duration-500">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                       {/* Image Gallery Section */}
@@ -187,7 +187,7 @@ const Solutions = () => {
                             <img 
                               src={solution.images[selectedImages[index] || 0]} 
                               alt={solution.title} 
-                              className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+                              className="w-full h-64 object-contain bg-slate-100 group-hover:scale-110 transition-transform duration-500" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             
@@ -221,7 +221,7 @@ const Solutions = () => {
                                 <img 
                                   src={image} 
                                   alt={`${solution.title} ${imageIndex + 1}`} 
-                                  className="w-full h-12 object-cover"
+                                  className="w-full h-12 object-contain bg-slate-50"
                                 />
                               </button>
                             ))}
