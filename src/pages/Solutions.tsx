@@ -116,11 +116,12 @@ const Solutions = () => {
       "Incorporation of sophisticated computer-controlled systems for efficient operations."
     ],
     images: [
-      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png",
-      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
-      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
-      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
-      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
+      "/lovable-uploads/588155db-38bf-4a12-bff7-963c3057b058.png",
+      "/lovable-uploads/7f5e381d-7801-4bfe-a11d-f9a669b22003.png",
+      "/lovable-uploads/cee14e77-478f-4ce3-a0b3-15c7923fcc5b.png",
+      "/lovable-uploads/758613d7-e8de-408a-96a0-15ef61d82e65.png",
+      "/lovable-uploads/25fa5630-6f45-45f7-8551-29de016500fa.png",
+      "/lovable-uploads/352873fb-1d00-4053-90a2-f804d45cbccc.png"
     ]
   }];
 
@@ -366,18 +367,24 @@ const Solutions = () => {
 
       {/* Image Modal */}
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="max-w-7xl max-h-[90vh] p-0 bg-black/95 border-none">
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-black/95 border-none overflow-hidden">
           <button
             onClick={() => setModalOpen(false)}
-            className="absolute top-4 right-4 z-50 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-colors"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-colors"
           >
-            <X className="h-6 w-6 text-white" />
+            <X className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
           </button>
-          <div className="flex items-center justify-center h-full p-4">
+          <div className="flex items-center justify-center w-full h-full p-2 sm:p-4">
             <img
               src={modalImage}
               alt="Expanded view"
-              className="max-w-full max-h-full object-contain"
+              className="max-w-full max-h-full object-contain w-auto h-auto"
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                width: 'auto',
+                height: 'auto'
+              }}
             />
           </div>
         </DialogContent>
