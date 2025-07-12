@@ -8,15 +8,23 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Settings, Zap, Shield, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Settings, Zap, Shield, Clock, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const Solutions = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsLoaded(true);
   }, []);
   const [selectedImages, setSelectedImages] = useState<{[key: number]: number}>({});
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState<string>("");
+
+  const openModal = (imageSrc: string) => {
+    setModalImage(imageSrc);
+    setModalOpen(true);
+  };
 
   const parkingSolutions = [{
     title: "G+1 Stack Parking",
@@ -70,11 +78,11 @@ const Solutions = () => {
       "This system is also available in 4 pole model."
     ],
     images: [
-      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
-      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
-      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
-      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
-      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+      "/lovable-uploads/42ab4556-d1f5-42a8-b257-89907028baeb.png",
+      "/lovable-uploads/c12d5f6a-b21b-496c-b6cd-7a361a6a8636.png",
+      "/lovable-uploads/c6187bd1-23b8-461b-8e45-b78db9842cb3.png",
+      "/lovable-uploads/0a6ed728-97e3-49d2-84ac-43eec70a9cf4.png",
+      "/lovable-uploads/a1c377a4-6b46-48fa-b9ce-7fb9af3763cc.png"
     ]
   }, {
     title: "Puzzle Parking",
@@ -89,11 +97,10 @@ const Solutions = () => {
       "Puzzle parking systems can be designed to fit specific site requirements and constraints. The modular nature of these systems allows for flexibility in configuration, making them suitable for various environments."
     ],
     images: [
-      "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png",
-      "/lovable-uploads/3cc7effc-535b-4d6c-be6a-5e472af9953e.png",
-      "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png",
-      "/lovable-uploads/be55bfe9-cbd4-433a-8f77-45064dc16a47.png",
-      "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
+      "/lovable-uploads/e676c6d0-b37a-469e-8883-d37e00bd0907.png",
+      "/lovable-uploads/e8fa59a7-630b-4c9c-b382-0e603d0fef6f.png",
+      "/lovable-uploads/961af773-d705-4c93-b7f6-b2f6ca2849f6.png",
+      "/lovable-uploads/df8f85d4-faaa-42b5-a86a-58889d0e73fa.png"
     ]
   }, {
     title: "Tower Parking",
@@ -182,14 +189,19 @@ const Solutions = () => {
                       {/* Image Gallery Section */}
                       <div className="lg:col-span-1">
                         <div className="space-y-4">
-                          {/* Main Image */}
-                          <div className="relative group overflow-hidden rounded-xl shadow-lg">
-                            <img 
-                              src={solution.images[selectedImages[index] || 0]} 
-                              alt={solution.title} 
-                              className="w-full h-64 object-contain bg-slate-100 group-hover:scale-110 transition-transform duration-500" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                           {/* Main Image */}
+                           <div className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer" onClick={() => openModal(solution.images[selectedImages[index] || 0])}>
+                             <img 
+                               src={solution.images[selectedImages[index] || 0]} 
+                               alt={solution.title} 
+                               className="w-full h-64 object-contain bg-slate-100 group-hover:scale-110 transition-transform duration-500" 
+                             />
+                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                               <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                                 <span className="text-white text-sm font-medium">Click to expand</span>
+                               </div>
+                             </div>
                             
                             {/* Navigation Arrows */}
                             <button 
@@ -209,21 +221,25 @@ const Solutions = () => {
                           {/* Thumbnail Navigation */}
                           <div className="grid grid-cols-5 gap-2">
                             {solution.images.map((image, imageIndex) => (
-                              <button
-                                key={imageIndex}
-                                onClick={() => handleImageSelect(index, imageIndex)}
-                                className={`relative overflow-hidden rounded-lg transition-all duration-300 ${
-                                  (selectedImages[index] || 0) === imageIndex 
-                                    ? 'ring-2 ring-primary scale-105' 
-                                    : 'hover:scale-105 opacity-70 hover:opacity-100'
-                                }`}
-                              >
-                                <img 
-                                  src={image} 
-                                  alt={`${solution.title} ${imageIndex + 1}`} 
-                                  className="w-full h-12 object-contain bg-slate-50"
-                                />
-                              </button>
+                               <button
+                                 key={imageIndex}
+                                 onClick={(e) => {
+                                   e.stopPropagation();
+                                   handleImageSelect(index, imageIndex);
+                                 }}
+                                 onDoubleClick={() => openModal(image)}
+                                 className={`relative overflow-hidden rounded-lg transition-all duration-300 cursor-pointer ${
+                                   (selectedImages[index] || 0) === imageIndex 
+                                     ? 'ring-2 ring-primary scale-105' 
+                                     : 'hover:scale-105 opacity-70 hover:opacity-100'
+                                 }`}
+                               >
+                                 <img 
+                                   src={image} 
+                                   alt={`${solution.title} ${imageIndex + 1}`} 
+                                   className="w-full h-12 object-contain bg-slate-50"
+                                 />
+                               </button>
                             ))}
                           </div>
                         </div>
@@ -347,6 +363,25 @@ const Solutions = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+
+      {/* Image Modal */}
+      <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+        <DialogContent className="max-w-7xl max-h-[90vh] p-0 bg-black/95 border-none">
+          <button
+            onClick={() => setModalOpen(false)}
+            className="absolute top-4 right-4 z-50 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          <div className="flex items-center justify-center h-full p-4">
+            <img
+              src={modalImage}
+              alt="Expanded view"
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>;
 };
 export default Solutions;
