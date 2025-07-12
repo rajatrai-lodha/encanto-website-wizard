@@ -7,7 +7,7 @@ import FloatingActions from "@/components/FloatingActions";
 import HeroImageSlider from "@/components/HeroImageSlider";
 import HeroFloatingActions from "@/components/HeroFloatingActions";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ArrowDown, ArrowUp, CircleParking, CircleParkingOff, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
+import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 const Index = () => {
@@ -52,7 +52,7 @@ const Index = () => {
   }, {
     title: "G+2 Stack Parking",
     description: "Triple your parking space with our advanced three-level stacking solution.",
-    icon: ArrowUp,
+    icon: Layers3,
     features: ["Maximum space utilization", "Advanced safety", "Quick retrieval"],
     image: "/lovable-uploads/826245bf-1f4b-448f-a12e-785d57b060a2.png"
   }, {
@@ -64,13 +64,13 @@ const Index = () => {
   }, {
     title: "Puzzle Parking",
     description: "Horizontal sliding puzzle system for maximum space efficiency.",
-    icon: CircleParking,
+    icon: Puzzle,
     features: ["Horizontal movement", "No pit required", "Modular design"],
     image: "/lovable-uploads/ca0c39e6-ee18-421c-8c60-308c9635f405.png"
   }, {
     title: "Tower Parking",
     description: "Vertical automated parking towers for high-density parking needs.",
-    icon: CircleParkingOff,
+    icon: Building2,
     features: ["Vertical storage", "Automated system", "High capacity"],
     image: "/lovable-uploads/58f1bdec-0d74-4a16-9de1-636f4aa046b6.png"
   }];

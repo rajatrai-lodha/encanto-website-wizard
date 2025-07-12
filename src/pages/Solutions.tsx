@@ -285,7 +285,7 @@ const Solutions = () => {
                         {/* Expandable Details */}
                         <Accordion type="single" collapsible className="w-full">
                           <AccordionItem value={`item-${index}`} className="border-primary/20">
-                            <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80">
+                            <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 text-center justify-center underline">
                               More Details
                             </AccordionTrigger>
                             <AccordionContent className="pt-4">
