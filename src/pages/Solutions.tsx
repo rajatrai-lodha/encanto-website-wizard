@@ -279,8 +279,7 @@ const Solutions = () => {
                         {/* Expandable Details */}
                         <Accordion type="single" collapsible className="w-full">
                           <AccordionItem value={`item-${index}`} className="border-primary/20">
-                            <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 flex items-center gap-2">
-                              <Settings className="h-5 w-5" />
+                            <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80">
                               More Details
                             </AccordionTrigger>
                             <AccordionContent className="pt-4">
@@ -367,18 +366,18 @@ const Solutions = () => {
 
       {/* Image Modal */}
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-black/95 border-none overflow-hidden">
+        <DialogContent className="max-w-[100vw] max-h-[100vh] w-screen h-screen p-0 bg-black border-none overflow-hidden flex items-center justify-center">
           <button
             onClick={() => setModalOpen(false)}
             className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-colors"
           >
             <X className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
           </button>
-          <div className="flex items-center justify-center w-full h-full p-2 sm:p-4">
+          <div className="w-full h-full flex items-center justify-center p-4">
             <img
               src={modalImage}
               alt="Expanded view"
-              className="max-w-full max-h-full object-contain w-auto h-auto"
+              className="object-contain"
               style={{
                 maxWidth: '100%',
                 maxHeight: '100%',

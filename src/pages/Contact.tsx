@@ -40,7 +40,7 @@ const Contact = () => {
         {/* Contact Information */}
         <section className="py-16 bg-zinc-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Get in Touch */}
               <InteractiveCard hoverEffect="lift" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up group">
                 <CardHeader>
@@ -53,9 +53,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Phone Numbers</h3>
-                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">8097465332</p>
-                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">7990047746</p>
-                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">022 3561 1681</p>
+                      <a href="tel:8097465332" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">8097465332</a>
+                      <a href="tel:7990047746" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">7990047746</a>
+                      <a href="tel:022-3561-1681" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">022 3561 1681</a>
                     </div>
                   </div>
                   
@@ -65,7 +65,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Email Address</h3>
-                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">info@encanto.co.in</p>
+                      <a href="mailto:info@encanto.co.in" className="text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">info@encanto.co.in</a>
                     </div>
                   </div>
                   
@@ -82,45 +82,45 @@ const Contact = () => {
                 </CardContent>
               </InteractiveCard>
 
-              {/* Office Address */}
+              {/* Combined Address Card */}
               <InteractiveCard hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200 group">
                 <CardHeader>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">Office Address</CardTitle>
+                  <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Our Locations</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                      <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                    </div>
-                    <div>
-                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
-                        308/B Moreshwar Krupa<br />
-                        Eksar Road, Borivali West<br />
-                        Mumbai - 400092<br />
-                        Maharashtra, India
-                      </p>
+                <CardContent className="space-y-8">
+                  {/* Office Address */}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Office Address</h3>
+                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                        <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
+                      </div>
+                      <div>
+                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                          308/B Moreshwar Krupa<br />
+                          Eksar Road, Borivali West<br />
+                          Mumbai - 400092<br />
+                          Maharashtra, India
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-              </InteractiveCard>
 
-              {/* Factory Address */}
-              <InteractiveCard hoverEffect="tilt" className="transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-300 group">
-                <CardHeader>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">Factory Address</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
-                      <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
-                    </div>
-                    <div>
-                      <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
-                        Umar Compound Industrial<br />
-                        Sopara Phata, Nallasopara East<br />
-                        Palghar - 401209<br />
-                        Maharashtra, India
-                      </p>
+                  {/* Factory Address */}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Factory Address</h3>
+                    <div className="flex items-start transform transition-all duration-300 hover:translate-x-2">
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mr-4 neon-blue group-hover:animate-pulse transform transition-all duration-300 group-hover:scale-110">
+                        <MapPin className="h-6 w-6 text-primary group-hover:animate-bounce" />
+                      </div>
+                      <div>
+                        <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">
+                          Umar Compound Industrial<br />
+                          Sopara Phata, Nallasopara East<br />
+                          Palghar - 401209<br />
+                          Maharashtra, India
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
