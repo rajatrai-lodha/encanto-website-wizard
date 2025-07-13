@@ -63,7 +63,7 @@ const Contact = () => {
                       <Mail className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Email Address</h3>
+                      <h3 className="font-semibold mb-1 transition-colors duration-300 text-black">Email Address</h3>
                       <a href="mailto:info@encanto.co.in" className="text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">info@encanto.co.in</a>
                     </div>
                   </div>
@@ -73,7 +73,7 @@ const Contact = () => {
                       <Clock className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Business Hours</h3>
+                      <h3 className="font-semibold mb-1 transition-colors duration-300 text-black">Business Hours</h3>
                       <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Monday - Saturday: 9:00 AM - 6:00 PM</p>
                       <p className="text-muted-foreground group-hover:text-slate-700 transition-colors duration-300">Sunday: Emergency support only</p>
                     </div>
