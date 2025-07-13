@@ -51,7 +51,7 @@ const Contact = () => {
                       <Phone className="h-6 w-6 text-primary group-hover:animate-bounce" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">Phone Number</h3>
+                      <h3 className="font-semibold mb-1 transition-colors duration-300 text-black">Phone Number</h3>
                       <a href="tel:8097465332" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">8097465332</a>
                       <a href="tel:7990047746" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">7990047746</a>
                       <a href="tel:022-3561-1681" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">022 3561 1681</a>
