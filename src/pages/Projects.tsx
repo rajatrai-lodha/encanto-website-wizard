@@ -115,7 +115,7 @@ const Projects = () => {
                     <CardTitle className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-500 text-slate-800">
                       {project.name}
                     </CardTitle>
-                    <p className="text-lg font-medium text-primary group-hover:text-blue-600 transition-colors duration-500">
+                    <p className="text-lg text-primary group-hover:text-sky-600 transition-colors duration-500 font-medium">
                       {project.client}
                     </p>
                   </CardHeader>
