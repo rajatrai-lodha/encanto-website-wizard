@@ -53,8 +53,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1 transition-colors duration-300 text-black">Phone Number</h3>
                       <a href="tel:8097465332" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">8097465332</a>
-                      <a href="tel:7990047746" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">7990047746</a>
-                      <a href="tel:022-3561-1681" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">022 3561 1681</a>
+                      <a href="tel:9967998814" className="block text-muted-foreground group-hover:text-primary transition-colors duration-300 hover:underline">9967998814</a>
                     </div>
                   </div>
                   
@@ -145,6 +144,9 @@ const Contact = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
                 <a href="tel:8097465332" className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                   Call: 8097465332
+                </a>
+                <a href="tel:9967998814" className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                  Call: 9967998814
                 </a>
                 
               </div>

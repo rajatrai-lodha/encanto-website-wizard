@@ -32,6 +32,18 @@ const Projects = () => {
   }, {
     name: "Hemgiri Apartments",
     client: "Pyramid Developers"
+  }, {
+    name: "Fortune Tower CHS",
+    client: "Lakdawala Developers"
+  }, {
+    name: "Nanadanwan CHS",
+    client: "Jadeite Developers"
+  }, {
+    name: "Shubh Regency CHS",
+    client: "Shubh Developers"
+  }, {
+    name: "Marathe Elenza CHS",
+    client: "Sai Ji Developers"
   }];
   const stats = [{
     number: 50,

@@ -39,8 +39,7 @@ const Footer = () => {
                 <Phone className="h-4 w-4 mr-2 mt-0.5 text-primary" />
                 <div className="text-sm">
                   <p><a href="tel:8097465332" className="text-muted-foreground hover:text-primary transition-colors">8097465332</a></p>
-                  <p><a href="tel:7990047746" className="text-muted-foreground hover:text-primary transition-colors">7990047746</a></p>
-                  <p><a href="tel:02235611681" className="text-muted-foreground hover:text-primary transition-colors">022 3561 1681</a></p>
+                  <p><a href="tel:9967998814" className="text-muted-foreground hover:text-primary transition-colors">9967998814</a></p>
                 </div>
               </div>
               <div className="flex items-center">
