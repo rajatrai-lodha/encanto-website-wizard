@@ -7,6 +7,7 @@ import FloatingActions from "@/components/FloatingActions";
 import HeroImageSlider from "@/components/HeroImageSlider";
 import HeroFloatingActions from "@/components/HeroFloatingActions";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import DownloadBrochureButton from "@/components/DownloadBrochureButton";
 import { ArrowDown, ArrowUp, Puzzle, Building2, Layers3, CheckCircle, Building, Users, Shield, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -290,6 +291,7 @@ const Index = () => {
       <Footer />
       <FloatingActions />
       <WhatsAppButton />
+      <DownloadBrochureButton />
     </div>;
 };
 export default Index;
