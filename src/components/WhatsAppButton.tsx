@@ -18,11 +18,7 @@ const WhatsAppButton = () => {
         onClick={handleWhatsAppClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`
-          w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 
-          shadow-lg hover:shadow-xl transition-all duration-300
-          ${isHovered ? 'scale-105' : ''}
-        `}
+        className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
         style={{
           background: isHovered 
             ? 'linear-gradient(45deg, #25D366, #128C7E)' 
@@ -41,14 +37,14 @@ const WhatsAppButton = () => {
         <div className="absolute inset-0 rounded-full border border-green-400 animate-ping opacity-30"></div>
       </Button>
       
-      {/* Tooltip */}
+      {/* Text bubble on hover */}
       <div className={`
-        absolute bottom-full right-0 mb-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg
-        transition-all duration-300 whitespace-nowrap
-        ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}
+        absolute top-1/2 right-full -translate-y-1/2 mr-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg
+        transition-all duration-300 whitespace-nowrap pointer-events-none
+        ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'}
       `}>
         Chat with us on WhatsApp
-        <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+        <div className="absolute top-1/2 left-full -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent border-l-gray-900"></div>
       </div>
     </div>
   );
