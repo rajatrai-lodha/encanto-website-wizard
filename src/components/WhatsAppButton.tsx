@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
   
   const handleWhatsAppClick = () => {
     const phoneNumber = "918097465332";
-    const message = "Hi! I'm looking for the best automated parking solution for my building. Can you help me with the details?";
+    const message = "Hi! I'm looking for the best automated parking solution. Can you help me with the details?";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
