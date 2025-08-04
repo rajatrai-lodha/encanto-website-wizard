@@ -205,7 +205,7 @@ const Projects = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 relative bg-white">
+        <section className="py-16 relative bg-slate-200">
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <div className="animate-fade-in-up">
