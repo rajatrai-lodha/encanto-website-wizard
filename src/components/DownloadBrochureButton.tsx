@@ -18,8 +18,8 @@ const DownloadBrochureButton = () => {
         className={`
           h-16 rounded-l-full rounded-r-full bg-primary hover:bg-primary/90 
           shadow-lg hover:shadow-xl transition-all duration-300 ease-out
-          flex items-center justify-center gap-3 overflow-hidden
-          ${isHovered ? 'w-48 pr-4' : 'w-16'}
+          flex items-center overflow-hidden
+          ${isHovered ? 'w-48 justify-start pl-4 gap-3' : 'w-16 justify-center'}
         `}
         style={{
           background: isHovered 
