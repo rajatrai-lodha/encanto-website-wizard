@@ -145,9 +145,7 @@ const Contact = () => {
                 <a href="tel:8097465332" className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                   Call: 8097465332
                 </a>
-                <a href="tel:9967998814" className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                  Call: 9967998814
-                </a>
+                
                 
               </div>
             </div>
